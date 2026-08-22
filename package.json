@@ -5,10 +5,24 @@
   "private": true,
   "type": "module",
   "license": "MIT",
+  "packageManager": "pnpm@11.19.0",
   "engines": {
     "node": "^22.19 || >=24"
   },
   "scripts": {
-    "verify": "node scripts/verify.mjs"
+    "build": "pnpm --filter @opencnid/recursus-assembly build",
+    "format:check": "node scripts/check-format.mjs",
+    "lint": "node scripts/lint.mjs",
+    "typecheck": "pnpm --filter @opencnid/recursus-assembly typecheck",
+    "test": "pnpm --filter @opencnid/recursus-assembly test",
+    "test:integration": "pnpm --filter @opencnid/recursus-assembly test:integration",
+    "assemble:packages": "pnpm --filter @opencnid/recursus-assembly build && node scripts/assemble-packages.mjs",
+    "assemble:finalize": "pnpm --filter @opencnid/recursus-assembly build && node scripts/finalize-package-assembly.mjs",
+    "verify": "node scripts/verify.mjs",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm verify"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.0",
+    "typescript": "6.0.3"
   }
 }

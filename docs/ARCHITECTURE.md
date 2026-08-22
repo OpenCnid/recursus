@@ -65,3 +65,17 @@ A Recursus release will contain:
 - third-party notices and source locators;
 - content-free verification and evaluation evidence;
 - no credentials, personal memory, developer paths, or mutable component branches.
+
+## Assembly layer
+
+The assembly layer is a Recursus-owned integration package, not another DSH runtime. Its versioned source lock records immutable component inputs and public build/package/profile seams. The generated integrity document records SHA-256 and byte size only after package bytes pass inspection; it deliberately has no timestamp or host path.
+
+Every component adapter follows one provider-neutral lifecycle:
+
+```text
+inspect → acquire → verify revision → restore dependencies → verify source → build → pack → inspect package
+```
+
+The lifecycle runner owns order and bounded evidence. Acquisition, command execution, and package inspection remain separate implementations. Git acquisition works only beneath an absolute operator-configured Recursus work root, enables Windows long-path checkout per command, reuses a checkout only when its origin, cleanliness, and commit all match, and removes only a partial checkout created by the failed acquisition call. Exact pnpm JavaScript entrypoints drive top-level commands while exact standalone executables remain on `PATH` for component-owned shell-free nested calls.
+
+The current slice executes all recorded component restore, verification, build, pack, and package-check commands, then rejects undeclared output, unsafe archive boundaries, credentials, developer paths, the configured work root, generated residue, source-control metadata, and missing notices. The first Windows run rejected 29 Harness client bundles that retained the absolute build path in CSS virtual-module comments. That generic fix returned through reviewed Harness PR #1 and Recursus pin `600299571a9d807a475ca87f366bd22761dd938e`; the repeated lifecycle accepted all 244 archives and generated deterministic integrity. The assembly does not yet install or modify a DSH profile.

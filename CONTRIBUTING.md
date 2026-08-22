@@ -1,6 +1,6 @@
 # Contributing
 
-Recursus is in its foundation stage. Start with an issue tied to a milestone in `GAMEPLAN.md` and describe the acceptance evidence before implementation.
+Recursus is implementing Milestone 1. Start with an issue tied to a milestone in `GAMEPLAN.md` and describe the acceptance evidence before implementation.
 
 ## Where changes belong
 
@@ -24,10 +24,28 @@ Every pull request should state:
 - remaining limitations;
 - whether package, notice, or provenance output changed.
 
-Run:
+For assembly changes, use Node.js `22.19.0` or a supported Node.js 24 release and pnpm `11.19.0`, then run:
 
 ```sh
-node scripts/verify.mjs
+pnpm install --frozen-lockfile
+pnpm check
 ```
+
+Run the opt-in public-pin acquisition separately with an absolute ignored work root. It performs public GitHub egress but uses no provider credential:
+
+```powershell
+$env:RECURSUS_RUN_PINNED_INTEGRATION = '1'
+$env:RECURSUS_INTEGRATION_WORK_ROOT = (Resolve-Path artifacts).Path + '\integration-work'
+pnpm test:integration
+```
+
+Run real component assembly separately because it performs public dependency egress and the pinned component test suites are intentionally broad:
+
+```powershell
+$env:RECURSUS_WORK_ROOT = (Resolve-Path artifacts).Path + '\assembly-work'
+pnpm assemble:packages
+```
+
+If a later component fails after earlier components checkpoint successfully, retry only the failed logical component with `RECURSUS_COMPONENTS`, then run `pnpm assemble:finalize`. Never recover or finalize a package directory that did not visibly complete the common lifecycle; finalization re-inspects bytes but does not replace component-owned verification.
 
 Keep commits reviewable, preserve unrelated work, and do not publish packages or releases without explicit approval.

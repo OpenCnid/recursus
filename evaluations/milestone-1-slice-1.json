@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "milestone": 1,
+  "slice": "assembly-schema-contract-acquisition",
+  "foundation": "d8425e54102d3d144f2b1f6f125c0581cee952ed",
+  "platform": "windows-x64",
+  "toolchain": {
+    "node": "24.19.0",
+    "pnpm": "11.19.0",
+    "git": "2.47.1.windows.1"
+  },
+  "componentRevisions": {
+    "deepseek-harness": "99f6f02fecdb7dff40c3fbc9470f5907c29f74ca",
+    "deepseek-openai-codex": "5232102d0cc8bd55d5bf27b6eb203efbf6ada8a9",
+    "deepseek-rlm": "4772c12b0630706f14d16e70be0ad67bff116690",
+    "deepseek-honcho": "83627329867a562959cf992d0ce56d78a273971a",
+    "deepseek-dovetail": "fec14d795edb5e52c02e2ccc49d9af6004fddee0"
+  },
+  "criteria": [
+    {
+      "spec": "20.2",
+      "status": "passed-for-source-lock-schema",
+      "evidence": [
+        "manifests/assembly.schema.json",
+        "manifests/assembly.json",
+        "manifests/package-integrity.schema.json",
+        "packages/assembly/tests/manifest.test.mjs"
+      ]
+    },
+    {
+      "spec": "20.3-common-lifecycle",
+      "status": "passed",
+      "evidence": [
+        "packages/assembly/src/lifecycle.ts",
+        "packages/assembly/tests/lifecycle.test.mjs"
+      ]
+    },
+    {
+      "spec": "20.3-acquire-and-verify-revision",
+      "status": "passed-on-windows",
+      "evidence": [
+        "packages/assembly/src/git-acquisition.ts",
+        "packages/assembly/tests/git-acquisition.test.mjs",
+        "packages/assembly/tests/real-pinned.integration.test.mjs"
+      ]
+    },
+    {
+      "spec": "20.3-build-pack-inspect",
+      "status": "not-implemented",
+      "evidence": []
+    },
+    {
+      "spec": "20.4",
+      "status": "not-implemented",
+      "evidence": []
+    },
+    {
+      "spec": "20.5",
+      "status": "not-implemented",
+      "evidence": []
+    },
+    {
+      "spec": "20.6",
+      "status": "incomplete",
+      "evidence": []
+    }
+  ],
+  "checks": {
+    "deterministicTests": {
+      "passed": 15,
+      "failed": 0,
+      "skipped": 1
+    },
+    "publicPinIntegration": {
+      "passed": 1,
+      "failed": 0,
+      "component": "deepseek-openai-codex",
+      "providerEgress": false,
+      "credentialUse": false
+    }
+  },
+  "packageIntegrity": {
+    "status": "not-generated",
+    "acceptedPackages": 0
+  },
+  "limitations": [
+    "No Linux run has been recorded.",
+    "No component build or accepted package hash has been produced.",
+    "No DSH profile lifecycle or assembled smoke test exists.",
+    "No live Codex or Honcho provider call was made."
+  ]
+}

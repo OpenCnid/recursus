@@ -1,0 +1,543 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/OpenCnid/recursus/blob/main/manifests/assembly.schema.json",
+  "title": "Recursus assembly source lock",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "assemblyId",
+    "runtime",
+    "baseline",
+    "workRoot",
+    "integrityOutput",
+    "components"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "./assembly.schema.json"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "assemblyId": {
+      "$ref": "#/$defs/identifier"
+    },
+    "runtime": {
+      "const": "recursus"
+    },
+    "baseline": {
+      "type": "string",
+      "minLength": 1
+    },
+    "workRoot": {
+      "$ref": "#/$defs/workRoot"
+    },
+    "integrityOutput": {
+      "$ref": "#/$defs/integrityOutput"
+    },
+    "components": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/component"
+      }
+    }
+  },
+  "$defs": {
+    "identifier": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9.-]*$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "revision": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "relativePath": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+    },
+    "workRoot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "operatorConfigured",
+        "paths"
+      ],
+      "properties": {
+        "operatorConfigured": {
+          "const": true
+        },
+        "paths": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "sources",
+            "caches",
+            "packages"
+          ],
+          "properties": {
+            "sources": {
+              "$ref": "#/$defs/relativePath"
+            },
+            "caches": {
+              "$ref": "#/$defs/relativePath"
+            },
+            "packages": {
+              "$ref": "#/$defs/relativePath"
+            }
+          }
+        }
+      }
+    },
+    "integrityOutput": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "schema",
+        "path",
+        "deterministic"
+      ],
+      "properties": {
+        "schema": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "deterministic": {
+          "const": true
+        }
+      }
+    },
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "role",
+        "repository",
+        "revision",
+        "version",
+        "license",
+        "acquisition",
+        "toolchain",
+        "lockfiles",
+        "entrypoints",
+        "pack",
+        "profileContribution",
+        "platforms",
+        "compatibility"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/identifier"
+        },
+        "role": {
+          "$ref": "#/$defs/identifier"
+        },
+        "repository": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https://github\\.com/OpenCnid/[A-Za-z0-9._-]+$"
+        },
+        "revision": {
+          "$ref": "#/$defs/revision"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "license": {
+          "$ref": "#/$defs/license"
+        },
+        "acquisition": {
+          "$ref": "#/$defs/acquisition"
+        },
+        "toolchain": {
+          "$ref": "#/$defs/toolchain"
+        },
+        "lockfiles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/lockfile"
+          }
+        },
+        "entrypoints": {
+          "$ref": "#/$defs/entrypoints"
+        },
+        "pack": {
+          "$ref": "#/$defs/pack"
+        },
+        "profileContribution": {
+          "$ref": "#/$defs/profileContribution"
+        },
+        "platforms": {
+          "$ref": "#/$defs/platforms"
+        },
+        "compatibility": {
+          "$ref": "#/$defs/compatibility"
+        }
+      }
+    },
+    "license": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "declared",
+        "status",
+        "noticeFiles",
+        "redistribution"
+      ],
+      "properties": {
+        "declared": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "permissive",
+            "pending-owner-license",
+            "composite"
+          ]
+        },
+        "noticeFiles": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/relativePath"
+          }
+        },
+        "redistribution": {
+          "enum": [
+            "allowed-with-notices",
+            "blocked-pending-owner-license",
+            "composite-review-required"
+          ]
+        }
+      }
+    },
+    "acquisition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "readOnly",
+        "revisionKind"
+      ],
+      "properties": {
+        "method": {
+          "const": "git"
+        },
+        "readOnly": {
+          "const": true
+        },
+        "revisionKind": {
+          "const": "commit"
+        }
+      }
+    },
+    "toolchain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "node",
+        "packageManager",
+        "additional"
+      ],
+      "properties": {
+        "node": {
+          "type": "string",
+          "minLength": 1
+        },
+        "packageManager": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "version"
+          ],
+          "properties": {
+            "name": {
+              "const": "pnpm"
+            },
+            "version": {
+              "type": "string",
+              "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+            }
+          }
+        },
+        "additional": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "name",
+              "version"
+            ],
+            "properties": {
+              "name": {
+                "$ref": "#/$defs/identifier"
+              },
+              "version": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      }
+    },
+    "lockfile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        }
+      }
+    },
+    "command": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "executable",
+        "arguments",
+        "cwd"
+      ],
+      "properties": {
+        "executable": {
+          "type": "string",
+          "minLength": 1
+        },
+        "arguments": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "cwd": {
+          "const": "source"
+        },
+        "platforms": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "windows-x64",
+              "linux-x64"
+            ]
+          }
+        },
+        "environment": {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {
+            "pattern": "^DSH_[A-Z0-9_]+$"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "commands": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/command"
+      }
+    },
+    "entrypoints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "restoreDependencies",
+        "verifySource",
+        "build",
+        "pack",
+        "inspectPackage"
+      ],
+      "properties": {
+        "restoreDependencies": {
+          "$ref": "#/$defs/commands"
+        },
+        "verifySource": {
+          "$ref": "#/$defs/commands"
+        },
+        "build": {
+          "$ref": "#/$defs/commands"
+        },
+        "pack": {
+          "$ref": "#/$defs/commands"
+        },
+        "inspectPackage": {
+          "$ref": "#/$defs/commands"
+        }
+      }
+    },
+    "pack": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "outputRoot",
+        "selectors"
+      ],
+      "properties": {
+        "outputRoot": {
+          "const": "{packageOutput}"
+        },
+        "selectors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "glob",
+              "format",
+              "purpose"
+            ],
+            "properties": {
+              "glob": {
+                "$ref": "#/$defs/relativePath"
+              },
+              "format": {
+                "const": "npm-tarball"
+              },
+              "purpose": {
+                "enum": [
+                  "runtime",
+                  "dependency-closure"
+                ]
+              }
+            }
+          }
+        },
+        "allowedMetadata": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/relativePath"
+          }
+        }
+      }
+    },
+    "profileContribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "packages",
+        "configPolicy"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "profile-foundation",
+            "bundle-patch",
+            "cordis-plugin"
+          ]
+        },
+        "packages": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "patch": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "configPolicy": {
+          "enum": [
+            "package-defaults",
+            "host-credentials-required",
+            "profile-template"
+          ]
+        }
+      }
+    },
+    "platforms": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "supported",
+        "constraints"
+      ],
+      "properties": {
+        "supported": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "windows-x64",
+              "linux-x64"
+            ]
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "compatibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dshRevision",
+        "nestedPins",
+        "constraints"
+      ],
+      "properties": {
+        "dshRevision": {
+          "$ref": "#/$defs/revision"
+        },
+        "nestedPins": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/identifier"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

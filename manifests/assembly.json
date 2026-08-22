@@ -1,0 +1,1124 @@
+{
+  "$schema": "./assembly.schema.json",
+  "schemaVersion": 1,
+  "assemblyId": "recursus-m1-source-lock-v1",
+  "runtime": "recursus",
+  "baseline": "d8425e54102d3d144f2b1f6f125c0581cee952ed",
+  "workRoot": {
+    "operatorConfigured": true,
+    "paths": {
+      "sources": "sources",
+      "caches": "caches",
+      "packages": "packages"
+    }
+  },
+  "integrityOutput": {
+    "schema": "manifests/package-integrity.schema.json",
+    "path": "manifests/package-integrity.json",
+    "deterministic": true
+  },
+  "components": [
+    {
+      "name": "deepseek-harness",
+      "role": "control-plane",
+      "repository": "https://github.com/OpenCnid/deepseek-harness",
+      "revision": "600299571a9d807a475ca87f366bd22761dd938e",
+      "version": "dsh-v0.1.0-rc.7",
+      "license": {
+        "declared": "MIT",
+        "status": "permissive",
+        "noticeFiles": [
+          "LICENSE",
+          "THIRD_PARTY_NOTICES.md"
+        ],
+        "redistribution": "allowed-with-notices"
+      },
+      "acquisition": {
+        "method": "git",
+        "readOnly": true,
+        "revisionKind": "commit"
+      },
+      "toolchain": {
+        "node": "^22.19.0 || >=24.0.0",
+        "packageManager": {
+          "name": "pnpm",
+          "version": "11.7.0"
+        },
+        "additional": []
+      },
+      "lockfiles": [
+        {
+          "path": "pnpm-lock.yaml",
+          "sha256": "f517dc3978d57531cda747df62a2abdde1df5b9f25415fcf1fc5d51f8b7547ea"
+        },
+        {
+          "path": "python/sdk/uv.lock",
+          "sha256": "faa68835043981cecfca29beebb28e04d355085e505bd650280c90cf1960e6e4"
+        }
+      ],
+      "entrypoints": {
+        "restoreDependencies": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "install",
+              "--frozen-lockfile"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "verifySource": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "check:ci:windows-complete"
+            ],
+            "cwd": "source",
+            "platforms": [
+              "windows-x64"
+            ],
+            "environment": {
+              "DSH_COVERAGE_MAX_WORKERS": "2",
+              "DSH_COVERAGE_TEST_TIMEOUT_MS": "30000",
+              "DSH_GATE_CONCURRENCY": "1",
+              "DSH_PUBLINT_CONCURRENCY": "8"
+            }
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "check:ci:linux-primary"
+            ],
+            "cwd": "source",
+            "platforms": [
+              "linux-x64"
+            ],
+            "environment": {
+              "DSH_COVERAGE_MAX_WORKERS": "6",
+              "DSH_GATE_CONCURRENCY": "3"
+            }
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "release:verify",
+              "--family",
+              "dsh"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "release:verify",
+              "--family",
+              "vendor"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "build": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "build"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "pack": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "release:pack",
+              "--family",
+              "dsh",
+              "--out",
+              "{packageOutput}/dsh"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "release:pack",
+              "--family",
+              "vendor",
+              "--out",
+              "{packageOutput}/vendor"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "native/landlock-run",
+              "run",
+              "build:ts"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "native/landlock-run/packages/entry",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}/landlock"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "inspectPackage": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "release:verify-packed-install",
+              "--family",
+              "dsh",
+              "--from",
+              "{packageOutput}/dsh",
+              "--from",
+              "{packageOutput}/vendor",
+              "--from",
+              "{packageOutput}/landlock"
+            ],
+            "cwd": "source",
+            "platforms": [
+              "linux-x64"
+            ]
+          }
+        ]
+      },
+      "pack": {
+        "outputRoot": "{packageOutput}",
+        "selectors": [
+          {
+            "glob": "dsh/*.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          },
+          {
+            "glob": "vendor/*.tgz",
+            "format": "npm-tarball",
+            "purpose": "dependency-closure"
+          },
+          {
+            "glob": "landlock/*.tgz",
+            "format": "npm-tarball",
+            "purpose": "dependency-closure"
+          }
+        ],
+        "allowedMetadata": [
+          "dsh/publish-order.txt",
+          "vendor/publish-order.txt"
+        ]
+      },
+      "profileContribution": {
+        "kind": "profile-foundation",
+        "packages": [
+          "@deepseek-ai/dsh-base",
+          "@deepseek-ai/dsh-headless"
+        ],
+        "configPolicy": "profile-template"
+      },
+      "platforms": {
+        "supported": [
+          "windows-x64",
+          "linux-x64"
+        ],
+        "constraints": [
+          "Landlock platform packages are optional; the entry package must still be present for packed-install verification.",
+          "The runtime uses the host access granted by the operator and is not a sandbox."
+        ]
+      },
+      "compatibility": {
+        "dshRevision": "600299571a9d807a475ca87f366bd22761dd938e",
+        "nestedPins": {
+          "cordis": "4.0.1"
+        },
+        "constraints": [
+          "All DSH packages are one audited 0.1.0-rc.7 set.",
+          "Profiles compose package-owned bundle patches through the public DSH loader."
+        ]
+      }
+    },
+    {
+      "name": "deepseek-openai-codex",
+      "role": "model-provider",
+      "repository": "https://github.com/OpenCnid/deepseek-openai-codex",
+      "revision": "5232102d0cc8bd55d5bf27b6eb203efbf6ada8a9",
+      "version": "0.1.0",
+      "license": {
+        "declared": "SEE THIRD_PARTY_NOTICES.md",
+        "status": "pending-owner-license",
+        "noticeFiles": [
+          "THIRD_PARTY_NOTICES.md"
+        ],
+        "redistribution": "blocked-pending-owner-license"
+      },
+      "acquisition": {
+        "method": "git",
+        "readOnly": true,
+        "revisionKind": "commit"
+      },
+      "toolchain": {
+        "node": ">=22.19.0",
+        "packageManager": {
+          "name": "pnpm",
+          "version": "11.19.0"
+        },
+        "additional": []
+      },
+      "lockfiles": [
+        {
+          "path": "pnpm-lock.yaml",
+          "sha256": "9dac0b5ab26ff63b95bdbde13a22408a065d8df1ce534bf324af1a9bdfa37445"
+        }
+      ],
+      "entrypoints": {
+        "restoreDependencies": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "install",
+              "--frozen-lockfile"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "verifySource": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "typecheck"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "lint"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "test"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "build": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "build"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "pack": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "inspectPackage": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "pack:inspect"
+            ],
+            "cwd": "source"
+          }
+        ]
+      },
+      "pack": {
+        "outputRoot": "{packageOutput}",
+        "selectors": [
+          {
+            "glob": "deepseek-openai-codex-0.1.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          }
+        ]
+      },
+      "profileContribution": {
+        "kind": "bundle-patch",
+        "packages": [
+          "deepseek-openai-codex"
+        ],
+        "patch": "cordis.patch.yml",
+        "configPolicy": "host-credentials-required"
+      },
+      "platforms": {
+        "supported": [
+          "windows-x64",
+          "linux-x64"
+        ],
+        "constraints": [
+          "OAuth credential reference OPENAI_CODEX_OAUTH is resolved by the host DSH credentials service.",
+          "Live provider acceptance is opt-in and isolated."
+        ]
+      },
+      "compatibility": {
+        "dshRevision": "600299571a9d807a475ca87f366bd22761dd938e",
+        "nestedPins": {
+          "cordis": "4.0.1",
+          "pi-ai": "0.84.2"
+        },
+        "constraints": [
+          "Registers provider openai-codex through ctx.llm and stores OAuth material only through ctx.credentials.",
+          "Redistribution remains blocked until the owner selects compatible terms."
+        ]
+      }
+    },
+    {
+      "name": "deepseek-rlm",
+      "role": "persistent-compute",
+      "repository": "https://github.com/OpenCnid/deepseek-rlm",
+      "revision": "4772c12b0630706f14d16e70be0ad67bff116690",
+      "version": "0.1.0-preview.0",
+      "license": {
+        "declared": "MIT",
+        "status": "permissive",
+        "noticeFiles": [
+          "LICENSE",
+          "THIRD_PARTY_NOTICES.md"
+        ],
+        "redistribution": "allowed-with-notices"
+      },
+      "acquisition": {
+        "method": "git",
+        "readOnly": true,
+        "revisionKind": "commit"
+      },
+      "toolchain": {
+        "node": ">=20 (assembled DSH host requires ^22.19 or >=24)",
+        "packageManager": {
+          "name": "pnpm",
+          "version": "9.14.4"
+        },
+        "additional": [
+          {
+            "name": "python",
+            "version": "3.11"
+          },
+          {
+            "name": "uv",
+            "version": "locked by component workflow"
+          }
+        ]
+      },
+      "lockfiles": [
+        {
+          "path": "pnpm-lock.yaml",
+          "sha256": "d1ae2cc697db86d42dadda4653f82ae64131f7010b440e130d5b4fb6d30cc08d"
+        },
+        {
+          "path": "python/dsh-rlm-runtime/uv.lock",
+          "sha256": "588a9165560eba4a70bfad798b4f67418c09498dc77b64e8c5ec7b4e150c7413"
+        },
+        {
+          "path": "python/managed-requirements.lock",
+          "sha256": "0d72c8c450c62fdb405db96cfa5dbffb3a60eedacb24dc37c028267696d258af"
+        }
+      ],
+      "entrypoints": {
+        "restoreDependencies": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "install",
+              "--frozen-lockfile"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "verifySource": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "format"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "lint"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "typecheck"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "test"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "test:python"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "provenance"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "verify:patches"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "test:integration"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "build": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "build"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "pack": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "packages/rlm",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "packages/prime-runtime",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "packages/rlm-jupyter",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "packages/tool-ipython",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "packages/bundle",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "inspectPackage": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "test:e2e"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "package:check"
+            ],
+            "cwd": "source"
+          }
+        ]
+      },
+      "pack": {
+        "outputRoot": "{packageOutput}",
+        "selectors": [
+          {
+            "glob": "deepseek-rlm-dsh-rlm-0.1.0-preview.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          },
+          {
+            "glob": "deepseek-rlm-dsh-rlm-prime-runtime-0.1.0-preview.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          },
+          {
+            "glob": "deepseek-rlm-dsh-rlm-jupyter-0.1.0-preview.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          },
+          {
+            "glob": "deepseek-rlm-dsh-tool-ipython-0.1.0-preview.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          },
+          {
+            "glob": "deepseek-rlm-dsh-rlm-bundle-0.1.0-preview.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          }
+        ]
+      },
+      "profileContribution": {
+        "kind": "bundle-patch",
+        "packages": [
+          "@deepseek-rlm/dsh-rlm-bundle"
+        ],
+        "patch": "packages/bundle/dsh.bundle.patch",
+        "configPolicy": "package-defaults"
+      },
+      "platforms": {
+        "supported": [
+          "windows-x64",
+          "linux-x64"
+        ],
+        "constraints": [
+          "Python 3.11 must be provisionable for the managed Jupyter runtime.",
+          "IPython executes with operator-granted OS authority and is not a sandbox."
+        ]
+      },
+      "compatibility": {
+        "dshRevision": "600299571a9d807a475ca87f366bd22761dd938e",
+        "nestedPins": {
+          "cordis": "4.0.1",
+          "rlm-compute-boundary": "79b6b28e16c7305e8e791f2d8c9d2935e75ade60"
+        },
+        "constraints": [
+          "Requires the three component-owned DSH patches recorded under patches/deepseek-harness.",
+          "Persistent computation remains behind the provider-neutral ctx.rlm service."
+        ]
+      }
+    },
+    {
+      "name": "deepseek-honcho",
+      "role": "memory-and-artifacts",
+      "repository": "https://github.com/OpenCnid/deepseek-honcho",
+      "revision": "83627329867a562959cf992d0ce56d78a273971a",
+      "version": "0.2.0",
+      "license": {
+        "declared": "Apache-2.0",
+        "status": "permissive",
+        "noticeFiles": [
+          "LICENSE",
+          "THIRD_PARTY_NOTICES.md"
+        ],
+        "redistribution": "allowed-with-notices"
+      },
+      "acquisition": {
+        "method": "git",
+        "readOnly": true,
+        "revisionKind": "commit"
+      },
+      "toolchain": {
+        "node": "^22.19 || >=24",
+        "packageManager": {
+          "name": "pnpm",
+          "version": "11.7.0"
+        },
+        "additional": []
+      },
+      "lockfiles": [
+        {
+          "path": "pnpm-lock.yaml",
+          "sha256": "daf18c443a64a860ad015d3f391ebbfed5abba640d870e579e0c27f7578064f9"
+        }
+      ],
+      "entrypoints": {
+        "restoreDependencies": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "install",
+              "--frozen-lockfile"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "verifySource": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "format:check"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "lint"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "typecheck"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "test"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "evaluate"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "check:provenance"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "check:secrets"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "build": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "build"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "pack": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "packages/honcho",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "packages/honcho-sdk",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "packages/agent-memory",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "packages/artifact-memory",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "packages/tool-memory",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "--dir",
+              "packages/bundle",
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "inspectPackage": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "exec",
+              "tsx",
+              "scripts/check-packages.ts"
+            ],
+            "cwd": "source"
+          }
+        ]
+      },
+      "pack": {
+        "outputRoot": "{packageOutput}",
+        "selectors": [
+          {
+            "glob": "deepseek-honcho-dsh-honcho-0.2.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          },
+          {
+            "glob": "deepseek-honcho-dsh-honcho-sdk-0.2.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          },
+          {
+            "glob": "deepseek-honcho-dsh-agent-memory-0.1.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          },
+          {
+            "glob": "deepseek-honcho-dsh-artifact-memory-0.2.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          },
+          {
+            "glob": "deepseek-honcho-dsh-tool-memory-0.2.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          },
+          {
+            "glob": "deepseek-honcho-dsh-honcho-bundle-0.2.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          }
+        ]
+      },
+      "profileContribution": {
+        "kind": "cordis-plugin",
+        "packages": [
+          "@deepseek-honcho/dsh-honcho-bundle"
+        ],
+        "configPolicy": "host-credentials-required"
+      },
+      "platforms": {
+        "supported": [
+          "windows-x64",
+          "linux-x64"
+        ],
+        "constraints": [
+          "Honcho memory is optional and startup must support memory disabled.",
+          "Exact artifact bytes remain in a project-local store outside Honcho."
+        ]
+      },
+      "compatibility": {
+        "dshRevision": "600299571a9d807a475ca87f366bd22761dd938e",
+        "nestedPins": {
+          "cordis": "4.0.1",
+          "honcho-sdk": "2.3.0",
+          "rlm-compute-boundary": "79b6b28e16c7305e8e791f2d8c9d2935e75ade60"
+        },
+        "constraints": [
+          "Honcho is fallible semantic context and never active run truth.",
+          "The SDK provider and artifact service remain separate public service roles."
+        ]
+      }
+    },
+    {
+      "name": "deepseek-dovetail",
+      "role": "agent-workflows",
+      "repository": "https://github.com/OpenCnid/deepseek-dovetail",
+      "revision": "fec14d795edb5e52c02e2ccc49d9af6004fddee0",
+      "version": "0.1.0",
+      "license": {
+        "declared": "SEE THIRD_PARTY_NOTICES.md",
+        "status": "composite",
+        "noticeFiles": [
+          "THIRD_PARTY_NOTICES.md"
+        ],
+        "redistribution": "composite-review-required"
+      },
+      "acquisition": {
+        "method": "git",
+        "readOnly": true,
+        "revisionKind": "commit"
+      },
+      "toolchain": {
+        "node": "^22.19.0 || >=24",
+        "packageManager": {
+          "name": "pnpm",
+          "version": "11.19.0"
+        },
+        "additional": [
+          {
+            "name": "python",
+            "version": "3.x for packaged skill validation"
+          }
+        ]
+      },
+      "lockfiles": [
+        {
+          "path": "pnpm-lock.yaml",
+          "sha256": "934e23d5d2c5c8053557a7174cc43a056af582b61b8242f194c4f11bd1f331d4"
+        },
+        {
+          "path": "upstream.lock.json",
+          "sha256": "dfd1caa72e6c6782be489031de395069d649deda331fc6de2ecd32ce1cbb2425"
+        }
+      ],
+      "entrypoints": {
+        "restoreDependencies": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "install",
+              "--frozen-lockfile"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "verifySource": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "typecheck"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "lint"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "test"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "materialize"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "verify:resources"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "verify:port"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "exec",
+              "vitest",
+              "run",
+              "tests/integration"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "build": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "build"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "pack": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "pack",
+              "--pack-destination",
+              "{packageOutput}"
+            ],
+            "cwd": "source"
+          }
+        ],
+        "inspectPackage": [
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "pack",
+              "--dry-run"
+            ],
+            "cwd": "source"
+          },
+          {
+            "executable": "pnpm",
+            "arguments": [
+              "run",
+              "verify:package"
+            ],
+            "cwd": "source"
+          }
+        ]
+      },
+      "pack": {
+        "outputRoot": "{packageOutput}",
+        "selectors": [
+          {
+            "glob": "deepseek-dovetail-0.1.0.tgz",
+            "format": "npm-tarball",
+            "purpose": "runtime"
+          }
+        ]
+      },
+      "profileContribution": {
+        "kind": "bundle-patch",
+        "packages": [
+          "deepseek-dovetail"
+        ],
+        "patch": "cordis.patch.yml",
+        "configPolicy": "package-defaults"
+      },
+      "platforms": {
+        "supported": [
+          "windows-x64",
+          "linux-x64"
+        ],
+        "constraints": [
+          "The package mounts immutable package-owned skills without watching or writing user/project skill homes.",
+          "Composite licensing requires per-skill notice closure before redistribution."
+        ]
+      },
+      "compatibility": {
+        "dshRevision": "600299571a9d807a475ca87f366bd22761dd938e",
+        "nestedPins": {
+          "cordis": "4.0.1",
+          "dovetail-source": "69f89e3322847fb11665980c16598494a9eacca0"
+        },
+        "constraints": [
+          "Mounts the public DSH filesystem skill provider as provider dovetail.",
+          "Package publication remains private pending owner licensing decisions."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "assemblyId": "recursus-m1-source-lock-v1",
+  "platform": "windows-x64",
+  "status": "blocked-component-owned-package-path-leak",
+  "componentRevisions": {
+    "deepseek-harness": "99f6f02fecdb7dff40c3fbc9470f5907c29f74ca",
+    "deepseek-openai-codex": "5232102d0cc8bd55d5bf27b6eb203efbf6ada8a9",
+    "deepseek-rlm": "4772c12b0630706f14d16e70be0ad67bff116690",
+    "deepseek-honcho": "83627329867a562959cf992d0ce56d78a273971a",
+    "deepseek-dovetail": "fec14d795edb5e52c02e2ccc49d9af6004fddee0"
+  },
+  "observedRun": {
+    "producedPackages": 244,
+    "componentPackageCounts": {
+      "deepseek-harness": 231,
+      "deepseek-openai-codex": 1,
+      "deepseek-rlm": 5,
+      "deepseek-honcho": 6,
+      "deepseek-dovetail": 1
+    },
+    "passedExactWorkRootScan": {
+      "components": [
+        "deepseek-openai-codex",
+        "deepseek-rlm",
+        "deepseek-honcho",
+        "deepseek-dovetail"
+      ],
+      "packages": 13
+    }
+  },
+  "blocker": {
+    "component": "deepseek-harness",
+    "code": "PACKAGE_CONTAINS_DEVELOPER_PATH",
+    "affectedPackages": 29,
+    "archiveEntry": "package/lib/client.js",
+    "leakedValue": "operator-configured Recursus work-root absolute path",
+    "owningSource": "packages/client/tsdown.client.ts",
+    "sourceSeam": "CSS_VIRTUAL_PREFIX plus the absolute sourceAssetPath result is retained in emitted region comments",
+    "packagePaths": [
+      "dsh/deepseek-ai-dsh-client-locale-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-agent-preset-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-commands-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-conversation-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-cordis-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-deliverables-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-directory-picker-browse-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-goal-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-input-trigger-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-jobs-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-layout-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-message-feedback-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-model-selection-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-permission-presets-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-plan-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-settings-general-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-settings-models-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-settings-plugin-inventory-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-settings-plugins-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-sidebar-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-skill-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-subagent-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-theme-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-tool-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-trajectory-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-user-questions-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-workflow-run-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-client-ui-workspace-0.1.0-rc.7.tgz",
+      "dsh/deepseek-ai-dsh-session-log-export-0.1.0-rc.7.tgz"
+    ]
+  },
+  "integrity": {
+    "status": "not-generated",
+    "acceptedPackages": 0,
+    "reason": "The assembly is atomic across all five components; package integrity must not be emitted while any component archive fails inspection."
+  },
+  "security": {
+    "credentialsFound": false,
+    "developerAbsolutePathsFound": true,
+    "sourceControlMetadataFound": false,
+    "entriesOutsidePackageBoundaryFound": false
+  },
+  "proposedOwningRepositoryChange": "In DeepSeek Harness, make the dsh-css virtual module identifier repository-relative or otherwise prevent its physical absolute path from reaching emitted bundle comments, add a clean-directory pack test that rejects the checkout root in every tarball, then return through a reviewed Recursus pin."
+}
