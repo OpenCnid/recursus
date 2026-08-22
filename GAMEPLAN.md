@@ -1,5 +1,13 @@
 # Recursus game plan
 
+Implementation status and detailed acceptance contracts are normative in [`SPEC.md`](./SPEC.md). A copy-ready handoff for the next Codex implementation session is maintained in [`NEXT_SESSION_PROMPT.md`](./NEXT_SESSION_PROMPT.md).
+
+| Milestone | Status | Next decision |
+| --- | --- | --- |
+| 0 — product foundation | Complete | Preserve the accepted foundation evidence |
+| 1 — reproducible runtime assembly | Next | Implement the assembly schema and adapter contract |
+| 2–9 | Planned | Begin only after inherited acceptance gates are met |
+
 ## 1. Mission
 
 Recursus will turn the verified DeepSeek Harness, Codex, RLM, Honcho, artifact-memory, and Dovetail components into one durable runtime agent that can work for long periods, survive interruption, coordinate bounded children, verify its own completion, and resume from authoritative state.

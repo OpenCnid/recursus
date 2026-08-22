@@ -7,6 +7,7 @@ const requiredFiles = [
   'README.md',
   'GAMEPLAN.md',
   'SPEC.md',
+  'NEXT_SESSION_PROMPT.md',
   'AGENTS.md',
   'LICENSE',
   'THIRD_PARTY_NOTICES.md',
@@ -61,6 +62,24 @@ const readme = contents.get('README.md')
 assert.ok(readme.includes('DeepSeek Harness remains the control plane'))
 assert.ok(readme.includes('Standing on the shoulders of giants'))
 assert.ok(readme.includes('not an official DeepSeek, OpenAI, Honcho, or Prime product'))
+
+const spec = contents.get('SPEC.md')
+for (let milestone = 0; milestone <= 9; milestone += 1) {
+  assert.ok(spec.includes(`Milestone ${milestone}`), `SPEC.md is missing Milestone ${milestone}`)
+}
+assert.ok(spec.includes('Current implementation milestone: Milestone 1'))
+assert.ok(spec.includes('A provider double is appropriate'))
+
+const nextSessionPrompt = contents.get('NEXT_SESSION_PROMPT.md')
+assert.ok(nextSessionPrompt.includes('Treat `SPEC.md` as normative'))
+assert.ok(nextSessionPrompt.includes('Milestone 0 is complete'))
+assert.ok(nextSessionPrompt.includes('Begin Milestone 1'))
+for (const component of manifest.components) {
+  assert.ok(
+    nextSessionPrompt.includes(component.revision),
+    `next-session prompt is missing the ${component.name} revision`,
+  )
+}
 
 const combined = [...contents.values()].join('\n')
 assert.equal(/\b(?:TODO|FIXME)\b/u.test(combined), false)

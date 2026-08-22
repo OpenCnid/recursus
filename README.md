@@ -86,6 +86,8 @@ The implementation order is defined in [`GAMEPLAN.md`](./GAMEPLAN.md):
 
 The normative product boundaries and Definition of Done are in [`SPEC.md`](./SPEC.md). The component topology is explained in [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md).
 
+To continue implementation in a fresh Codex session, use the maintained kickoff in [`NEXT_SESSION_PROMPT.md`](./NEXT_SESSION_PROMPT.md). It directs the session to the normative specification and the first unfinished milestone.
+
 ## Foundation verification
 
 The initial repository has no runtime dependency installation. Verify its pinned component manifest, required documents, MIT boundary, and attribution closure with:
