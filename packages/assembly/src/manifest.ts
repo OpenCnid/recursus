@@ -224,7 +224,12 @@ function component(value: unknown, path: string): AssemblyComponentV1 {
     )
 
   const profile = record(item.profileContribution, `${path}.profileContribution`)
-  exactKeys(profile, `${path}.profileContribution`, ['kind', 'packages', 'configPolicy'], ['patch'])
+  exactKeys(
+    profile,
+    `${path}.profileContribution`,
+    ['kind', 'packages', 'configPolicy', 'credentialReferences'],
+    ['patch'],
+  )
   const profileKind = oneOf(
     profile.kind,
     ['profile-foundation', 'bundle-patch', 'cordis-plugin'] as const,
@@ -235,6 +240,29 @@ function component(value: unknown, path: string): AssemblyComponentV1 {
     : relativePath(profile.patch, `${path}.profileContribution.patch`)
   if (profileKind === 'bundle-patch' && profilePatch === undefined) {
     invalid(`${path}.profileContribution.patch`, 'is required for a bundle-patch contribution')
+  }
+  const configPolicy = oneOf(
+    profile.configPolicy,
+    ['package-defaults', 'host-credentials-required', 'profile-template'] as const,
+    `${path}.profileContribution.configPolicy`,
+  )
+  const credentialReferences = stringArray(
+    profile.credentialReferences,
+    `${path}.profileContribution.credentialReferences`,
+  )
+  for (const [index, reference] of credentialReferences.entries()) {
+    if (!/^[A-Z][A-Z0-9_]*$/u.test(reference)) {
+      invalid(
+        `${path}.profileContribution.credentialReferences[${String(index)}]`,
+        'must be an uppercase host credential identifier',
+      )
+    }
+  }
+  if (configPolicy === 'host-credentials-required' && credentialReferences.length === 0) {
+    invalid(
+      `${path}.profileContribution.credentialReferences`,
+      'must be non-empty when host credentials are required',
+    )
   }
 
   const platforms = record(item.platforms, `${path}.platforms`)
@@ -305,11 +333,8 @@ function component(value: unknown, path: string): AssemblyComponentV1 {
       kind: profileKind,
       packages: stringArray(profile.packages, `${path}.profileContribution.packages`, 1),
       ...(profilePatch === undefined ? {} : { patch: profilePatch }),
-      configPolicy: oneOf(
-        profile.configPolicy,
-        ['package-defaults', 'host-credentials-required', 'profile-template'] as const,
-        `${path}.profileContribution.configPolicy`,
-      ),
+      configPolicy,
+      credentialReferences,
     },
     platforms: {
       supported,
@@ -342,6 +367,7 @@ export function validateAssemblyManifest(value: unknown): AssemblyManifestV1 {
     'baseline',
     'workRoot',
     'integrityOutput',
+    'profileLock',
     'components',
   ])
   if (manifest.schemaVersion !== 1) {
@@ -361,6 +387,10 @@ export function validateAssemblyManifest(value: unknown): AssemblyManifestV1 {
   }
   const integrityOutput = record(manifest.integrityOutput, 'manifest.integrityOutput')
   exactKeys(integrityOutput, 'manifest.integrityOutput', ['schema', 'path', 'deterministic'])
+  const profileLock = record(manifest.profileLock, 'manifest.profileLock')
+  exactKeys(profileLock, 'manifest.profileLock', ['path', 'sha256', 'packageManager'])
+  const profilePackageManager = record(profileLock.packageManager, 'manifest.profileLock.packageManager')
+  exactKeys(profilePackageManager, 'manifest.profileLock.packageManager', ['name', 'version'])
   const components = array(manifest.components, 'manifest.components', 1).map((entry, index) =>
     component(entry, `manifest.components[${String(index)}]`),
   )
@@ -382,6 +412,18 @@ export function validateAssemblyManifest(value: unknown): AssemblyManifestV1 {
       schema: relativePath(integrityOutput.schema, 'manifest.integrityOutput.schema'),
       path: relativePath(integrityOutput.path, 'manifest.integrityOutput.path'),
       deterministic: literal(integrityOutput.deterministic, true, 'manifest.integrityOutput.deterministic'),
+    },
+    profileLock: {
+      path: relativePath(profileLock.path, 'manifest.profileLock.path'),
+      sha256: sha256(profileLock.sha256, 'manifest.profileLock.sha256'),
+      packageManager: {
+        name: literal(profilePackageManager.name, 'pnpm', 'manifest.profileLock.packageManager.name'),
+        version: literal(
+          profilePackageManager.version,
+          '11.19.0',
+          'manifest.profileLock.packageManager.version',
+        ),
+      },
     },
     components,
   }

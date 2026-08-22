@@ -17,6 +17,14 @@
     "path": "manifests/package-integrity.json",
     "deterministic": true
   },
+  "profileLock": {
+    "path": "profile-lock.yaml",
+    "sha256": "82dbbea0be76dbdd72bbe975b9e7bfb2841c650c76e304813fa6ac22706b9352",
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.19.0"
+    }
+  },
   "components": [
     {
       "name": "deepseek-harness",
@@ -230,7 +238,10 @@
           "@deepseek-ai/dsh-base",
           "@deepseek-ai/dsh-headless"
         ],
-        "configPolicy": "profile-template"
+        "configPolicy": "profile-template",
+        "credentialReferences": [
+          "DEEPSEEK_API_KEY"
+        ]
       },
       "platforms": {
         "supported": [
@@ -371,7 +382,10 @@
           "deepseek-openai-codex"
         ],
         "patch": "cordis.patch.yml",
-        "configPolicy": "host-credentials-required"
+        "configPolicy": "host-credentials-required",
+        "credentialReferences": [
+          "OPENAI_CODEX_OAUTH"
+        ]
       },
       "platforms": {
         "supported": [
@@ -645,7 +659,8 @@
           "@deepseek-rlm/dsh-rlm-bundle"
         ],
         "patch": "packages/bundle/dsh.bundle.patch",
-        "configPolicy": "package-defaults"
+        "configPolicy": "package-defaults",
+        "credentialReferences": []
       },
       "platforms": {
         "supported": [
@@ -902,7 +917,10 @@
         "packages": [
           "@deepseek-honcho/dsh-honcho-bundle"
         ],
-        "configPolicy": "host-credentials-required"
+        "configPolicy": "host-credentials-required",
+        "credentialReferences": [
+          "HONCHO_API_KEY"
+        ]
       },
       "platforms": {
         "supported": [
@@ -1096,7 +1114,8 @@
           "deepseek-dovetail"
         ],
         "patch": "cordis.patch.yml",
-        "configPolicy": "package-defaults"
+        "configPolicy": "package-defaults",
+        "credentialReferences": []
       },
       "platforms": {
         "supported": [

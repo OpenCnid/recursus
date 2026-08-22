@@ -16,8 +16,10 @@
     "typecheck": "pnpm --filter @opencnid/recursus-assembly typecheck",
     "test": "pnpm --filter @opencnid/recursus-assembly test",
     "test:integration": "pnpm --filter @opencnid/recursus-assembly test:integration",
+    "test:profile-integration": "pnpm --filter @opencnid/recursus-assembly test:profile-integration",
     "assemble:packages": "pnpm --filter @opencnid/recursus-assembly build && node scripts/assemble-packages.mjs",
     "assemble:finalize": "pnpm --filter @opencnid/recursus-assembly build && node scripts/finalize-package-assembly.mjs",
+    "profile": "pnpm --filter @opencnid/recursus-assembly build && node scripts/manage-profile.mjs",
     "verify": "node scripts/verify.mjs",
     "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm verify"
   },

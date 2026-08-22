@@ -2,7 +2,7 @@
 
 ## Current scope
 
-This Milestone 1 slice implements the versioned source lock required by `SPEC.md` §20.2 and the provider-neutral component lifecycle contract from §20.3. It acquires exact public revisions, provisions exact package-manager entrypoints, runs component-owned restore/verification/build/pack checks, and inspects npm tarballs without extracting them. A reviewed Harness pin fixes the checkout-path leak exposed by the first Windows run; the repeated lifecycle accepted all 244 archives and generated deterministic integrity. This slice does not redistribute component archives, install a profile, contact live Codex or Honcho services, or claim Milestone 1 completion.
+This Milestone 1 slice implements the versioned source lock required by `SPEC.md` §20.2, the provider-neutral component lifecycle contract from §20.3, and the bounded profile lifecycle from §20.4. It acquires exact public revisions, provisions exact package-manager entrypoints, runs component-owned restore/verification/build/pack checks, inspects npm tarballs without extracting them, builds a locked local distribution, and installs or removes one explicitly named DSH profile. A reviewed Harness pin fixes the checkout-path leak exposed by the first Windows run; the repeated lifecycle accepted all 244 archives and generated deterministic integrity. No live Codex, DeepSeek, or Honcho provider was contacted, no component archive is redistributed by the repository, and Milestone 1 is not complete.
 
 The authoritative files are:
 
@@ -11,9 +11,11 @@ The authoritative files are:
 - `manifests/assembly.schema.json`: strict source-lock schema version 1;
 - `manifests/package-integrity.schema.json`: deterministic package hash/size schema;
 - `manifests/package-integrity.json`: deterministic SHA-256 and byte-size records for 244 accepted archives;
+- `manifests/profile-lock.yaml`: exact pnpm `11.19.0` resolution for the assembled profile, pinned by the assembly source lock;
 - `evaluations/milestone-1-package-report.json`: path-free accepted lifecycle, package, and security evidence;
+- `evaluations/milestone-1-profile-lifecycle-report.json`: path-free §20.4 distribution, profile, containment, and smoke evidence;
 - `evaluations/milestone-1-package-report-blocked-99f6f02.json`: preserved evidence for the fail-closed predecessor pin;
-- `packages/assembly`: provider-neutral types, lifecycle runner, manifest validation, containment, Git acquisition, command execution, and archive inspection.
+- `packages/assembly`: provider-neutral types, lifecycle runner, manifest validation, containment, Git acquisition, command execution, archive inspection, and profile lifecycle.
 
 Package archives themselves remain beneath the ignored work root. No integrity file is written while any archive fails inspection. The checked-in integrity file proves accepted bytes, not redistribution permission; the Codex adapter remains blocked pending owner-selected terms, and Dovetail requires composite notice review.
 
@@ -46,6 +48,40 @@ Acquisition is idempotent only for an existing checkout whose configured origin,
 
 Each component's exact pnpm JavaScript entrypoint runs top-level lifecycle commands. An exact standalone pnpm executable is also first on `PATH` for component-owned shell-free nested commands. Known package-manager and Python caches remain beneath the work root, Git prompting is disabled, and credential-shaped environment variables are removed.
 
+## Locked distribution and profile commands
+
+The profile CLI requires an explicit absolute work root, DSH home, and profile name. Its package-manager module defaults to the exact pnpm that launched the repository script; direct callers can provide `RECURSUS_PNPM_MODULE` or `--pnpm-module`.
+
+PowerShell:
+
+```powershell
+$workRoot = 'D:\recursus-work'
+$dshHome = 'D:\dsh-home'
+pnpm profile build --work-root $workRoot
+pnpm profile install --work-root $workRoot --dsh-home $dshHome --name recursus
+pnpm profile update --work-root $workRoot --dsh-home $dshHome --name recursus
+pnpm profile verify --work-root $workRoot --dsh-home $dshHome --name recursus
+pnpm profile remove --work-root $workRoot --dsh-home $dshHome --name recursus
+```
+
+POSIX:
+
+```sh
+work_root=/var/tmp/recursus-work
+dsh_home="$HOME/.dsh"
+pnpm profile build --work-root "$work_root"
+pnpm profile install --work-root "$work_root" --dsh-home "$dsh_home" --name recursus
+pnpm profile update --work-root "$work_root" --dsh-home "$dsh_home" --name recursus
+pnpm profile verify --work-root "$work_root" --dsh-home "$dsh_home" --name recursus
+pnpm profile remove --work-root "$work_root" --dsh-home "$dsh_home" --name recursus
+```
+
+Build re-inspects all hashes and package identities before copying accepted bytes and the checked profile lock into an input-addressed directory beneath `<work-root>/distributions`. The distribution manifest contains only relative archive paths, revisions, hashes, byte sizes, bundle names, credential-reference names, and the profile-lock hash. Repeating a build verifies and reuses the same bytes; different source-lock input receives a different directory. Install uses `--frozen-lockfile`, so registry range changes cannot alter a clean-machine profile.
+
+The installed profile contains all 244 archives as local direct dependencies and pnpm workspace overrides. Its ordered DSH bundles are `@deepseek-ai/dsh-base`, `@deepseek-ai/dsh-headless`, `deepseek-openai-codex`, `@deepseek-rlm/dsh-rlm-bundle`, and `deepseek-dovetail`. The Honcho bundle is installed but intentionally absent from that list until its provider is configured, so disabled memory cannot prevent startup. The profile names `DEEPSEEK_API_KEY`, `OPENAI_CODEX_OAUTH`, and `HONCHO_API_KEY` as host-owned references and never reads or serializes their values.
+
+Install and update verify exact pnpm `11.19.0`, scrub credential-shaped environment variables, redirect caches beneath the work root, reject physical paths in generated text, and validate every installed package identity. A matching installation returns unchanged without running pnpm. Update requires the Recursus ownership marker, builds the replacement at the exact final path, and restores the prior profile if installation fails. Removal likewise requires the marker plus realpath containment and deletes only the named profile; it deliberately retains all caches.
+
 ## Inspected component seams
 
 | Component | Package manager | Owned verification/build seam | Pack/profile seam | License finding |
@@ -70,11 +106,24 @@ pnpm test
 node scripts/verify.mjs
 ```
 
+The opt-in real profile integration consumes the already accepted archives and contacts only the public npm registry for third-party dependencies:
+
+```powershell
+$env:RECURSUS_RUN_PROFILE_INTEGRATION = '1'
+$env:RECURSUS_INTEGRATION_WORK_ROOT = 'D:\recursus-work'
+$env:RECURSUS_PROFILE_PNPM_MODULE = 'D:\path\to\pnpm\bin\pnpm.cjs'
+pnpm test:profile-integration
+```
+
+It installs all 244 accepted packages, proves repeated install/update are unchanged, verifies every archive and installed package, composes the default DSH configuration, proves the installed Honcho bundle is unmounted, removes the exact profile, and confirms unrelated profiles, settings, credentials, repositories, caches, memory, and artifacts survive.
+
 The opt-in pinned integration fetches only the public Codex adapter revision into the configured work root. It proves the real GitHub acquisition/reuse/revision seam, not Codex provider behavior.
 
 The accepted Windows package run produced 244 archives: Harness 231, Codex 1, RLM 5, Honcho 6, and Dovetail 1. The prior Harness pin failed closed on 29 `package/lib/client.js` files whose `dsh-css` virtual-module comments retained the absolute source path. The owning fix now derives repository-relative virtual IDs and scans each DSH/vendor tarball before publication handoff; reviewed Harness PR #1 returned as Recursus pin `600299571a9d807a475ca87f366bd22761dd938e`. The repeated full Harness lifecycle accepted all 231 Harness archives. Finalization independently re-inspected all 244 archives, matched them to component checkpoints, and generated package integrity with no timestamp or host path. The 13 unchanged non-Harness archives were recovered through the documented checkpoint path after their archive SHA-256, size, identity, entry count, and notices matched and only the inspector's derived content digest representation had changed.
 
 RLM's aggregate `check` and Dovetail's aggregate `verify` assume build artifacts already exist, so their adapters invoke the same component-owned granular checks before build and their build-dependent E2E/package checks after build. Honcho's package checker is invoked directly with the exact pnpm module in `npm_execpath`. Harness's own packed-consumer verifier is recorded as Linux-only, matching its public Ubuntu release workflow.
+
+The pinned Harness web replay was repeated after installing Playwright's pinned Chromium, headless shell, FFmpeg, and Winldd payloads. Chromium launched successfully. The full Windows run reported 41 passing and 35 failing files, with 154 passing, 24 failing, and 90 skipped tests. The remaining failures are Harness test-portability findings: JSONL fixture replacement does not escape Windows backslashes, shipped-composition goldens assume `bash` instead of the Windows `pwsh` tool, persistent-terminal snapshots declare `win32` unsupported, one settings rename hit Windows `EPERM`, and one plugin-config expectation differs from current defaults. These findings do not change accepted package bytes; a generic fix belongs in the Harness repository.
 
 ## Security, privacy, and limitations
 
@@ -83,8 +132,7 @@ RLM's aggregate `check` and Dovetail's aggregate `verify` assume build artifacts
 - The runtime and component build commands use operator-granted host access. Path checks do not make them a sandbox.
 - Package inspection rejects undeclared output, archive traversal and links, source-control metadata, generated residue, credentials, developer-specific paths, corrupt headers, oversized input, and missing declared notices.
 - Local acceptance does not override component redistribution status.
-- No profile build, install, update, verify, or removal behavior exists yet.
-- No disabled-provider, deterministic assembled smoke, or opt-in live Codex/Honcho acceptance has run.
+- The §20.4 profile lifecycle and a deterministic default-config composition smoke have passed on Windows. No live Codex, DeepSeek, or Honcho acceptance has run.
 - Windows acquisition/build/package/inspection is verified locally. Harness's Linux-only packed-consumer check and complete Linux assembly evidence remain required Milestone 1 items.
 
-The next implementation step is `SPEC.md` §20.4: add bounded build/install/update/verify/remove commands for an explicitly named isolated Recursus DSH profile, with exact-profile containment and idempotence tests. Linux build/package verification and the assembled smoke matrix in §20.5 remain required before Milestone 1 can be complete.
+The next implementation step is `SPEC.md` §20.5: run Linux and Windows assembled smoke tasks that exercise the model, host tools, persistent RLM, enabled/disabled Honcho behavior, exact artifact bytes, and Dovetail skill paths without live provider mutation unless separately authorized. Linux build/package verification and the full smoke matrix remain required before Milestone 1 can be complete.

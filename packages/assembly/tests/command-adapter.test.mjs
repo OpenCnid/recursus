@@ -86,7 +86,12 @@ async function fixtureContext() {
         selectors: [{ glob: 'fixture.tgz', format: 'npm-tarball', purpose: 'runtime' }],
         allowedMetadata: ['publish-order.txt'],
       },
-      profileContribution: { kind: 'cordis-plugin', packages: ['@fixture/runtime'], configPolicy: 'package-defaults' },
+      profileContribution: {
+        kind: 'cordis-plugin',
+        packages: ['@fixture/runtime'],
+        configPolicy: 'package-defaults',
+        credentialReferences: [],
+      },
       platforms: { supported: ['windows-x64', 'linux-x64'], constraints: [] },
       compatibility: { dshRevision: '0'.repeat(40), nestedPins: {}, constraints: [] },
     },

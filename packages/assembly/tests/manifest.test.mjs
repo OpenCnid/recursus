@@ -34,6 +34,11 @@ test('the assembly source lock matches all five accepted component-lock entries'
     ?.compatibility.nestedPins['honcho-sdk'], '2.3.0')
   assert.equal(manifest.components.find((component) => component.name === 'deepseek-dovetail')
     ?.compatibility.nestedPins['dovetail-source'], '69f89e3322847fb11665980c16598494a9eacca0')
+  assert.deepEqual(manifest.profileLock, {
+    path: 'profile-lock.yaml',
+    sha256: '82dbbea0be76dbdd72bbe975b9e7bfb2841c650c76e304813fa6ac22706b9352',
+    packageManager: { name: 'pnpm', version: '11.19.0' },
+  })
   assert.ok(Object.isFrozen(manifest))
   assert.ok(Object.isFrozen(manifest.components[0]))
 })
@@ -55,6 +60,31 @@ test('invalid revisions, credential URLs, duplicate roles, and path traversal fa
     (manifest) => { manifest.components[1].role = manifest.components[0].role },
     (manifest) => { manifest.components[0].lockfiles[0].path = '../outside.lock' },
     (manifest) => { manifest.workRoot.paths.packages = 'sources' },
+    (manifest) => { manifest.profileLock.path = '../profile-lock.yaml' },
+    (manifest) => { manifest.profileLock.packageManager.version = 'latest' },
+  ]) {
+    const candidate = await sourceManifest()
+    mutate(candidate)
+    assert.throws(() => validateAssemblyManifest(candidate), { code: 'INVALID_ASSEMBLY_MANIFEST' })
+  }
+})
+
+test('profile credential references are identifiers, never values, and match the configuration policy', async () => {
+  const manifest = await sourceManifest()
+  assert.deepEqual(
+    manifest.components.find((component) => component.name === 'deepseek-openai-codex')
+      .profileContribution.credentialReferences,
+    ['OPENAI_CODEX_OAUTH'],
+  )
+  assert.deepEqual(
+    manifest.components.find((component) => component.name === 'deepseek-harness')
+      .profileContribution.credentialReferences,
+    ['DEEPSEEK_API_KEY'],
+  )
+
+  for (const mutate of [
+    (candidate) => { candidate.components[0].profileContribution.credentialReferences = ['token-value'] },
+    (candidate) => { candidate.components[1].profileContribution.credentialReferences = [] },
   ]) {
     const candidate = await sourceManifest()
     mutate(candidate)
