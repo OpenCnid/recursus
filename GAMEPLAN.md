@@ -5,7 +5,7 @@ Implementation status and detailed acceptance contracts are normative in [`SPEC.
 | Milestone | Status | Next decision |
 | --- | --- | --- |
 | 0 — product foundation | Complete | Preserve the accepted foundation evidence |
-| 1 — reproducible runtime assembly | Next | Implement the assembly schema and adapter contract |
+| 1 — reproducible runtime assembly | In progress | Fix Harness pack determinism, return through a reviewed pin, and close Linux §20.6 evidence |
 | 2–9 | Planned | Begin only after inherited acceptance gates are met |
 
 ## 1. Mission
@@ -270,13 +270,10 @@ Release acceptance:
 
 ## 14. Immediate issue sequence
 
-1. Define the assembly manifest schema and component adapter contract.
-2. Implement read-only component fetch and revision verification.
-3. Implement component build/pack adapters without installation.
-4. Generate package hashes and third-party notice closure.
-5. Assemble an isolated DSH profile and run the first real smoke test.
-6. Specify the durable run event and projection contracts.
-7. Implement the local run-state provider and crash-recovery tests.
-8. Add execution handles and output-cursor persistence.
-9. Add the first software completion contract.
-10. Demonstrate one restartable repository task end to end.
+1. Land the component-owned Harness deterministic-pack regression and implementation fix.
+2. Return the reviewed Harness commit through the Recursus source lock.
+3. Rebuild and inspect all 244 packages twice on Linux and once on Windows.
+4. Record accepted platform package evidence without claiming byte equality that the evidence does not prove.
+5. Run the Linux profile lifecycle and default assembled smoke against accepted Linux bytes.
+6. Close §20.6 notice, path, secret, package, and cross-platform verification evidence.
+7. Begin Milestone 2 only after every §20 criterion has concrete passing evidence.

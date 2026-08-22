@@ -3,7 +3,7 @@
   "assemblyId": "recursus-m1-source-lock-v1",
   "platform": "windows-x64",
   "componentRevisions": {
-    "deepseek-harness": "600299571a9d807a475ca87f366bd22761dd938e",
+    "deepseek-harness": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
     "deepseek-openai-codex": "5232102d0cc8bd55d5bf27b6eb203efbf6ada8a9",
     "deepseek-rlm": "4772c12b0630706f14d16e70be0ad67bff116690",
     "deepseek-honcho": "83627329867a562959cf992d0ce56d78a273971a",
@@ -14,7 +14,7 @@
       "schemaVersion": 1,
       "assemblyId": "recursus-m1-source-lock-v1",
       "component": "deepseek-harness",
-      "revision": "600299571a9d807a475ca87f366bd22761dd938e",
+      "revision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
       "recoveredAfterLaterComponentFailure": false,
       "phases": [
         "inspect",
@@ -31,9 +31,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "2c6d1e03636fb4f99c387312c0c0d762986f4656aaff6892f84126ab7b0234ae",
-          "bytes": 32861,
-          "contentsSha256": "82ef22614d5bfedbb53c4791f0562f61c26320da5ad25f0949cfb9bc8cf37698",
+          "sha256": "51821871ae1cf76311ab54b32e12b84692c5ffd571cf093d462d62423e84cd8a",
+          "bytes": 32872,
+          "contentsSha256": "89d739af0afd6daa0b76f97dcf0d1f0856dd7965db681277a80c948d96638a4a",
           "entryCount": 20,
           "notices": [
             "package/LICENSE"
@@ -43,9 +43,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-acp-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-acp",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "169c2355a50e26d4859814472ff810e9f9454b20e5f25be302c417879c096b57",
-          "bytes": 17056,
-          "contentsSha256": "0476a9c27cf3bc3ec8eb91248c29ce3baf1e3050ef75022441890021ea36a1eb",
+          "sha256": "db030cd254e9aa4d4a73d1e26a9531cc3f50e6c353bc7abb6d879a201f6897cd",
+          "bytes": 17065,
+          "contentsSha256": "c5eef74342a8a5bc213df2dd906dbd6a09b6568a95cc2d37ac76825a024c93fd",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -55,9 +55,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-acp-demo-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-acp-demo",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "fefbb0c5a46c30aba66d3f2c7a7a8477e48f3c92ecf244d8ff25aee23ccae0a0",
-          "bytes": 9704,
-          "contentsSha256": "23552d5f0111a6727fad7556da60be3aec2bd14b69678ef1481260e8a8d4221d",
+          "sha256": "c7151cf2a7c3cbfb348d25ec3acc2a6dcc5ddb49e137d65309d225191699bfba",
+          "bytes": 9701,
+          "contentsSha256": "dfda0886b2b1f4d723a69999d12b46364c6962b3763097061b24ab224936b84d",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -67,9 +67,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-acp-snapshot-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-acp-snapshot",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "87c29eb0d5b8de2f022bcd0d31b505380ab88868eaf7f26d30fcf1198b17308c",
-          "bytes": 49626,
-          "contentsSha256": "a809ce9c1c502b6abf0bb8aed62b7f36dc3c5e0444af47bd434b86494e3d521a",
+          "sha256": "a77bc3f14c6432901908139be5ffb266730e6d10ebbdaffb2493ec0d70c321a5",
+          "bytes": 49635,
+          "contentsSha256": "81137b06959f609a5694f0e79c6d2f08b82e64ae8a57763bf31db748dbae6db0",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -79,9 +79,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-agent-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-agent",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "4971b08f1d8d4123718b46c413cfa5691670f8cbcec0ddce8ba71dd80ecf848b",
-          "bytes": 46688,
-          "contentsSha256": "7d972c1f9430ce6f7b128fec1e87f2cda6bfb6d100f8fa751fca1e781abaef08",
+          "sha256": "6140719f31f4d8f6f9eea99717ad890e9082a36daab1625452f6980e3bac9425",
+          "bytes": 46691,
+          "contentsSha256": "e459a570940005f4ce91478874f86365a59e91dbeeb416639164feb5b99b0d3d",
           "entryCount": 23,
           "notices": [
             "package/LICENSE"
@@ -91,9 +91,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-agent-default-model-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-agent-default-model",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "6dfab72bef34c1b42e15c3c9725068134524f28c080bdc1b46a27e8dd9fe145f",
-          "bytes": 5541,
-          "contentsSha256": "7813f43b7582353204d36619a0880e4ea43b236e868fc2438f00f35fc94d4cfc",
+          "sha256": "fb1dc8231afd6d92f439ed429e7a169c81047163e63a9150c2fe5929b7a02bb6",
+          "bytes": 5555,
+          "contentsSha256": "6d04b67147be38ebe71dbc5a478ef2cbe55b824f593cf733b54e50c90c57d453",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -103,9 +103,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-agent-instructions-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-agent-instructions",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "11803de02295a2c357e152cdb96f867a43348ea9d8514e9e28ab04317110c889",
-          "bytes": 32693,
-          "contentsSha256": "2bce92c08af4572427b30d79ab90a5ad6040bbb71ce6b32bb38c5723c91bfd21",
+          "sha256": "dbb04666a39fc8754b0431d5083f71398b01d356c2278d5f2ccb8a40f022d6af",
+          "bytes": 32698,
+          "contentsSha256": "b6b723dcb753e48e0883f04cc4ff89401dd43a905d0fecd87957198632ab5706",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -115,9 +115,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-agent-loop-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-agent-loop",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "5084808095b7f5e707a6a3bea721409a16b1101a1bf7f132cd590041ab8aede4",
-          "bytes": 35505,
-          "contentsSha256": "15d60d786d8e141e34e091edb7220ca332d7ded15963232a1dbb5fb5369444df",
+          "sha256": "6ede0cf53c0466f9b55ffeeeaf516077aa8d12393677b974f6ae6e674f227995",
+          "bytes": 35507,
+          "contentsSha256": "9647d2c9765de78e59037332e13c95823ec3ced0a7f0e80a28bcb22a9695250c",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -127,9 +127,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-agent-loop-testkit-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-agent-loop-testkit",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "6cec08d6ce8df2f4ea87d01ab48415ebd1ba90bf11875967f0a151a4e12eacc9",
-          "bytes": 4483,
-          "contentsSha256": "a90870a5068b6d22c8acbd3bff9bc100ba1442145cfe5371b91080bdd783ee76",
+          "sha256": "d4a528cb995498a0e11d7658d5803532108c2e5d4636dae228c831195460489c",
+          "bytes": 4498,
+          "contentsSha256": "cd2a1b8c472e76945ede2f28684290a45bd8bab18a767b7bafd92c99429ac743",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -139,9 +139,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-agent-presets-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-agent-presets",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "4ac7c02da575d11f966416ca2c8d16e8699f4cddae20104a6c03dee57952940c",
-          "bytes": 75774,
-          "contentsSha256": "f7ea66e02051381c974d21bbc95b1259f02631b14ba706f0d6d57b87a1108003",
+          "sha256": "f70f3881b9a2d7e2422bbf606a185a5e6766f499024b54e18e9ad2f3f22219f1",
+          "bytes": 75786,
+          "contentsSha256": "c8165a9f0fd13bfc09fd7cbc9da29016efe16c61a8a5a1af8ced62703d8f4ebc",
           "entryCount": 25,
           "notices": [
             "package/LICENSE"
@@ -151,9 +151,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-agent-spine-demo-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-agent-spine-demo",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d1743ebb4e07bc0510929b7d47c2b7ccf5f7fbf97ef160a6351b4cd0cf86ba39",
-          "bytes": 12188,
-          "contentsSha256": "a3e377c780f8e6b3c84ce4b047ecd51fad7f284a69c2dba73b59a6fdc5911912",
+          "sha256": "d4cf6487d3bbb438b095ab5c393381ea25dd1049bac468771c310a06ca402582",
+          "bytes": 12199,
+          "contentsSha256": "338ea53ac5be1462e144f072e7f4d67f41139fb91206facd54cf9dd28d0e32ec",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -163,9 +163,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-agent-tool-presentation-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-agent-tool-presentation",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "78877423f7993e8a7c0e88279914b622efe98d88f4cfd5ad2580f1397cf65fbe",
-          "bytes": 6204,
-          "contentsSha256": "58ad7364294404634742ad054b5777adf2e4d9b20371524c57b0a61a3c31a466",
+          "sha256": "159db1e53de47b2ed8ab072ab599f46f8957b97ee0c79fd01e589a54c28bdae2",
+          "bytes": 6206,
+          "contentsSha256": "57d02dbbd51eff0dbd51ae21e02a578ceb8bf3a7b9890ffbf6cba66fbeb1f61d",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -175,9 +175,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-anonymous-user-id-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-anonymous-user-id",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "4b91f06b34fe5c212324d43cbde083a2b1afd56f120da5effb69db3f5fab3ce3",
-          "bytes": 6719,
-          "contentsSha256": "07f91eed1de8aee1628f7879a96a1e337c300c8af9685b59f46ecf8309f37cd4",
+          "sha256": "685c1b3011811b9dfb2f0e6167bafe548009d680fdbc9e852e16e6aba642d801",
+          "bytes": 6722,
+          "contentsSha256": "dc1ceb51bf5017221ccf395532de402a382c60536f31c81fb682832c3bbb7a49",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -187,9 +187,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-api-gateway-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-api-gateway",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "acf8de4ddad35614f8ef82fb92e0ce45b2ef087846bb2905331231af2ade2339",
+          "sha256": "3057ebff65ce6538c989f053785137b9f29e9c0ebea130fb4cc33399147a1469",
           "bytes": 27851,
-          "contentsSha256": "6ce20249f437199c10354018d5b2d96eb779c92784cf1e8d9053043d5f5b477d",
+          "contentsSha256": "4ffc3977db003b073fa460e2797a084902019e5cade8c035edd8f9597a9ad1db",
           "entryCount": 16,
           "notices": [
             "package/LICENSE"
@@ -199,9 +199,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-api-remotes-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-api-remotes",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "61509688d68ab0fdcd61f798841d886bdf210d1eb73863a44f4278ce529582a0",
-          "bytes": 46666,
-          "contentsSha256": "e48d6285124842232fe68eef7a5880952e48a141b03dd24eafc66141fae8c43c",
+          "sha256": "de7e6bb9f41a0ae4d1a9b989ad3cd6ac4d96e82874d78815723ac85cb886cbfa",
+          "bytes": 46660,
+          "contentsSha256": "0af42042f52c3fa5c3238025cf9e51fe0e69df6c1d2571e1726b1e8a468bbb4b",
           "entryCount": 20,
           "notices": [
             "package/LICENSE"
@@ -211,9 +211,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-app-boot-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-app-boot",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "c7d8cc82865b6d36341186131a87877bb2d4461bd723acb4e760c20fbf83ecd5",
-          "bytes": 37531,
-          "contentsSha256": "f95292c1b8baac62fe0d01527993f723f1db994557074ea419d86fdb82a1f336",
+          "sha256": "bb1bb310473bb04dd567e95d463c42c19ba820ebd1a1dfe8107fdd704c7fdc3f",
+          "bytes": 37529,
+          "contentsSha256": "df52954ae7c362d84a424fd297eb23095fcd6831c768bd70209a280a128e5f2b",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -247,9 +247,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-attachment-local-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-attachment-local",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "969dde86430f9d6ec9a8cf1b7324d3202ed453595bb7ed184e7b261247dc8e64",
-          "bytes": 9322,
-          "contentsSha256": "254d9e28a743c30dbdbd15d5cfec7a48a51e67aa540135910620391a1a291677",
+          "sha256": "ea519cbbea5154b22ffbe5a606c926745f987bd3ab72b6d5e1970686592fd28f",
+          "bytes": 9329,
+          "contentsSha256": "665718a72ceef32fed013caa911182320da6ac6f9489dedeb650b808889a72ca",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -259,9 +259,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-base-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-base",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "9e0d8b3b7d6db677cec6c1781ac2fe2fef760cf644e28f01755b8958bf33a0cd",
-          "bytes": 12025,
-          "contentsSha256": "cafc2a517d7761c9c027afb50d9adf368ecbeb88d733e5c573c1f537f86f2309",
+          "sha256": "efdafa118e3de0e66b0ab1adb773e1e9dd5edf835d634f242f7fb45bd7a5efa7",
+          "bytes": 12040,
+          "contentsSha256": "472be328adf455592f0abc261c481f193730f68e6a32f8a68587fe5710513671",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -271,9 +271,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-bash-local-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-bash-local",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "eceb1eeb3345bda8f4cbf7ecd12f77b789b907b46bb6b804cb2e314b76d07ad7",
-          "bytes": 12113,
-          "contentsSha256": "f1a40aa319ac9636a48a077d1802a1bf07ba42fc6553b6cef8faab6d81ed45d3",
+          "sha256": "4f6ac996a1cd62e2ce92cd91442f19b6e818d06e56a4a8273b0978aaa16614ec",
+          "bytes": 12105,
+          "contentsSha256": "cc2f30d62677731dc90af86c918173fcd45d2818518ce023aa18f82d0866c19d",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -283,9 +283,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-bash-sandbox-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-bash-sandbox",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "a463b20c355d01bb5db9da46d8c28ac63f9f1048eae4adaf7368ad6b5f755831",
+          "sha256": "8b860b3788d4c3bea330335d117365aeb8bf561136fac21876493477a8948b4b",
           "bytes": 14594,
-          "contentsSha256": "a7c1f9282582ea1cb230886289620f7ee7489338865d67a8834b8bbafdececcb",
+          "contentsSha256": "0c5bbf225dac5aace86a6bbdb2ce32ec1a29c71b055827ff365bb0e734d1552e",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -307,9 +307,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-connection-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-connection",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "6da7ee5406305d75f2113de5f793dd711f296ce563c04e2271e4544e3209f597",
-          "bytes": 100853,
-          "contentsSha256": "04bd609f99d039b620900fdf563c02b312404c0dccf5e696c0dc513a2fab8d5c",
+          "sha256": "28ecbd1648dbeb77c1fa626c0e1bb3721e7bfbae639d187d6f319ff213bde290",
+          "bytes": 100854,
+          "contentsSha256": "5244767c9e42fdf623d95a042cf9aeb82ed5d72d005a5dfeb31b5b1e3ff9eb5f",
           "entryCount": 24,
           "notices": [
             "package/LICENSE"
@@ -319,9 +319,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-hmr-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-hmr",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "77aeff88b0ec8754004e37074a60e83a193d1fea8056daecf6d4d506c98a6c0a",
-          "bytes": 10145,
-          "contentsSha256": "e64de3e67193cc1db8b78f2e8163e2bd9c2fa99f4a9f4e07ece1e04a4a9c8cd2",
+          "sha256": "e2b0e9cf08594d4064331f4e707cdc4c304a8b8114040b89baaf7680add4495b",
+          "bytes": 10139,
+          "contentsSha256": "2d0decb4b8cc19f9de6b044daa0798bebb3044fabf9866f77ce6b6c4b5acf5d6",
           "entryCount": 12,
           "notices": [
             "package/LICENSE"
@@ -331,9 +331,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-locale-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-locale",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "0a83f74e3f6dbb53595fa763945fde26bc64449d8997fdc2d3c590badab95324",
-          "bytes": 21099,
-          "contentsSha256": "d83a6c4733ac21660acd51ce7710a397d70b27a2c67edf77b37163e09ad9a2ce",
+          "sha256": "7702a93a49a38c0868fe7a5a0ef8b64b1db8f3b3c84eb9795344a88f031d7222",
+          "bytes": 21102,
+          "contentsSha256": "082b0f2a7e7cd180d5b35edf0d3450bffd38756548e89bd543e11cc2e4ea2ea5",
           "entryCount": 18,
           "notices": [
             "package/LICENSE"
@@ -343,9 +343,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-modules-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-modules",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "3ca7826ae9fb7efdfcf15a12ecbd64a93fc54883bae799e83054d0a9c85debb2",
-          "bytes": 18003,
-          "contentsSha256": "179f66ff89ed3920d975102abfbe2cdc110498ba8a260a557d0af07c971ddc85",
+          "sha256": "ac2d4b470653007592cbe31d693fbece5831275415acea12a1e47526ad657649",
+          "bytes": 18001,
+          "contentsSha256": "8be75328ac51aadde73f18a0d8ee37a2a882ecb68f3cb14e08f3d5ccb58d97ff",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -355,9 +355,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-runtime-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-runtime",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "67d64e9145d675d8f13814d795de8220e573a2aedc5365bd4e7cfb714c49e93d",
-          "bytes": 162657,
-          "contentsSha256": "f12f449c97a344dbb13ce59182e9bebf20d128c0fd5be31d03e663e45cb052af",
+          "sha256": "386cf4cda051b5fa4f841c517a6daeddd554b95c89606d92dfce483f05e25915",
+          "bytes": 162656,
+          "contentsSha256": "faa940ad91af5ae8b9178bbcb2efa91319de0adc7cff50ca008681de98427f77",
           "entryCount": 51,
           "notices": [
             "package/LICENSE"
@@ -367,9 +367,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-schema-form-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-schema-form",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "a55695ea473555f566d4080944a16cea9ade2c66d9ecb3c5dc2c45d3a03ed543",
-          "bytes": 7219,
-          "contentsSha256": "cb76b1bce7cea06a0e08d0230f6dcdc7d0c6a3529a9a8e3d9b7eff3a49558f15",
+          "sha256": "4252ff20dac5bb2309042a8d224604e94b6d405357c5063c2e780a23148757cf",
+          "bytes": 7228,
+          "contentsSha256": "a888f2ac81cfb9e8e70e5c5737a4859b7f766079ae4fca464b726bd7e22bcaa6",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -379,9 +379,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-test-runtime-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-test-runtime",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "f7f26c245eeaa64e4646f0a39a6f2e203dc09fbeca2f658275cec5d8c43b0de8",
-          "bytes": 27183,
-          "contentsSha256": "2d1e25282aebddba89c2236b02c3a8ae66cfc9937875309ac5b4956e94a9d0ba",
+          "sha256": "abf5b2dbfb3951e709309cc2180792d91d68efbf822580970f5353b2631357ce",
+          "bytes": 27173,
+          "contentsSha256": "295fb0268deb87f623f10d4e6b5cdfd8d0ec62c07c11e9b14ead25d2f2c36090",
           "entryCount": 17,
           "notices": [
             "package/LICENSE"
@@ -391,9 +391,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-agent-preset-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-agent-preset",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "3457de90dec3cfb4f841ced930f05964a019144fffbe518262777acd1d1c1ef3",
-          "bytes": 38349,
-          "contentsSha256": "c9d65f078c0e1f5b867f10ff76f62e4bc9a84e6f67a572bbb84eddc0359ed544",
+          "sha256": "c6645b34570a84095aea7c516b83f6c985bbc55033f2d627327717c013b5fff0",
+          "bytes": 38337,
+          "contentsSha256": "ff2b7fb2a9d3392526f7695189437a689ca7ac8f9a4da93c7f154839cf012d97",
           "entryCount": 20,
           "notices": [
             "package/LICENSE"
@@ -403,9 +403,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-attachment-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-attachment",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d615f7f2340ee32f20134dc18856cea4990c17a9e976914c18e1bff839651436",
-          "bytes": 13952,
-          "contentsSha256": "8a7cf366c5d44a0c5e256087bda8aeb063f6e6eb0a3f49ded057d5dbd15127f9",
+          "sha256": "fb78edc0ba389ca316d65568fffec5a36c587507d8032ad219eb5e9a486c6abb",
+          "bytes": 13955,
+          "contentsSha256": "47b7fd472f3afc49de7b0e7fd8c759fb61e8066d95afcea567735c5091efa065",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -415,9 +415,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-commands-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-commands",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "94f960fe337ef478bb946332ec8ce09282cf690fb7ab37077df0f39174a83f6b",
-          "bytes": 27217,
-          "contentsSha256": "eda78093dc97e8159617e9e9144a92cc5568a392434a3664fdf8872eff0abf2f",
+          "sha256": "1a962160468b9ebbcb2af1f91dddbaa74aeb2aedd8da5b629b07e1141514df30",
+          "bytes": 27227,
+          "contentsSha256": "00a675a9949e52be026d521576c735fe4ff4045901eaa01863cd44c66817705f",
           "entryCount": 17,
           "notices": [
             "package/LICENSE"
@@ -427,9 +427,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-conversation-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-conversation",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "856f155459b545c675fa8076123f38e5b2c017d05f57ac005fc61ed7f85c3b7e",
-          "bytes": 174710,
-          "contentsSha256": "5c0bd1330bd0ae5018befb733ebc6316b36e078bdc51c4b9bcd300fd93461f90",
+          "sha256": "5d38440b8d355e3cbdb631fad990a4d1bc4c4ccaa1f68c1b11b7984887cffadf",
+          "bytes": 174718,
+          "contentsSha256": "b4df5515d0245a67310647c8ab9c679165858db5f9a540661c8fb19ffbbfb1f5",
           "entryCount": 78,
           "notices": [
             "package/LICENSE"
@@ -439,9 +439,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-cordis-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-cordis",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "928cb925e2f7ddbef8e9528249311cf20aee01c8a364a400eb22b89a630818f3",
-          "bytes": 31699,
-          "contentsSha256": "7498c87e14c3ae20b9e3a411bc7f5ca201fd0c384d835a8975c56622635b2a0e",
+          "sha256": "b00f70221a69c3302510ed9b51d587bf5483ee76643bf8e424b819d2e4c08b27",
+          "bytes": 31703,
+          "contentsSha256": "62e721c252f8bf5257220f766f20ea3262b5726c4547354227fd26a35e08e3e8",
           "entryCount": 23,
           "notices": [
             "package/LICENSE"
@@ -451,9 +451,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-deliverables-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-deliverables",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "c4e2f8e981dc1094b873e46f775bf6ee3e4f6bb951fa82ec90b043c1ec07dff6",
-          "bytes": 15332,
-          "contentsSha256": "dbdc7899ff2903ebae134d7472f08a72a025904c6e782a7603d72b42fff759e5",
+          "sha256": "70464dd2a33a98385d7846dc1f775482120ca3ccec7428e20f44dd5577e90657",
+          "bytes": 15335,
+          "contentsSha256": "5df46d455d49e908dc56908f8df50d90104e7c695bb3fef41ce0193b58cc893a",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -463,9 +463,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-directory-picker-browse-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-directory-picker-browse",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "24adce8ab608da7f59c51a804034437638b7bceb32fb7498f290f97135c876b1",
-          "bytes": 19952,
-          "contentsSha256": "082360a6f418f2aa4f21035baa1a62dea517f22e93a8c95cca6401a36bf6d020",
+          "sha256": "4ead2ac3cbbf29ff8c78ca2bddef164b9359dcdeb22ab633da343fb2a51341aa",
+          "bytes": 19948,
+          "contentsSha256": "8882406ff430dcf5389f0a40cf80e3940108bf5954e8d81ba738103d6fad5100",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -475,9 +475,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-directory-picker-native-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-directory-picker-native",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "69f331790f1f2af0ee784a442755f6a47a903e8efbc5eda6afa32b49f06df32e",
-          "bytes": 6582,
-          "contentsSha256": "c282bc63dfae513d452852965ca0f39fdde935a84add745081252f1fc4769e69",
+          "sha256": "913186c270ae7355e639baac66af3ff3c13bb3eaaceec0e2e82128f398285ec5",
+          "bytes": 6571,
+          "contentsSha256": "d2e08091233b907ed484656f55a2e7bc8e6dd565dc671c5bcb27437c6b245ad4",
           "entryCount": 12,
           "notices": [
             "package/LICENSE"
@@ -487,9 +487,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-goal-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-goal",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "c5af934b1a12ab698865b8040dbfdc8d0096d098e8aa78dbbd04eb2a12e0ef38",
-          "bytes": 12127,
-          "contentsSha256": "1aeee22654e93e61ebdefdbce2553888b5abb4dc3c95875abeaf9b86b24f131d",
+          "sha256": "81af6dd91fac95ade44db92e066ef332806163284e9e5c9efd9d13ed4271c098",
+          "bytes": 12134,
+          "contentsSha256": "a05fc1138bab7694472780ceb21275b10634731609b2b2227162be13716d1acc",
           "entryCount": 16,
           "notices": [
             "package/LICENSE"
@@ -499,9 +499,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-input-trigger-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-input-trigger",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "7994607ba3d1f547993b13feb90d99b13448a418354ca655727d3cc6f5c2925f",
-          "bytes": 27246,
-          "contentsSha256": "c39fcd9b184716a65576aa220e06c1f0ecdb0e5a2c3a30a9acca30dd801260a5",
+          "sha256": "be4354ef52d14ebb842688b316685877fd0ee42648441b74759ca1b3071e7978",
+          "bytes": 27257,
+          "contentsSha256": "9efc79eed95e81724fecfd277925be25ae4b6b25645b15d7fbdc33cee772c634",
           "entryCount": 21,
           "notices": [
             "package/LICENSE"
@@ -511,9 +511,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-jobs-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-jobs",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "34e7ffbe28f8aaa4210a0bab0af5f750b6dc831a58d6f11821b4de02bb03be6c",
-          "bytes": 11218,
-          "contentsSha256": "5441d7b31ef1c8fb80d0c61666273f0268b296844b2bdd31ecada9ca33464b1b",
+          "sha256": "8dd3bfad4c5904a0b4267d19834fc83aae4f458445ad4135b4395810152f7b93",
+          "bytes": 11214,
+          "contentsSha256": "777a19491407e9ad007b5bd1fe4faa49583a71b6d8606966ddf0d2de3d6f6167",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -523,9 +523,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-layout-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-layout",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "1bcfdeacc02bd788e691a389627ce1500bdd5b43dbf32ffa1033fd4b42a7a66a",
-          "bytes": 16071,
-          "contentsSha256": "af6da8168ef861684c59923775f755542b6089f831bb631019522d8ef7779881",
+          "sha256": "a7d3690c34f00477f05df401197ffd07ceab39ec57a5461d7a94f3c5c4dda99a",
+          "bytes": 16075,
+          "contentsSha256": "5cd401c84e820c616c45c73829e6d00b827e36d733d79e67b060099be462b56c",
           "entryCount": 16,
           "notices": [
             "package/LICENSE"
@@ -535,9 +535,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-message-feedback-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-message-feedback",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "5205945be6af8eee8d3c374410ae061019f42478a5e4a9e4b763245b26e31bb2",
-          "bytes": 14986,
-          "contentsSha256": "ee34bdfaf2a0a112a4e36ca985c36df1243a8729a0d17953c29c04986dc41400",
+          "sha256": "b2e2b3a34bc456efdf36425b20466055eae1e175979199b334b6be8d5b5577f7",
+          "bytes": 14999,
+          "contentsSha256": "324b5753503af1822cf026f516e9844351c71375101525b967604e93d2bb37d6",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -547,9 +547,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-model-selection-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-model-selection",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "a400d76cdbba40919ae8b28bf52114ba8194d631e17ddb9e34b886bdc7f811ce",
-          "bytes": 19276,
-          "contentsSha256": "11122f1cebbdfbe9164b674409c86b6b2dfa12cdf132a8735cdd425dae3863b5",
+          "sha256": "ac4ffa157595371eca2097965beae8a3182f05fe219a9c83b9059aceee659008",
+          "bytes": 19291,
+          "contentsSha256": "4864ed4c2781e4ca51411dfe5a065ad3ff12b23fda38f684f57c4734aa976183",
           "entryCount": 16,
           "notices": [
             "package/LICENSE"
@@ -559,9 +559,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-permission-presets-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-permission-presets",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "5da1d507b7364ee2e7a651f4310589e7fd62b0a40dc17373a757a1e18d273ab9",
-          "bytes": 12647,
-          "contentsSha256": "d738861fbb9972c097d7c0487604f2803afe1fda1724e6a295d39cace8e3ec29",
+          "sha256": "7ab48aecd94e70f5de71f49a552be7ba8f9b6a14238f21869b60deb35069f72e",
+          "bytes": 12656,
+          "contentsSha256": "36c520477419ba32c7a845373d1ee2d019cb54817fd39244a3745df5ceefeea7",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -571,9 +571,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-plan-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-plan",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "f4b78b49b84260e901b1fdcdb6b76486f154dd4fb8ba9b29e047b5913af30715",
-          "bytes": 8289,
-          "contentsSha256": "4fb5e7b2035b8efcceca313b67bf634ae6f7c10b2940ccd0d7726d312d84812e",
+          "sha256": "69bb3c8a57e379b3b0c7886fad51a8af43937b07818fde2d5f17d5567d048ad0",
+          "bytes": 8285,
+          "contentsSha256": "8f40734932a55c63a4fa01c955e1625bff783903fcef20cb3a255308e4aeb42e",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -595,9 +595,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-settings-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-settings",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "7ac06d8f967ae329f79be3f651a5223794da83df8f3cd0d3ec6ee5a58eaaa088",
-          "bytes": 11402,
-          "contentsSha256": "0a3b06ade6054b4020d38e078d0d89da018365022b381d7d8fa92df04c997073",
+          "sha256": "11d942c5aff6b352fd5fa2ca15c1dde63a66ee4992051275c09ce0356e44cb59",
+          "bytes": 11382,
+          "contentsSha256": "644346401e451df304a5cb89f1c1bfd03a632b6339b9368813678332474f902e",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -607,9 +607,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-settings-general-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-settings-general",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "754fb8f848ceb10a1d0b3809d0763f85f7028d04b347a34127b5d370f472f847",
+          "sha256": "c9c982568d6d399b72165a0241ca1ee8db96ae4cc551b6b43d3321abd4f9567a",
           "bytes": 15755,
-          "contentsSha256": "8e4a469492414582261c474d44a384001b80ffdd57fd7ff3e2d4f7560b5b6b6a",
+          "contentsSha256": "d9b3aaf53dd7f61cd73e8bc3b91abfeb7a9b1f20c45418f695154b4dfc265623",
           "entryCount": 18,
           "notices": [
             "package/LICENSE"
@@ -619,9 +619,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-settings-models-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-settings-models",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "b64e88b7da02b5c2d496e9c6d5f71f36b7c7800ed6dc9d6271b3286f9c8fc67b",
+          "sha256": "9a8c36917297733c12096a6cfb61f2ebcf4b52820f4d2b5338b0ba99aadb5c8c",
           "bytes": 57785,
-          "contentsSha256": "9908eecdd47888fee08d1ce1a7e82f454196c160848479e997c591f7375cb524",
+          "contentsSha256": "1a160439143049c39befebb08f583dcdaed923965f864f0559d6aa406490b710",
           "entryCount": 25,
           "notices": [
             "package/LICENSE"
@@ -631,9 +631,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-settings-plugin-inventory-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-settings-plugin-inventory",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "574beebe4a9ef6cec566335a422279c063bbfa57bfa52ee64c106258aa76c085",
-          "bytes": 9916,
-          "contentsSha256": "5e807017651c7930f4415147d1a690ae5332f1792ef308864b26e92c42399952",
+          "sha256": "12fc6222f26d06c20a7495a4bac89c76242a53d9c13875effebd9b6aa57ba3fd",
+          "bytes": 9924,
+          "contentsSha256": "f40b2348d17ba64b01a6ee2db63f9afb145d0aa26fdb9aadaee140c4587c55f9",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -643,9 +643,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-settings-plugins-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-settings-plugins",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "6f1892c86750c90ea0e4a002a44c44415040b06e36860109e619cccabd5ea5e5",
-          "bytes": 30304,
-          "contentsSha256": "485a39a08b6dd98c0dd1b35ce70f298c5207791bd128081cb0efdd03efa3e8e3",
+          "sha256": "701c88735dc59fe62be6823ab5c4e6dc8b2b6a235365fc54815f355c8619033a",
+          "bytes": 30312,
+          "contentsSha256": "1a332b7d5449aafbe26385c09fcb62d31a12922503dfb3d912bcd1d2831b59e6",
           "entryCount": 25,
           "notices": [
             "package/LICENSE"
@@ -655,9 +655,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-sidebar-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-sidebar",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "a0a7083bb98d45c06b057c85983fc66bfda2feb3b41d9acf3f4994eb4ae71a61",
-          "bytes": 11837,
-          "contentsSha256": "7857595abda9802dd22cd2c7bc872132f41d26249e5876f8e41d6c627534b171",
+          "sha256": "78272d0a0ff76d875bea1f1b5091b7832497e7f921dab350437b5574719c4bd9",
+          "bytes": 11833,
+          "contentsSha256": "4f4113916ffaac313f6541e6a22168a13c85cf9f112f256ec7b339ea2dbb55ef",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -667,9 +667,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-skill-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-skill",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d92dda191fc68692d14ca7843e94e3d1ba59a509dac14f835a576dbc7efcbbcd",
-          "bytes": 13349,
-          "contentsSha256": "d0556a5a32f3998a18386df90e32f7953bc9dda7992ff343ee1e9c575f3792ff",
+          "sha256": "96db0b070af45693a8f40e1422661b4a24bb44e26d5a56102ab37893141e3256",
+          "bytes": 13347,
+          "contentsSha256": "6e9fad4291c6c34aa3af8c91873a306418ed5b4fd254e14dbf93fe1074fd680d",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -679,9 +679,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-slots-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-slots",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "511d734e674f280a166854d6dca5d94a2c716123990737e3c50b6b2d13e46751",
-          "bytes": 26524,
-          "contentsSha256": "31053cc35223f516eff3c2885c122a2ff981e3ebd70df64fbe870a10b6d3d543",
+          "sha256": "e678824db62f2bd1fb79c13bbc6816e8087dd788fb682b59075d8f1d1a10079d",
+          "bytes": 26529,
+          "contentsSha256": "fcd965e9db60178323bcba1192dabd1ec2aa0bbba59b2210920dd534a8acd6df",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -691,9 +691,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-subagent-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-subagent",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "8407a11264ec4bfff7aaf618fc2058e94848b9950f2a4702e0e204ca1f0f25fd",
-          "bytes": 18077,
-          "contentsSha256": "0e8cebeec90000d1be58b886b83974d85c1c9bf3876fda99082746cc6384729c",
+          "sha256": "b9ccae988e06b8fa1e163ecde3a30cb8c3a983327a0da9f8f98c774d03304d1d",
+          "bytes": 18085,
+          "contentsSha256": "8933f6205cd6c33f44a1525f726cf46e85afc6a876bf07caaaaac07a933c296c",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -703,9 +703,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-theme-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-theme",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "f40d21bb14e10777ae7a135f902a11ace99f22ed6208ddd1f628e177aeb19474",
+          "sha256": "a90c704cff898aecb36c1f7720541d53acec257df2766fdac4981dc9ce8036c5",
           "bytes": 32461,
-          "contentsSha256": "a11d7e4ba3a1a32ea1284d3bddff3f0971ce9a8c8e44213f1431a45f45183d7a",
+          "contentsSha256": "d526d35f160264b4472fd817e2f1f3cb738f9e418c20d9e826db80740f3f7fd7",
           "entryCount": 21,
           "notices": [
             "package/LICENSE"
@@ -715,9 +715,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-tool-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-tool",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "780276a2fcda2fd25568f218c766a00cc67f44caa24501a442788365a4962360",
-          "bytes": 34296,
-          "contentsSha256": "3d2f62e74999b23959c659a47035cb20fa69e2df15149c641c058fc639020d2c",
+          "sha256": "ef96be952d6b6906db7b114f400f40473af5ac9475a010db450f1bf461f86d08",
+          "bytes": 34314,
+          "contentsSha256": "d10e61996ff5ebea20b80b4a9a85fa5eb423f47c7b473f03985313a350cb37c5",
           "entryCount": 32,
           "notices": [
             "package/LICENSE"
@@ -727,9 +727,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-trajectory-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-trajectory",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "5c80db56347728ff4190a510d850424397de13c6a1801dc4d337b5aab10431cb",
-          "bytes": 88831,
-          "contentsSha256": "b23612feda3e4a105ef68fd7e13aeb7b776394d9cbd7413457068584cdcf1fa2",
+          "sha256": "2d32331b0fff7afcda57c0c59735c77dc658dbc5c2a40b17a56ab0601d096bbd",
+          "bytes": 88809,
+          "contentsSha256": "bb780b2017dec4cb478f791d579663f682f8afaa293f4bcb0e2e555ae3d90448",
           "entryCount": 35,
           "notices": [
             "package/LICENSE"
@@ -739,9 +739,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-user-questions-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-user-questions",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "ba6afbf0f355d79b4497b07ef428ce48ce6fb61d29267c59832bf1c8fcb5f2c9",
-          "bytes": 18665,
-          "contentsSha256": "3a9c548bdc6a2ac8a57d910fd3d72b60f90385f57df71c9133ac64acfdba5f27",
+          "sha256": "5d79edefb0a276d7683157fc4ab1e9e8e1916a1abed293672de43acdb2df4bc5",
+          "bytes": 18683,
+          "contentsSha256": "be14c5b5ac46a02b677396a99ff6f6787afc5f35a76fe7b7f00db59ed1b26e5b",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -751,9 +751,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-workflow-run-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-workflow-run",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "c25b8e9bbcd22f4872f20c71ac63afb5c1ebe5e7a03e416cc8357c0ae04dab94",
-          "bytes": 12655,
-          "contentsSha256": "3f007fc7488aeb9926f41016d00e3199fec3cd5f28ddf382e5a2df3248e1bc47",
+          "sha256": "32febfa1f6f87e0ed1143defba6852bc577cd0079e54f017c13f655824fbdb2d",
+          "bytes": 12656,
+          "contentsSha256": "1cf37e679e8c9818e0f4357afcfa9258ea361de421784046b339f673441e6b37",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -763,9 +763,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-ui-workspace-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-ui-workspace",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "337c5a1a144c19442ede0537a34b031c94c91117816e83b8a7012d068f73f510",
-          "bytes": 45606,
-          "contentsSha256": "b66d19580e3ab379490622078493ddad99ad0095cf8fb8c65e30b83fa857a11b",
+          "sha256": "646842cca9737368f2ffeda51420bf2a8ce578eabf1f597e762a1db6d39d2555",
+          "bytes": 45597,
+          "contentsSha256": "9ad978c8574d3c053f2f5e0d4e1a17ad1b85faff7b87912f19ea957e93356eea",
           "entryCount": 18,
           "notices": [
             "package/LICENSE"
@@ -775,9 +775,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-web-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-web",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "536234e84cd807359d8c5ec51df5eeba5a7c8aa6fd181ebd6dc47deb390ee42c",
-          "bytes": 13814,
-          "contentsSha256": "1096d969e3e85e2b040947f39b24b2d3e2de984794966d135ee781fd1e0631dc",
+          "sha256": "eb1950be72e4dc648717b8c3d3605e2513ca6aa4a02125145be525d91c8d7523",
+          "bytes": 13815,
+          "contentsSha256": "de113cd7a1ae9d122903458f3f976e3a18da0c891d525b0bf402b825f7c0e0e0",
           "entryCount": 17,
           "notices": [
             "package/LICENSE"
@@ -787,9 +787,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-client-web-react-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-client-web-react",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "3cabb9255125f12a4c04d24bb0785abc94bc53af4c7963c9d8ffe4c21f89ea0f",
-          "bytes": 15188,
-          "contentsSha256": "1f92dec50023899e32fc888d29b2a8c7aacd73a08e222617db60038077a51550",
+          "sha256": "52f3898cd682b692ebc7860d8ac69f3496c1057fb6dd646eb157a2de22ca585c",
+          "bytes": 15192,
+          "contentsSha256": "9a88567192df715ca3cbc25340b56df71b414f7ff9884d2a11370ff0b21c0bad",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -799,9 +799,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-cmdline-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-cmdline",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "ed969af7e3df8a8a13593fc7dbf9e5e2f876fdb9665a34ea5b8109bb2cc71392",
+          "sha256": "6998775a3f7d138e2860c1fa18524c03c1613f66e92ca72028a4b2d11e93be1d",
           "bytes": 8857,
-          "contentsSha256": "70954c706f10d307d96e3bfcbf2753397643f4e212f10efff5308daff1d45058",
+          "contentsSha256": "eb4dc4b6d690b0fa56c494c3d62267cdb6a56f1df44feee08cdd2a1713825796",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -823,9 +823,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-code-runtime-worker-thread-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-code-runtime-worker-thread",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "ca4c776f6831cbe46ae083921d8b367736b2c6be850bc1c150ff5197da84d1aa",
-          "bytes": 35264,
-          "contentsSha256": "fc0c7316982741d039ce2f4e54f9c9a720de4fc12b6d2af7dabba14c7e259c35",
+          "sha256": "8f2ff8dfadbf64cd5d950ee6613c550708708b09c3c56b080fbd217387e5e735",
+          "bytes": 35263,
+          "contentsSha256": "f85e9ed339a718485d4e428c661ec791a2bde8f47f4301afc3c69d15831f1f9e",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -835,9 +835,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-command-compact-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-command-compact",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "f2f12609f7dfa8efd342e2b467513ab593200333e92e658a4ac7e8ac54760923",
-          "bytes": 7689,
-          "contentsSha256": "bca20ac2177224d00b9d3a1d08c6aa93c536c74b26e54b8ded484b880237bb33",
+          "sha256": "79c803711a37b1bc3ee20c63c0455132b8682d53c125ed94c31cd10eb7b734f5",
+          "bytes": 7693,
+          "contentsSha256": "82d88b4b570f041360f3101403f8f45a295011da479711354cd63dbbaf8c7774",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -847,9 +847,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-command-feedback-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-command-feedback",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "89b8401fd95ba360afca488991253c650feeef08c3b7dab84305710daf31f05f",
-          "bytes": 9476,
-          "contentsSha256": "8a37a302f18fec26bb877a01bd1756d19e17ef6ae6f779b170a64a03ac1ebd70",
+          "sha256": "f8aec08f60ed3f455fda92bcf4c54344d1d96bbb0f8e5e8a01398826b87609cd",
+          "bytes": 9473,
+          "contentsSha256": "0f9f7684d0c721aba47762621a07fca846fbc51e0de14cd0dd5a315c79bfec31",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -859,9 +859,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-command-goal-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-command-goal",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "b7f28a3cebaa385c4c34e88d31a1003dba295f7d9c05915f0fcfd3c272aa6bb7",
-          "bytes": 8403,
-          "contentsSha256": "cebd9190a20ab6fe4629b453193e878e068127277b44ffc2c4f020c5a1882773",
+          "sha256": "0815369293abfc841b4cb9a46599996e1f6b4128ccc5092bb63b395092ed1e06",
+          "bytes": 8410,
+          "contentsSha256": "01ed155e91791a4a64cab34574336b2da3b64ec22d4b3c6db8bcf4aa7a758fd6",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -871,9 +871,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-commands-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-commands",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "f2cc2dc8d3452520841322fbbd3bb5a05388ec1279b5720b0744545050bf69b3",
-          "bytes": 24119,
-          "contentsSha256": "07054476cb98c914da5aba7ac4b5de871cc0a1ce5d8afe86d16aee1eed04c775",
+          "sha256": "5a9fbdfdb152913876cb1b409282f77f402a2ffd636f99f57927013259f1637d",
+          "bytes": 24140,
+          "contentsSha256": "6616fca688c975274476249286b5456c9e65ad0eda536147f28335e7dd22f9dd",
           "entryCount": 19,
           "notices": [
             "package/LICENSE"
@@ -883,9 +883,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-compaction-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-compaction",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "56e76bfece5bb1dda7cf7b458b87c5bd2958ceaa5ca2aa7e5a0976c320f1c12f",
-          "bytes": 24968,
-          "contentsSha256": "51b724df2dd800ea147e149582435854c3797560544f55bb2efcaca725f62f75",
+          "sha256": "8ccb26293cc7021b298c47118142656b42068d1e7612b9e04b46e940518922fc",
+          "bytes": 24962,
+          "contentsSha256": "d356a766c3b6830b6baf796ee95f20b59db46db2be3d448d8884d4f801dfabf2",
           "entryCount": 19,
           "notices": [
             "package/LICENSE"
@@ -895,9 +895,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-compaction-basic-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-compaction-basic",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "621d7f081ff66be67e19c007042e6da885075933c1b751da05484cce112960b9",
-          "bytes": 30975,
-          "contentsSha256": "30c6857c98b44e8510220cbb8f16f0272fba53bba47522fe83cefdd195f4ec9c",
+          "sha256": "e60f9f91afe2dfaa18a2e177400b214e4abc64cee76a94df62c4fbacc8cf9a02",
+          "bytes": 30976,
+          "contentsSha256": "c4b274c1e195c2b4ff4549f8fc54db62886ba1eda03a0403a20dbae81a0e6326",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -907,9 +907,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-compaction-tool-result-pruner-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-compaction-tool-result-pruner",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "7eed123123b378b9ee8dae2a63a9fedde61891f32f7ee8ee944ad9c6dd74acd7",
-          "bytes": 9442,
-          "contentsSha256": "d9beaad118d6d6e5dec235b07b40c8a04f039ddf6d7843303b65ad8ce76707fa",
+          "sha256": "ee24c599c8abffd8338f25ebb6d77012ea7f2cac312410bccf88d7c0ab54b867",
+          "bytes": 9451,
+          "contentsSha256": "478a60c4abcb69031a606746f4abb61b935fe22e45ff8671d833165372ffb166",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -919,9 +919,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-cordis-client-runner-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-cordis-client-runner",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "fba9a0b28c862c0cded4f52c431b9f927a85b354f6625ae20cf6ef2840cf7c9d",
-          "bytes": 70983,
-          "contentsSha256": "9f0795cb413a62eaf053944e183bdd18cf180c64254713005722111575b142db",
+          "sha256": "7c77d825634737e3240d87ca679a3d6d46319ac5f8c7783802be77e9a26249e0",
+          "bytes": 70973,
+          "contentsSha256": "83ea89874e12f6551003ac79ed82ee4a0a2aa214e00205c45c65f3fcad593c3b",
           "entryCount": 20,
           "notices": [
             "package/LICENSE"
@@ -931,9 +931,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-cordis-host-runner-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-cordis-host-runner",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "f7fc674ca6ab5f6dc9576dfbd2956073a0ab0083b7dd2fd69c9a5b3e1f4b6b19",
-          "bytes": 94778,
-          "contentsSha256": "ed545dd234548b237f9a305ed4332310093c8fbbaa1f63f690d81767477ab13a",
+          "sha256": "e2d9c3266db927acc75f29e82ff70336f4abd3029524e753c4e9b1de13d338d7",
+          "bytes": 94827,
+          "contentsSha256": "1589f0e2717bf1c80402ea7726582015c5ea6d76c1c23e126bfcd895c1c48927",
           "entryCount": 27,
           "notices": [
             "package/LICENSE"
@@ -955,9 +955,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-credentials-local-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-credentials-local",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "0d2bbeaa5d84fdee8eaea0d917ad1613bfb331dd0749d5245d90222e11835ac3",
-          "bytes": 15579,
-          "contentsSha256": "6cf82af7d9c58617c2e0601642a79c16ed986a34b767666c714214301db110c0",
+          "sha256": "0954241fe8b2cfb9f07a8a7bfed8edd5e31ceecd1ac47e9128e1c39ac6edc7f4",
+          "bytes": 15588,
+          "contentsSha256": "c00a6dc0216e470e60ba038e2016ca8058339ccbf83482255ab045842e7807e4",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -967,9 +967,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-e2b-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-e2b",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "ad1c62a9e161c29d19ce262c2dbdf9d4a0852ce2110e7189965b74db550110cf",
-          "bytes": 7244,
-          "contentsSha256": "bf6f9640484299eeab26bd2900ad8887616a143484d468b861a5ed695f64f7aa",
+          "sha256": "7f79f745e047e9aa53e6f049c1990134f458287c4315d7fd52c930fd4233731c",
+          "bytes": 7249,
+          "contentsSha256": "6f1b80218f5e0e8bee6895bc9680c4ab989b910053f0da1fcee21872fe21af73",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -979,9 +979,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-fs-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-fs",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "92d210fc48278b55e04b0e94e0db04c0aea3b4724daad1c17af0a8ab275bfb55",
-          "bytes": 16570,
-          "contentsSha256": "c498608ae5d2edad17116f39c1ab2f73acfd161a079a50a3cb76a0ad0dc6f6ab",
+          "sha256": "4e287c4d702b628c14961fbf9e32018abb11ca8ac29947e3a50182eef90af19e",
+          "bytes": 16569,
+          "contentsSha256": "24c9f61a4c2fb12f5112d940455a78be70de94f40892da15fd56814d20cf6bb0",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -991,9 +991,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-fs-e2b-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-fs-e2b",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "9f5a20d0eff7682dc97f3f8e91db64a60a4d6b0a19c77d7725a6ee94035e66f6",
-          "bytes": 12264,
-          "contentsSha256": "8e201e76c6fbad1a68fe976bbe5d5178e458dc8cf932a8c5d47d7149af8db543",
+          "sha256": "27b3fea2f6278f2eec0028fc189e36062967e5a9bfbe33d4b97fef0d9e42dcf7",
+          "bytes": 12257,
+          "contentsSha256": "f2da2f3221bc84657bd53fbac15c4baf5a5246fbb5172053630582ddf136a39d",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1003,9 +1003,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-fs-local-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-fs-local",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "ca18508e72f13b56f828cb67e1acb712a0bac0ef01565777650cdcc6468d59bf",
-          "bytes": 24639,
-          "contentsSha256": "5e7f21b774b4f996e64d354a2275a20d6d066f8fe5ddb6dbef0160439e45e874",
+          "sha256": "b44588bbe4da7139381f3ad0a0ea0b75d57ff7fb7a330d743605274071681ca4",
+          "bytes": 24637,
+          "contentsSha256": "3c2d78e352c3e3d8f0fa146c6908f613c086bcee947bf9b02ed29e29e9ee36d0",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -1015,9 +1015,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-fs-observation-policy-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-fs-observation-policy",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "5d89fa68289e00b5ec7fb8b4515dd7f62af168b2094c2ce32f99c8127e5bb71c",
-          "bytes": 9604,
-          "contentsSha256": "083d68e42b24bd6f72be5f53b1de9f2f7d0c2862432f6f23ebf361ba3b642270",
+          "sha256": "ad497b517c817876cadf2d99dfb1d2538b716d3d1e7882dab616a81dc4fe9caa",
+          "bytes": 9606,
+          "contentsSha256": "10a6f11286e2459665b0275ad4e158b519cdf256a913d6e627f930094d2d40e4",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1027,9 +1027,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-fs-sandbox-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-fs-sandbox",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "641e3fe0e185643f095887958a5cc59cb495bc8fa350653fd75c49ed91597819",
-          "bytes": 10173,
-          "contentsSha256": "88a4c3e01357e14ab16b29827c2058d8d8befe2f6f00f727bf7ad42a10c11687",
+          "sha256": "178e44142595c54c72b09c3a794bc127b421690cf521afb41b85a5cbe7fc5605",
+          "bytes": 10177,
+          "contentsSha256": "b8e574428413450e55c2db19860e2476e561ce3172ed1802bc9db631575625e1",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1039,9 +1039,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-goal-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-goal",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "667c8b15456211318ea476bc6c4d883fbd391063886f01f241add5032b6612a9",
-          "bytes": 38081,
-          "contentsSha256": "79f9f207d93739b53678a3025ad29bdd7cd25214280a96dbef17cd1b90402326",
+          "sha256": "4024a62449afcbfcf69c344e635e4f8344b06d1642ae66fad556fcc520905c3a",
+          "bytes": 38099,
+          "contentsSha256": "451dfe092406ff24def08a1a62ff21a4498038cf6c592126d0ad39238465054c",
           "entryCount": 25,
           "notices": [
             "package/LICENSE"
@@ -1051,9 +1051,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-goal-round-driver-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-goal-round-driver",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "9472a4e0e62d278145eaf9583fcd37e0ad8a43d34ab5bde1c93f35ee4c1feec1",
-          "bytes": 11815,
-          "contentsSha256": "910d06c6a35fec42ae492267409a424c9c6966edbbf5e52833e841b5617666ca",
+          "sha256": "ab46f567e3053072b41d34cf395a8a5e0f35a502b2884e8194c960797d41787a",
+          "bytes": 11809,
+          "contentsSha256": "c0f63b19e3c2376627853cc278301ac016605b3c751451465aea650f662038c3",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1063,9 +1063,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-headless-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-headless",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "857295f4c0bcb0fd51c545dd2d91161fdfe5cd141f003043a8b08fce2a3643ed",
-          "bytes": 7825,
-          "contentsSha256": "b8ca276df402fa642aeb4bb8860da67c2bd5077b12127824f0827ad44e093d82",
+          "sha256": "a58181122f397d73dfb1f77ed79f18bc9d9b0a3c1eccd0c780467ed0f3aca3c3",
+          "bytes": 7814,
+          "contentsSha256": "dc2df0c4f5585c8de1e3660b2db5bf76885cc5ef477f32efb6d49e85f1d05d0d",
           "entryCount": 12,
           "notices": [
             "package/LICENSE"
@@ -1087,9 +1087,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-hook-protocol-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-hook-protocol",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "771bd6dc8fbee8135d7c242a93549a9f91bbb8a75a1846f91c9fded4c96705b3",
+          "sha256": "04a1082b7e7ba498dae71703a7eae19b16e54a5a502e876ac20348b09780a494",
           "bytes": 20612,
-          "contentsSha256": "cb7121f513ee9253adaae5040309d85957ade3054f091ceea3f7d14768a61134",
+          "contentsSha256": "54bee909ec97f1c0be288ea21d4a9876352e404de4681277bb5130d79e06ce33",
           "entryCount": 16,
           "notices": [
             "package/LICENSE"
@@ -1099,9 +1099,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-hooks-claude-code-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-hooks-claude-code",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "0ffb5e8ba3c1a0062abbed09c10a869611aaeba26a25abf7e12d19efa1a2e7f8",
-          "bytes": 17522,
-          "contentsSha256": "7bf3404607f59c658ca121abb5aad895b4f8fcedee1ed26b3c9ae3e1d489493f",
+          "sha256": "d3d5048c6dd178a3a894a264ec7520534a7f91a4acf83c6d57e78f564bfdf89c",
+          "bytes": 17512,
+          "contentsSha256": "eacb36e593b64c452e43da10294e3d12d86c142be1835ba6a06f7706e27bbd27",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1111,9 +1111,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-hooks-codex-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-hooks-codex",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "8b7943d04672f363759f28931a872dd32fad564563c3eacda28128db7c526651",
-          "bytes": 14624,
-          "contentsSha256": "da5d073488c69bebd4fda9ff7a61c3089dfa5726be113b0109919d7b229a315c",
+          "sha256": "cb7a41d2d73b90b72daa2689b3b73d92503abaf048ecccca06fd8be96e10a51a",
+          "bytes": 14621,
+          "contentsSha256": "13568a2a437258eb1e233c17c4f7510bb91f7b84c91029d2e1ee3eba8d9884f2",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1123,9 +1123,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-host-apiproxy-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-host-apiproxy",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d2d66a54ac15a97dec5bbb4549580ce448db6a2547563e00e6e9e9dee7896841",
-          "bytes": 194476,
-          "contentsSha256": "682a51f2834c8b0ac5e4f5f0af97e6dc98778b8ed36ef9c5717e69fc51b20871",
+          "sha256": "dcc99f929192347af4f3c55d38f8698998eb8198779065258cc63985ba6c2bce",
+          "bytes": 194480,
+          "contentsSha256": "d06bcc2b638acd97ae6ab4301598d8d7591bde9a685f4532b9a1f696aeea06e4",
           "entryCount": 91,
           "notices": [
             "package/LICENSE"
@@ -1147,9 +1147,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-host-directory-picker-auto-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-host-directory-picker-auto",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "45268561839282698bd59757f194090a5e3c906627b0dcc25948b9dc9681f7aa",
-          "bytes": 8929,
-          "contentsSha256": "19fd390274896fb9b467f258d68bd96720c9f2148f7883018e12b3f7a672baa3",
+          "sha256": "ecccc1e2cb9020133d26fc790e818fcc6d3b4e0638e8a6c184a38568fe1c89d1",
+          "bytes": 8923,
+          "contentsSha256": "7b28ca88fb167a53c7ca736c089c484a56665ed841d4791f8b88842f0187c40f",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -1183,9 +1183,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-host-frontend-static-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-host-frontend-static",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "f5371ffb1805c36c491a5973434c004c6aca51738801836e8c1943443f3bb5ec",
-          "bytes": 5614,
-          "contentsSha256": "9d4741e63be9f89f4235a7f5e22ae94bb7431592a267156a1efb836eb62480db",
+          "sha256": "940c2a26aa8b295e972be8c1182554558639ecaa120e66165400e52cf795ef48",
+          "bytes": 5609,
+          "contentsSha256": "555a9098f4988095f3fef76242a9ef780355f93a454de8eeb391ed8c033d7623",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1195,9 +1195,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-host-plugin-inventory-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-host-plugin-inventory",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "788b20123453e6014c82f2fd3692761cde19644002eb555dbc83021e25deebdf",
-          "bytes": 7787,
-          "contentsSha256": "4ab97653c845e3fa02ed9525b4da88524ee698aa982492e7b2e10a7f6deba256",
+          "sha256": "8384cdfd0fdd1be9bb4e37abd80ea4bbb1c56f3cdbd2c1068336810f9f0de3cd",
+          "bytes": 7786,
+          "contentsSha256": "0d6ed8eb1eafc11b7cfed79651e1391836aa2b623dcb8f1abf0ff1780a018e7d",
           "entryCount": 17,
           "notices": [
             "package/LICENSE"
@@ -1231,9 +1231,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-jobs-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-jobs",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d3cfdb9a647bb9d02307c1c17e06287fef5aa41f3034c6d283ef303a8431e39c",
-          "bytes": 12879,
-          "contentsSha256": "631e86a42720025e697db08aa05ebc74b7770db612c7cb426ebd4e53d6bc007d",
+          "sha256": "7437e7310c84994ff38e52eaff4df6cde3c9e6e823b6f6ea12224adae4fd6770",
+          "bytes": 12878,
+          "contentsSha256": "7680520d35671c74bbe40ca66b3184a9b90e6ea434ed114430d76fd4fc0d85ba",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -1243,9 +1243,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-jobs-local-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-jobs-local",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "ee867c74c82aad5f0c15deb5d26c9197903fca6ca003da9e1ab32ecf7f8168e2",
-          "bytes": 12812,
-          "contentsSha256": "207009048e2e6590d0cc64b120c712b8d725946c54c9106845bc78fed05b2e67",
+          "sha256": "929c57a022754c3778a097e62af5b1a4f43db5bcfc6500613c531c540e4607be",
+          "bytes": 12806,
+          "contentsSha256": "654b1fa43ce312a1755d4435e7ba490c60ed6fb3ea425fc236354410e24934df",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1267,9 +1267,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-llm-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-llm",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d67aabaf5e1dabf5f80b21e1f36975a4977790fea1e92f63f4932143648d0658",
-          "bytes": 72056,
-          "contentsSha256": "1ef5e18e09138bd22210a7be87abf72760a8e7fe540b0e02664d8aad54f3f0fb",
+          "sha256": "05344248c6e187674c44c5f7cf82e2668debc1d2a0b4981b25e2ded74cb4824e",
+          "bytes": 72063,
+          "contentsSha256": "bfaa69008089f72f703053fde57a53a2382f2302f00616ac444a2bca88bdcb71",
           "entryCount": 35,
           "notices": [
             "package/LICENSE"
@@ -1279,9 +1279,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-llm-deepseek-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-llm-deepseek",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "58a5b4a9b173ac34fc0ad0431f1d20d7c6f68b09d61a0ac476c00d72560d3d79",
-          "bytes": 29549,
-          "contentsSha256": "3990ca5b544b40ce90a10b15fa7945babcb4d37ea24d51122fc6bbbcb2f4baf7",
+          "sha256": "8db687f79738c06513a8ef797d6f16cb2aaf0abfbc74c05c699a369bec0440fc",
+          "bytes": 29539,
+          "contentsSha256": "8842c6de0de4c3c4582572646aecd0be3c4506cf9d85233660661c24e285b34b",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -1303,9 +1303,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-llm-pi-ai-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-llm-pi-ai",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "0bb578693b5c170cb2e60e32cd9e986c452f40259713ceb7528f0a1d6a8ddc73",
-          "bytes": 63917,
-          "contentsSha256": "be68f92e7d39a5a957324cfdf4a520779b8a46c83771cf9bbb2a1895c2b8a690",
+          "sha256": "9a29397359cf9411899ce2e32ca928b4e023a381a98c314289ee18edfc04eb8f",
+          "bytes": 63922,
+          "contentsSha256": "2cc2b8d63fdc75779785b9edbb36915cf0e6770fba297cd5503fc399a5e7e2a9",
           "entryCount": 17,
           "notices": [
             "package/LICENSE"
@@ -1315,9 +1315,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-llm-replay-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-llm-replay",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d6dd6fc45078ce18bb763cfb93b4ec4002778aeee059263a91b3c31eac666a15",
-          "bytes": 21093,
-          "contentsSha256": "ee1d1eb3cb1619c60353204d4be342c4deb5a00b9386cb9f09cc0c17e5fd0216",
+          "sha256": "3446bf706c6025535dc036decd194c84ee3a6f7b37565f8ee0202b27b91661dd",
+          "bytes": 21092,
+          "contentsSha256": "fbf1261c63838dfd52df16fa2bede95323277e7600ce8bfe9ff2d1dfeff47c17",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1327,9 +1327,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-llm-retry-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-llm-retry",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "438027f0d8ee47928da163ef2caf1b18d8150a3f52f97cca12e82bc2643660f2",
-          "bytes": 14784,
-          "contentsSha256": "79b539a32cf93c00d0aef59a701df2dc583ebcab0bd9284b589adebab078f3b3",
+          "sha256": "1fb673fb739cb62270e26f7787ad44f5c7b438098d43b1db2729f3bc122c24fe",
+          "bytes": 14790,
+          "contentsSha256": "a843b053fcc884af8681c19dc13a05749f3d62efd95c0cd80e123984ea27222c",
           "entryCount": 17,
           "notices": [
             "package/LICENSE"
@@ -1339,9 +1339,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-loader-smoke-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-loader-smoke",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "2c5b834e3b52a275a732ac19fc20c880213e949ce52f6dfb613d50c228226a06",
-          "bytes": 9399,
-          "contentsSha256": "fb54083edfecd70445e7fccb6233df23f562e2c95693de12a77f94b6a8182b8d",
+          "sha256": "2f7361a840c938cf972e9d0a37dfbba31beea12d07c729b67691f783776ab7ce",
+          "bytes": 9409,
+          "contentsSha256": "ad6004c642b76e7543e4d9324f30931bd3fc844ecbf072a2f7533b3d9f4b43e6",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1351,9 +1351,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-lsp-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-lsp",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "e7d7cf304ac98908ac932303dfc1cb936ed24b1ef1e73e6a66b7745618b97f1a",
-          "bytes": 10697,
-          "contentsSha256": "5c532c934b57a7ef58f7b377e0f6bbb2f0ccfce6bce9540ee9ec5aa1f298fc1a",
+          "sha256": "9d9bddaf997d4fe9471751fdf56fc24d4a74bddb2e000f356d741d81c20fd44f",
+          "bytes": 10700,
+          "contentsSha256": "6a5443ce1cd107c0d9c59099bd9c111d223a95df9c10bef8c81a1a4b8a5b3066",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -1363,9 +1363,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-lsp-stdio-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-lsp-stdio",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "06721567506d3d6ecce5a91ac1ef141004d74b1ab2cd293f65dc4cdfc730fa69",
-          "bytes": 30419,
-          "contentsSha256": "a3ff52d60e69a9c911e79019aec667c467e5fe53e8104387e17288b237409a9a",
+          "sha256": "c3b3e6cf3d979c517c597896d31699bd12295440e739a963e7752bc0869b920d",
+          "bytes": 30412,
+          "contentsSha256": "95138ec366c46888d1ad78f472372f5f79c99133fd508be7b0a9181f8829317a",
           "entryCount": 16,
           "notices": [
             "package/LICENSE"
@@ -1375,9 +1375,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-mcp-client-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-mcp-client",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "220f7ebcdcfa32d7940beb0d43de530e5425009901daf88f2c5a98c4a3d0840f",
+          "sha256": "9746d391d44475fd92dd971fddbe05d778e032d5025987cb79240155b13b7451",
           "bytes": 24308,
-          "contentsSha256": "33286ff7e2c4f8139b97e730e13ca1ee8b2e14996e34051bbe2e37dba58168c7",
+          "contentsSha256": "e53668f1465fe50e346b157f3d2272cc99639f2502ce17a31b354a4b9576850c",
           "entryCount": 12,
           "notices": [
             "package/LICENSE"
@@ -1387,9 +1387,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-message-feedback-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-message-feedback",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "fa12b225bff4599945717dff9e9a277be2052a5672ddb8640b78890509e976db",
-          "bytes": 23522,
-          "contentsSha256": "b33f5e5e95264be5fda54b0c56cb6809c689ff027af1c6f7bf164a8a4f09b8b0",
+          "sha256": "a86e3b8d2f377a99c634e0798d2edab1e511abefb3987f81a118c1be055ae7b3",
+          "bytes": 23528,
+          "contentsSha256": "e34c7cea17f7f6245f58dbf3ecc30f50fbb436b7ea0717431a3fc91cefaed7c4",
           "entryCount": 19,
           "notices": [
             "package/LICENSE"
@@ -1423,9 +1423,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-permission-presets-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-permission-presets",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "42453ef55bfda12b6aee6ac478336eaaf401f7936d8a1ee76d212c82a752af61",
-          "bytes": 14700,
-          "contentsSha256": "c21aa7b31e1228f427bc9f92b8bdc353e6fc3806a294924a0b67dfdb6ab460dd",
+          "sha256": "88eb720d9650ef2162c8069e07c8e53c5e7974004ffd343e47cab5378a0d0eb9",
+          "bytes": 14697,
+          "contentsSha256": "ebe485939a0cf86a08b71cdf16ed9c4ba5ae172ef7641abaf9d3ee179f846a55",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -1435,9 +1435,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-persona-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-persona",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "c30bac6fd2fd556081a5fc0e210ec9729ed7e9f5dbadcbc7457889e93257281f",
-          "bytes": 6466,
-          "contentsSha256": "b47c5f8c7a840b856cac463ad2f0f96344ebd1a4495c23a7bd0bebda40bf197b",
+          "sha256": "7f08d1733fdcc97a73f2f465e135f2c187561a6506d6366049015df556415da8",
+          "bytes": 6471,
+          "contentsSha256": "79c465d4f38e952253e093e8e8fb2954973f9184e3a4633bb15afde0cdd160ee",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1447,9 +1447,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-plan-mode-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-plan-mode",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "4c913d1f2c9f6d8ecc50e4c39037fb6109d90ccacae5d57594c5d5d30f0f50fa",
-          "bytes": 19738,
-          "contentsSha256": "74de464f3d170a19e7ea5b3b6d5bff4485dab395fc110f93a15ab48a1daf2683",
+          "sha256": "cedb80b67905956a4ba918556e48d2424d0372cdd653e4a621196062ed7e814a",
+          "bytes": 19753,
+          "contentsSha256": "c9d48e5e61fc8a0fee207c35276e51290f3f51760da72a550bc1b0c2f0058158",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -1459,9 +1459,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-pwsh-local-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-pwsh-local",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "8fcc8d68ec4bf90b314cd4111f7cb742b49c00645b1cfac5540afbdc39d6df27",
-          "bytes": 16979,
-          "contentsSha256": "a090811bfbe4d2c2cb2c2a827c483278953f45d8be47f0f8bb7d7cfe8ffe81d5",
+          "sha256": "2fade5c75ff85c347ad8343edfe35ae070d8f148cdabffe83ef6c6370188b1e5",
+          "bytes": 16975,
+          "contentsSha256": "87f21f645f8b7fe6a675fae6b845c17d852079a370742a19d3dfbbb548141e81",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1471,9 +1471,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-pwsh-sandbox-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-pwsh-sandbox",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "cdb7d06c667e5b0d406ae1f4f4cbe587866567629794ad9071c213f36462d7b2",
-          "bytes": 9264,
-          "contentsSha256": "a0249edd555033270cc3da54349a55c6b33124b1e05a450cf01a74efd701c5e9",
+          "sha256": "0e2c35ee06e733db5776d743db5cf4be02ea9b33f597565abace2034759a42b3",
+          "bytes": 9266,
+          "contentsSha256": "7d5973c2ec91a14ecc87bf7c3c2fa3255a00a513b40797505eb18efbfaed2ea3",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1483,9 +1483,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-repeat-tool-reminder-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-repeat-tool-reminder",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d279a02ad9d9d32dfb6e2c1512491bc3b569a72ecb75cc69fafdff8b34b3ac9c",
-          "bytes": 13722,
-          "contentsSha256": "a2df9fd959616b0e987f275acf5df70346cd4a55739dcc5e73dfcd0b21852dce",
+          "sha256": "bc062f090dd7303f0e338909789e252825d1e1f989731db3792fdf25e09f875e",
+          "bytes": 13737,
+          "contentsSha256": "48a18961219d3c0c94954aa2f4f9a238791797b7f5e2cd104b24c0dc3889d09d",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1495,9 +1495,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-sandbox-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-sandbox",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "5de44fc0e4925fd3b8d43fcb902a5c1bb60a584af87753e9158bc4590c55b081",
-          "bytes": 14155,
-          "contentsSha256": "a57a6ed18c19d672efd9a7338141d0a2a307200a408ad36d6c67b6d74f5b6e81",
+          "sha256": "4195f5dc84332162c0686beb8663940d3f26f07a13456963b8aecaec367df544",
+          "bytes": 14158,
+          "contentsSha256": "9d889c5fad157e59a877fffdaf9c7bc31529f3784f75f615698c0eba260af6b7",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -1507,9 +1507,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-sandbox-local-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-sandbox-local",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "fc3047ce693d74fb8168e7ff5399d75c074e7883173371a1bf0c520ab7bb05d1",
-          "bytes": 17148,
-          "contentsSha256": "3086a4f4910b565b36602ff9f73d7abde3e1f8a1ec23be2fd4ea28f53608a3f3",
+          "sha256": "1d2a7a84be805eafd23a02dc1550f538f0abfb82155b5b449bd63664afe3d8d9",
+          "bytes": 17158,
+          "contentsSha256": "f05544923f4d9a512bbe82ca429341d10ec94baca886bb643263c449a2cd1900",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1519,9 +1519,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-sandbox-policy-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-sandbox-policy",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "1a1f59195eb1a475a37dbeed94ee5172ccbfc6f9ba6de8d5dbd597fbc1ea1ce5",
-          "bytes": 11307,
-          "contentsSha256": "ce9a38848f53f659828fd4f94cca95c53d35e8d72fc555029a86bfdad144d81a",
+          "sha256": "a0279682614e14decd54a8643581919e1206e0caa00c41bd85a508d9aa184e64",
+          "bytes": 11305,
+          "contentsSha256": "f1e73328a099294d30842561010c72fe7fc16648c0bd241993358f1001161d27",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1531,9 +1531,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-sandbox-windows-acl-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-sandbox-windows-acl",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "470b262311dfa98dc22bf38b25057caaf400916228dbd51f9d4bb2423d2600bd",
-          "bytes": 58060,
-          "contentsSha256": "9d4ea776c840ab9b0ff033a6894b3e9084d95388cfe14ce84d61b5fe32340fb4",
+          "sha256": "bc90a4eea42c2903820ae17eead95c5c65445fc36c38440b8723e40db9cd718a",
+          "bytes": 58065,
+          "contentsSha256": "50536f2cd86d3eec3afeac8f93073e112f5109f77ec62ca5b5debfcf36b8948b",
           "entryCount": 21,
           "notices": [
             "package/LICENSE"
@@ -1543,9 +1543,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-schedule-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-schedule",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "7f5d3271ff72a2a2666a7a4476e397fcbf9fbe6a4d244d8d2f5ce15b794a7a22",
-          "bytes": 32727,
-          "contentsSha256": "8defd3eb9dca3a1344600dc1ac199786ecb9003d846df780c4834b60bc163534",
+          "sha256": "ab138c2654d919779992fdcb99f0433d9961a1311ab566c4091e6a9a473cc4d5",
+          "bytes": 32734,
+          "contentsSha256": "697234323a34ce61de12cb97052a580bb0d754d5d175339739b07da8c3dffcc3",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -1567,9 +1567,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-sdk-client-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-sdk-client",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "c6e9e1dd498b4dc4e74576add4d92a5db41ff448b900073f00a605e70284c95c",
-          "bytes": 19117,
-          "contentsSha256": "4cdca10ea1d4bad7eb132366b8f31ebac4872d5ab2b6d70ba31ffeb1ff06e281",
+          "sha256": "f76fc6db1418d2b519720b7c7fbdeefa9afc4ae3eca8ba8a2ddd8c0cce3c6b20",
+          "bytes": 19123,
+          "contentsSha256": "d18589cd6aecfe2c99801a501df478e3d3b9c18ba45c74ebc7016b0d9fd3e8a6",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -1579,9 +1579,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-sdk-jsonrpc-demo-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-sdk-jsonrpc-demo",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "00313ab9b091f5960d91fc01dd2cefe96aaffa7002e0868fc55fbb232d92d886",
-          "bytes": 6267,
-          "contentsSha256": "ebbbf97bb9b345cc247130b3d709ba9167ac2ae69e343367ee1cd7a7a2d9d2e7",
+          "sha256": "2340ac8bca7fca88fa6d720f082d83006d8e4d2e43c1d0bfc2a06cae56e9bd40",
+          "bytes": 6266,
+          "contentsSha256": "22237083a8956a3d451dce356b0c8bb130f6f3ad3d4da1eaca7f93b042d647c2",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -1591,9 +1591,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-sdk-jsonrpc-server-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-sdk-jsonrpc-server",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d424fc86a9458c63907ebb2a60a9bfc454e5a565d3d161bbb243c20c9b816baf",
-          "bytes": 10228,
-          "contentsSha256": "df550a4bb5a10297dfb37347d23ed3370b21e89cc0d64cb6b57c8d6ab75e6b78",
+          "sha256": "5f75247317b99e9a1199ce0523bf5dd0282924d84e91d73b5ea7a45308f5c6ab",
+          "bytes": 10235,
+          "contentsSha256": "7efae2f76ecd158b193d25fdb431d531131e9e4190c24bf33e3095bfc0005929",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1603,9 +1603,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-sdk-protocol-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-sdk-protocol",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "66765bb50d99a8b00e55ed18dfae267d5e0b16c8973ee1674633e041ec01e2c0",
+          "sha256": "9630c9afa413f04e6964cce3c6ea0c2b3b2e0e68b9cf76876e854709fcf9575b",
           "bytes": 10458,
-          "contentsSha256": "e837285c938fd5b230ba7d8e76583f8a08d3b17c2dd6f8cfacd406e128cea070",
+          "contentsSha256": "32368c91956ac2b28b9f3a88d0a6c70c947ecf47ff66bf0f4cb493d2c9f2b7aa",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -1615,9 +1615,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "c9f88e7232ca1191496f9a29c69c4abbc7ce93436c7c2129c2d04dfe8b6eddb3",
-          "bytes": 87450,
-          "contentsSha256": "e57b023d606329bd0e1e4c276a5a96189435e8101295688d0db5e95b91603544",
+          "sha256": "0eeaf0d00ffcbd3a6a383ecde926a295a476fa3b1a78525653fc6fbcfa11875e",
+          "bytes": 88336,
+          "contentsSha256": "385f62e82986526247c2f96985983e57dbe2c50ecc73b66eca93637f17179927",
           "entryCount": 27,
           "notices": [
             "package/LICENSE"
@@ -1627,9 +1627,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-checkpoint-policy-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-checkpoint-policy",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "53e9d5aa985d34567ceecd32d4391b602a7f7fa4f66b0931bfb17eb42a4a700c",
-          "bytes": 6860,
-          "contentsSha256": "83c97d56b077cc8a347245c590407d5761a9bfc5c5b4befbbc70b238610f0d26",
+          "sha256": "4803d8aff951581ac05d1fdd1d2ce6e914aabd40d2a5a675c9fc6cae9963de53",
+          "bytes": 6859,
+          "contentsSha256": "1efab9a4391427d29eb8995c634e17c880c838aa1a5c7cc00a245c61e87341c8",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1639,9 +1639,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-log-export-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-log-export",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "f1bcd0acc74f0d9dc340a36fcfa9fb459ca34cdf4faafeaac9bc697afef6751d",
-          "bytes": 10663,
-          "contentsSha256": "ee76700c9a67a5429ff2c43e22cbe20f54aa065d461915c9af7bf05eb1ec8330",
+          "sha256": "c1441f1cbf7423b0c83fc2f13a5f90b0f595e2e844c2e1b82662735c3f4e2ffa",
+          "bytes": 10669,
+          "contentsSha256": "ba1c5cf2a696f7fc9128d0b67d58154d65a378317c24b78d61b4c6808c86a085",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -1651,9 +1651,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-persistence-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-persistence",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "1c7a7758d5f73df78ddff4eafaef1f65446d90c327d945169ffbd5cf0c3611da",
-          "bytes": 39464,
-          "contentsSha256": "b19c38b0ccd12a86bb806184b8d14216a6e2f2a941821b432410e9c95643d3cb",
+          "sha256": "581a1e79eba11b4ec1e227a986253466beec1e5ea4562576d0263bdd7a72e8dd",
+          "bytes": 39463,
+          "contentsSha256": "f000ab8ba7a61f18abdba3a18a30d69f604114c1779ec1103450506dd4bd3674",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -1663,9 +1663,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-persistence-jsonl-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-persistence-jsonl",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "7e1157b5b7b76a53e3163d76cef0351705d5b4aa545988357150be7b9c8cd203",
-          "bytes": 35333,
-          "contentsSha256": "96d3c39716e206ec0f6f960b8a7dc5ab333b742357a69e607631646aae2bd8e2",
+          "sha256": "19c14cdabc6e0e8a4bcdd49646a04f8cff62f051769b559bd335ed1f9cd693db",
+          "bytes": 35330,
+          "contentsSha256": "3988483611a7a28774bbcdb2adcdc8239dbde26a41a72353c975d5493c4bc2d5",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -1675,9 +1675,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-persistence-sqlite-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-persistence-sqlite",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "20d125777ad8271b88a3f84624b978f74adf85e279f3a42a88acfe9ba95df019",
-          "bytes": 18407,
-          "contentsSha256": "e4b3754dce3b4dabcde067f7655b5dfb71f6c1dce96adef8f7897e264a0d3d33",
+          "sha256": "3f08ae768e65d167c61856c0841faf099933b0239d06276c7f34d569b2388803",
+          "bytes": 18411,
+          "contentsSha256": "01ff57a265c0fa7b9c552be8c084f8f20dee92d647c8a5d3337e1f58df600b80",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1687,9 +1687,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-projection-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-projection",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "40b7c07b8b46e48d48de15acb61c7af0aeb555e93c88563494a9177c1c41c3c2",
-          "bytes": 17459,
-          "contentsSha256": "b9ab9c5807e6971d86ac42749258a003e26996b15e1a6de279b32cd4baaecc30",
+          "sha256": "403ae2bf90fab30fa7a7e5d7c9933dc111c97aba92744112973c2fd555f42b94",
+          "bytes": 17451,
+          "contentsSha256": "5617a8fda699d578e8260a611792364446c797a92511849413f7e24ba76a7063",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -1699,9 +1699,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-projection-cache-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-projection-cache",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "7fc963f2970646e977ee49e882097972de3c84810bcf6c846984ff6c7532c8a2",
-          "bytes": 13189,
-          "contentsSha256": "70ab93626468e6092759fd3a53a526c7df39b5319d9c4b5872d078e0c1d6524b",
+          "sha256": "efdf94b0c550885ec6d77db1b57a1a4f86deba8b2eaa6eeebc6b344284933f61",
+          "bytes": 13180,
+          "contentsSha256": "814ef5ea26f96e1a803f5c8818b0b1e01b77c052000f8eb9b76ce85c57e6bcee",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1711,9 +1711,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-query-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-query",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "99dc0f8b74400a226036f1705a0bf4768d1c253f276d22f08f03113f3b34ebdb",
-          "bytes": 25172,
-          "contentsSha256": "2280127be0e14ca9466f971ae0f301021a0df26b7fe56c2e2f248eacd0c56282",
+          "sha256": "6b3b5b03f9cf0c3182203591c78fd3d824dc003cbab845cce8f1b041bf55ef5d",
+          "bytes": 25174,
+          "contentsSha256": "a3037a70f855c71e3bb8e40ec6c8089d375f582311fb351bb579ca10ed14ec7a",
           "entryCount": 18,
           "notices": [
             "package/LICENSE"
@@ -1723,9 +1723,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-query-sqlite-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-query-sqlite",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "a93a8c0de28e51d789c22ae7fcf4afdf0001e288793ca94fdd8002e03ed840b6",
-          "bytes": 24511,
-          "contentsSha256": "249c0e156dd8b82bc750594ca69ae7f4b7403e1d9f99dd3b5323eae405abf2c6",
+          "sha256": "d84fcc4115aec1d156adba3a7d4a94cbe88398e2df3fdee591c8491a62610468",
+          "bytes": 24524,
+          "contentsSha256": "8325050ce8bede775319c3892c891e6cd0fcd88c07f67d05043e04fd3c828dc6",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -1735,9 +1735,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-reference-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-reference",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "6a4a46053e94b718bf74607623b0d829e2d400f35e96828f930867093b40a9ff",
-          "bytes": 16470,
-          "contentsSha256": "f6c96b32e7ffec0696cf0db20479205eef53bcd48e4e9a7037868a61fcf65975",
+          "sha256": "3270a251064eb5a645b95e71bb71e6dd14414bf36a5dab8255a3ad258af403ae",
+          "bytes": 16466,
+          "contentsSha256": "3c4ab35ff84905fca938c8c4400935b62b624de07135dcd5ed8cff93026897f2",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -1747,9 +1747,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-stats-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-stats",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "774a3b5a8dd832148e688e6329a917fe8c5b42e5c8802700f4badadafc5d6a3b",
-          "bytes": 10456,
-          "contentsSha256": "ee3d22b2f052b3c30124af716c0eba9908a3d4a8ac9f22a95a6b4ab8530dd299",
+          "sha256": "9c02ab1b6b653c491534118c269e596880e5bdeff18f1e3888698b263022f98a",
+          "bytes": 10448,
+          "contentsSha256": "4aa20f3b5e722cfaf563144beac754418ef47640a7c5bda3886d94a462419622",
           "entryCount": 17,
           "notices": [
             "package/LICENSE"
@@ -1771,9 +1771,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-telemetry-otel-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-telemetry-otel",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "cffa6a8efe9ca066c069ffe592d13b7b3ac041555f552554da05e60bd92e6194",
-          "bytes": 13195,
-          "contentsSha256": "f15cc026b9470a7a399b0962bf8e1ef6421f3aed3bb0fc9cc1830a350dc43e13",
+          "sha256": "235ba10de3f22a1b883df96596bdae2418065d119b57575413060c23ef8b92ff",
+          "bytes": 13188,
+          "contentsSha256": "2e50063a1aa74af403b4e28368bc752855c69468a419d4337829948a52160e93",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1783,9 +1783,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-title-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-title",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "8dad98dc103c84d2ac153accd1d3c8ead5d80ffd71fe7673a919073e95205959",
+          "sha256": "76009ea5eb51ebf2a7648118a1b57c43cad4acc961a5fa2f3ed6610a3a7d79b5",
           "bytes": 22700,
-          "contentsSha256": "c420d228e3a79ab1156e9590970b6843e652b2a15a41e86736a3e0026f1620f8",
+          "contentsSha256": "a8c1f42c5af861636735643e56325ae609b98715a87f43197151e318170b0246",
           "entryCount": 17,
           "notices": [
             "package/LICENSE"
@@ -1795,9 +1795,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-title-all-prompts-llm-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-title-all-prompts-llm",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "cb157b6406fc845f2a4b7ab23866082c4f0151b267c736a00fa15c86388b951b",
-          "bytes": 4873,
-          "contentsSha256": "74475abc6a21c386bd0fb41d4d67d0b91c7abb5b28eb17129a40eccb835d227d",
+          "sha256": "7f6287fe1dea4ee26df6ca45337a828069148fcb4da822fe69571eb911c2ed97",
+          "bytes": 4870,
+          "contentsSha256": "2ecf80902d695c4d36138a0caccdf2b1149dd5fece8a7b40eeb69b8a1ef222f6",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1807,9 +1807,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-title-first-prompt-llm-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-title-first-prompt-llm",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "491e92cb38ce1c010dc9670a192139337cb5a80beb210e07507db5d6200ef49e",
-          "bytes": 4693,
-          "contentsSha256": "caa38cfa73ddb75b68f9ebb82f1853680907a3d8d234f24f2560f3856978fdf0",
+          "sha256": "c5cedb8b556f56320fae663340b60948d8ee8d27782b095f1b698eae13c12118",
+          "bytes": 4691,
+          "contentsSha256": "96c5f584d0f5017884a37c4fbd8fc9afe5e1e6a76b4e08cdbb4e48c6f83cee9a",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1819,9 +1819,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-session-title-llm-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-session-title-llm",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "315894a637b778562d1eb224cfebd7859e3be3271ad96f881664b602a5b93d0c",
-          "bytes": 10915,
-          "contentsSha256": "3cd224d2b328fd3a4e0a5aa6d1a31ad104271a42b39664b00c4f730f84095e7d",
+          "sha256": "34a673f6b91acbe40630c3ffb68129bd754d8b8dccd652589c4fa204cda91c9e",
+          "bytes": 10911,
+          "contentsSha256": "8e929d156eb98510f1985ec22e89ffc5884e19e1e1cc3d6597b634aef55e85d7",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1831,9 +1831,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-settings-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-settings",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "7c4f9fd3cea6b82793ec0347b238fa507a40f00a9de1a6e39816ad55c15705a7",
-          "bytes": 31109,
-          "contentsSha256": "aeb93097ccc5376900dcaab9793dd9d4e7dfcd1ffc069c152acc183b6e91f635",
+          "sha256": "ca1d9332888be981d8acf451cf9043a0fcf4675a2e96201edda0094e384e171e",
+          "bytes": 31105,
+          "contentsSha256": "922d35c088d1d6d91a361294ab57c862fee6bc8ee6c4a00376da8b9598e344b7",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -1843,9 +1843,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-settings-file-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-settings-file",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "680a0aade0fa0f37822cb70a5542cd2ee6564362c5cc9e9158d96f972a6013fa",
-          "bytes": 12050,
-          "contentsSha256": "962e86930daf594dcb654588df93779c9991f1bfc769dd4f573654b85bab8777",
+          "sha256": "dca925444aed2cfaa76be1aa24cb3ec80cf95a41d630b564fdcd905b7f329a84",
+          "bytes": 12033,
+          "contentsSha256": "42ee040c4b4fb54ebb8b9981d3d42282e894fb7053d792a28c8ec99c7ad511bc",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1855,9 +1855,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-shell-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-shell",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "1e24c6be28bdbf5455aa03c9d8b710a892af02e89e63c783a68a51274c7d1bb5",
-          "bytes": 13136,
-          "contentsSha256": "d3db0856880e71b5edb81d80f01dff293890ba481262361ebed744eac7c3a21c",
+          "sha256": "a76be6ee0dc3de4c553657d0789b13af4e7026e92a4cc65ee97566545fc5f373",
+          "bytes": 13132,
+          "contentsSha256": "9cef2a3039ee37952b0fd100921c5766a8674f0a30baf55234de340b3509fc50",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -1867,9 +1867,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-shell-env-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-shell-env",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "7100b901a76c124e6696218d446eaa900935892d84bab88b00b3b52e1d1c96c4",
-          "bytes": 8088,
-          "contentsSha256": "19b29160130aed39cd954164e58f61a335e7e4a9da5fde2edf2e94eb2f9e4ad8",
+          "sha256": "0d6a817aa02cc1e8571d351b1537fd74e43b4daa8817e0d9cdbac35c0210ca25",
+          "bytes": 8092,
+          "contentsSha256": "5553861b4dd50463bc619c05b8d4957261d368d47d87d60fc86076bec621891a",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1879,9 +1879,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-skill-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-skill",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "9266cc44f0e06af1c7d4f9fb54f7b60a721e4d56b0b002ce5c1ce4834565d392",
-          "bytes": 20858,
-          "contentsSha256": "c348f62c788a2227cdf499fd35a38b2b569c381e2b5d194c3ef86594c47fd095",
+          "sha256": "5d99909b4d564f48f0f7b602293b55ec6792da50e4b625b29ec1dbcc1293231c",
+          "bytes": 20848,
+          "contentsSha256": "b9ab27e3a22823eb95864e27aeae8b3db861363580bc89e1563bf64f796c210d",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1903,9 +1903,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-skill-filesystem-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-skill-filesystem",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d806a6776be8e513cbaf768b1b2ed56560bd152b7de85c160eb68e8b3e91c7c3",
-          "bytes": 18962,
-          "contentsSha256": "6cc2c8353a832e8481b8adbea3b65aed205c2dfabd8cd1e45e61db1884dcc712",
+          "sha256": "1400779e4cec773bef439cc7cd82cb33586cbb501cba740cd32cd776237a5107",
+          "bytes": 18965,
+          "contentsSha256": "e7734ff023b8e4259b5eb1298a4f24d2268e1572cc84d035ae20f6f037fdc946",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -1915,9 +1915,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-spill-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-spill",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "8146b6adf4f789c860329d51226dadd9047acb8e100ef47336f25f29c10f26a7",
+          "sha256": "5e7358083b92cd225b1a099f151c7e193113b50c6994c784bab3799b4f57e62c",
           "bytes": 7556,
-          "contentsSha256": "92280292238867de1b877158289bed30e821f0bf36c494e8bd0d802316f68e9e",
+          "contentsSha256": "328ea601f2e2493cd4db173882a9141dcc0c2be071aac44ffc5173d9e4387232",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1927,9 +1927,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-spill-local-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-spill-local",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "34fc9944f08a5ce6e898358296d251dfd6c863ec7a9fca17ff4f6d44c6b4be22",
-          "bytes": 7857,
-          "contentsSha256": "4a2ea1b4569f2322a402fa2b70d4b5b3711f649b9ce3d6647cca2c06061b4184",
+          "sha256": "7e05ea2245987dc278bcb82951e63484ede2ed9838ad4f8410482c1b9122deda",
+          "bytes": 7852,
+          "contentsSha256": "dd3ad8c31a286a7b80260817bb798382ecefae099e3101030b22a786eead7672",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1939,9 +1939,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-spill-policy-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-spill-policy",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "46aeacb9ccba83afbec9a7c806f4e2b0aa639c7577955bb3f30d1a876f8d0ee8",
-          "bytes": 10635,
-          "contentsSha256": "6b5e5cb76350568a4bf365f461530ded1a35170c5f1abde3450e50b5104e9714",
+          "sha256": "22a54628d97a7451d34866f3aa8fbd166fec2d42d86a82912e5004177bfbaec2",
+          "bytes": 10638,
+          "contentsSha256": "108a772540eacf8bfa322489a71cf8f65d1de15416105fec53f46f7a0e1d79db",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -1963,9 +1963,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-storage-domain-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-storage-domain",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "ed81caba8436f78303ccfaa64946909bf9a7038b5705fcaf86e1d0b53c11d4f9",
-          "bytes": 14905,
-          "contentsSha256": "c046f5edc30c2edf1d738c9e8bc760ad4f9e1ecd288a67fe3edeebc570f90b65",
+          "sha256": "c090c5d7123f4087d8d4094177ad1167a53676eca32444422bd4cd8907ea15c8",
+          "bytes": 14901,
+          "contentsSha256": "f7b0caa00b3f11610d41a9f899c76f85c4dc9e1b800886def2b1e72c0193d25e",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -1975,9 +1975,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-storage-json-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-storage-json",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "54adc9f75bf6ce8630ebc7b09550520abde0fade6e1eb7f2eebc039ab70dbd4e",
-          "bytes": 8769,
-          "contentsSha256": "0ec4d4befb297fb7432b10cb7fe8a0308d3af92ad0a445de511288c1803cca04",
+          "sha256": "0b21e64f10e9dbf1807cd0c99d98338dd3da8a0273cf9f69d8fb0693a239ffe1",
+          "bytes": 8776,
+          "contentsSha256": "8d2a5582c5653cf96e38eb67d2f1d415b83442b2f8b36f1b185adbfb050504d2",
           "entryCount": 12,
           "notices": [
             "package/LICENSE"
@@ -1987,9 +1987,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-storage-sqlite-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-storage-sqlite",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "988ed166d5f15bd2a2d8f551e78d9c28eb287ca80b9b197ed4df3ddd5dc34e5a",
-          "bytes": 10353,
-          "contentsSha256": "87b515d6b3405a30f22395cdf0ceaa35c4cf11190d5f0e440da8dbe511972dd8",
+          "sha256": "253dcf1a12cdf6d8cf1c3b929acd075b4bab99ccba81cb4f9ae18357629879f1",
+          "bytes": 10346,
+          "contentsSha256": "133197ca13f8427a0c34e6fd7ce36e207469d5c007e5e2911a3aa1e9dd5a2df8",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -1999,9 +1999,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-subagent-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-subagent",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "dedb01f8f832457334b53509d9fbe8297c2b427f5266febee4e23fbd8582ef57",
-          "bytes": 124423,
-          "contentsSha256": "8d987cbc77168e9ad248eb79a92ce961382eb1552622818c124f02b890dea62b",
+          "sha256": "3d488761d75db35c099055e47e4488f6bcd20948687965098d6f7d50e2bc3e72",
+          "bytes": 124427,
+          "contentsSha256": "0424b6581fdf0d23127c00a0de3aed96b05d7cb17d3abe372b297307c6414861",
           "entryCount": 43,
           "notices": [
             "package/LICENSE"
@@ -2011,9 +2011,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-subagent-acp-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-subagent-acp",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "e477ae4f1ed33ebbaf65b2fd2b52c438898ddff0b337abd116fcb548b2806c6a",
-          "bytes": 16244,
-          "contentsSha256": "4e5ae3a9fd5613c2b8fd51e1047fc4c9af03b00a9f9c4c66a3455f953e029926",
+          "sha256": "40e60f415e6c4879629f8f445e3a76297dd91e7d54841c6f3d4de3ae4bfadb80",
+          "bytes": 16252,
+          "contentsSha256": "3ce9d5de22d4ab02badb8f25952848f88cbc93f1284e4302c05d6f07c6e471b6",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -2023,9 +2023,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-subagent-claude-code-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-subagent-claude-code",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "e421fd52a309c679137678f83058e140d73b2de4bb778cb43377cd3d7fcb6e40",
-          "bytes": 17581,
-          "contentsSha256": "79ec2b5ce7964511f942d61e3adb4258b6e733bb6233fb1f956cabe413a04cb0",
+          "sha256": "d32f004d83fd687d56bd8e31a0ac180b5f270ba0dfac3f1de111e01145125d1f",
+          "bytes": 17580,
+          "contentsSha256": "1d3739b58e037f70921a12ca1b9417c96b74229547b783d43449f726591b511a",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2035,9 +2035,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-subagent-codex-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-subagent-codex",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "0c98b49aaf84816a5f1a6744a2a16291a3c6a88d0c80234a6c1415b4d2954335",
-          "bytes": 17311,
-          "contentsSha256": "e76b153af2f2e2fec398187ece7d8a4a7f2e7ba56866ba3d6c3bbe58f4e8d3f1",
+          "sha256": "cd4de19a12e563249fc315ac9b7f6e9a00d44371fcdba935e619f15115390b35",
+          "bytes": 17308,
+          "contentsSha256": "13bff51b7caa437dffd3fa6091f438237502a6896f3f6a9b8c8333cbc3b2bdea",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2047,9 +2047,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-subagent-dsh-sdk-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-subagent-dsh-sdk",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "f2265a5faa31f7216472c79b607df3c3f9195a820c21832692b206439758c993",
-          "bytes": 13876,
-          "contentsSha256": "075e3e820580fb53c9c10b1db9efc0089d1bf02e48c12b7c5c748dc6307b26fa",
+          "sha256": "4ced2fdd0aa0c982fe1bf9230c5faedaae289222f558da13c7c62530cd9b61db",
+          "bytes": 13879,
+          "contentsSha256": "3dbd3778cb49ae20de37294ede6f2163e8f5f032e963d754b85bf2e702236c88",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -2059,9 +2059,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-subagent-fork-in-process-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-subagent-fork-in-process",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "37a2e3f0ef6e0d1a4982dcb16e56119c8865a4c454edf2ef10c84cbc1af31a7c",
-          "bytes": 7405,
-          "contentsSha256": "bc30b4dce1382482e89596278c3c7956c865a4727c34358d053d0663c69e3f76",
+          "sha256": "8b2b488a17de2b6ef8cd2336ec74707a2baced594279d56e01a114abb40921af",
+          "bytes": 7406,
+          "contentsSha256": "742eb2896d261b01a8559c98586120c283c080a9e6bec85caad31e0e5ecffce1",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2071,9 +2071,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-subagent-in-process-driver-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-subagent-in-process-driver",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "0c9baf79920bebbed709336dcb4d29bf8d4b50d9e64f5c5983fec2448aae6ae7",
-          "bytes": 14403,
-          "contentsSha256": "0f2622bb8b68456227d20e0186fb099310e824d7009dec1c38663440c9f73c81",
+          "sha256": "78ff0e79bf5ffecc002e89498c30c95e32c5235c69a23e57f7dce2b66b31339a",
+          "bytes": 14395,
+          "contentsSha256": "68e2809fc333b3a9595c8abf5af3417a1929c60a0f8584dc49c7feb5bd6af52e",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -2083,9 +2083,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-subagent-spawn-in-process-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-subagent-spawn-in-process",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "cf5f0d8c0f5633afee4b673dc14c5031592314b9ddc5986c310f41024ee88f74",
-          "bytes": 6060,
-          "contentsSha256": "82576293600df24a51dde975f0b66dd02ad1b7eedd7e1f23b1576c973e4ba060",
+          "sha256": "2aa77ecc1a6408dd5b7d01237815cb35e708c729599d17a2b3e63d31c4c65535",
+          "bytes": 6049,
+          "contentsSha256": "4ca7c95210d59e038eddd3dfab8e0131b734a794d48d793488e33fb2da74536a",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2107,9 +2107,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-subprocess-e2b-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-subprocess-e2b",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "e8bd91fd2da948c8ecc7b51d40326b5ae70a935b7803312cdef5ee6f0cd4265e",
+          "sha256": "d73266f8b005a83b7f1ca07c8131caeb9e97d0e953a33baf699d5e270d91f261",
           "bytes": 28152,
-          "contentsSha256": "50ee0267e9d5efd398728110aee2867f77da370540aa866d12e31a3487b5c405",
+          "contentsSha256": "218570fc374858fb39a870560ee15c8bceaa57480f64d89c178bb80b98cd5e9b",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -2119,9 +2119,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-subprocess-local-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-subprocess-local",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "26363d5ec941087e264485804cb5dffc1da8c657ae61e31af8b72daa1254d432",
-          "bytes": 25343,
-          "contentsSha256": "78862f75d57747f0e74893e601ae66740e4b9e000410478916bec17d91498208",
+          "sha256": "75e9c07d2a3460a29fa90ba3cec01078215fa59e6b619319c7be1026a94d2f80",
+          "bytes": 25340,
+          "contentsSha256": "d2dd4b16c009f53367463810b77422dc85ac9400599817fcfc9de1116edce4bf",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -2131,9 +2131,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-system-prompt-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-system-prompt",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "27bc3b0b708c07274de40163355afc588aab85f12a4799e8146e4c79f3a50ccc",
-          "bytes": 18851,
-          "contentsSha256": "ee24e8d148e97ec9af08c381c248531cde2d40b480cffdeb55f464775a811594",
+          "sha256": "4c39ee81b40e9c80149951e987eeba0b36ba663420e344195ddc3d84aa4de0a1",
+          "bytes": 18843,
+          "contentsSha256": "29df142cd275dcd5d48cfa7ad920f09d545fbaa36c5ef3a6b24eb7206385b217",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2143,9 +2143,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-terminal-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-terminal",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "fba4bb1d7dfd0febdb83ada0be657391813e382b7386d4c4aae5d1d10b65a2ec",
-          "bytes": 11872,
-          "contentsSha256": "0bc18a6756d697e92ef1c1a76fdc1138370b24056a8c886c0fa07ee459468d92",
+          "sha256": "15ec370bbc034fd61a5568e2e771892a64aa996259d712d76208090006f1048f",
+          "bytes": 11865,
+          "contentsSha256": "9a29ae7b48d4d94576bc7e6a343c240fa42e9678e866df5d8860a71d02bfbd3a",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -2155,9 +2155,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-terminal-bash-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-terminal-bash",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "7a69d2c2221875c8c8d51f3bc07b48074d8e4db1f925b6e1a6cd7f2230befd2b",
-          "bytes": 17294,
-          "contentsSha256": "dc868936c314842586fb0b5570e37d2dcfef5f95500570f01ce6bc090e9124e4",
+          "sha256": "45dc1a23b142e2243c196964fe04698cda04a3ff2f8f21d75250971b46b721d5",
+          "bytes": 17305,
+          "contentsSha256": "af78f97700812527b211480d758ba2e8a2027c5c10698b03e7359e52b4dfee6f",
           "entryCount": 12,
           "notices": [
             "package/LICENSE"
@@ -2167,9 +2167,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-time-context-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-time-context",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "e9845f975fb121629bed43e5698744b11362855a1f0c93f944cf7914da891c02",
+          "sha256": "bf432eaa6b19ccd969db88d240dd8cc3e97b68112e29cef1d32d0a637b36f3d1",
           "bytes": 15475,
-          "contentsSha256": "e936e0817fe85cd366c4930493b3022670b78d7b6aaa39e607e60c0e68738448",
+          "contentsSha256": "b7bde44bd8c2672f6763aeb5308382039626b939ca14c05841592f1b571a741f",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2191,9 +2191,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tmux-context-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tmux-context",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "23a15c3be87d05eb1653f7432e9a3de5d88dcc7230e76befbd3e2f07f54b8c20",
-          "bytes": 12169,
-          "contentsSha256": "f6262958f447cba704960d9bff3c0c4979e8b47e4dbc6a2b41bddb3da549e3c7",
+          "sha256": "4360485f88c8b00c6ff74273a5e2e00bc1a5563134feca3a047c297faa65c59c",
+          "bytes": 12173,
+          "contentsSha256": "ad84bed4cc0d45f8613497af0ed55cc725c64432a2415ddabfebfdd69f4d0723",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2203,9 +2203,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-token-meter-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-token-meter",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "0ec3884debf5efb300630ebb833539143356a863dd27961147f35f6f1e744738",
-          "bytes": 27937,
-          "contentsSha256": "b8b8339d08d05cdb7a61137ec101bb93294f7bf326ae4ae14e70b84e35e550d2",
+          "sha256": "3750e9bbd416388f7cb2c1b000d9e06088bc341bcf6b3764b7eb5f0c3bf10ec1",
+          "bytes": 27949,
+          "contentsSha256": "0ad96670897e4b85837436fb6011ecc061253e8383034a72623cbd82c52440ce",
           "entryCount": 27,
           "notices": [
             "package/LICENSE"
@@ -2215,9 +2215,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-ask-user-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-ask-user",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "7a97dd14a4fd031c885bd96218680f335f0abf05bd27a530406b167d37654abe",
-          "bytes": 6615,
-          "contentsSha256": "bc1877b24dacc9b571c3eb8ee9663b259d16ffb81c86611c7746b86b977d4fc0",
+          "sha256": "0c27e87dc6dd53d408549572203adcdae981f0cab932a8c72eb690122d893b48",
+          "bytes": 6629,
+          "contentsSha256": "39a27ba4904055a0ad0967d70cb4ce71f43132ddc3074db694674fc3b12c0a83",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2227,9 +2227,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-bash-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-bash",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "e39b62e795e750c54414df4ad3fcebfe677984ead159cf88e1810613825b13d9",
-          "bytes": 20111,
-          "contentsSha256": "603fef8cd5713d50c4f16aff389af4102b3b5c1ec051529dcbc46e1e861df68a",
+          "sha256": "cfb1dcaa58d380ff605b6226d4e82f6286d256fa892f0122dafb462c478a9ae1",
+          "bytes": 20101,
+          "contentsSha256": "819b8664ac6b079873a7c36710500689d02ca810b7876f40da0151e7622138a8",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2239,9 +2239,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-bash-persistent-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-bash-persistent",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "e25313f51548d01f8dd3046c81d854f8e35823bea5b30a50998e1e287d1fd658",
-          "bytes": 10220,
-          "contentsSha256": "b510423568402d5bb33adc784d42230af8372e02b77d6deb18d837d45c8e4d84",
+          "sha256": "f3317f7ca3652cf357105abbdd9056a02e3d60831a807635ade9e18218768c10",
+          "bytes": 10219,
+          "contentsSha256": "cbd669a6725fda6b7a2cadab66fe871904a17bd3c239dd3fc0473fe6a17f097e",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2251,9 +2251,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-call-timeout-policy-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-call-timeout-policy",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "4a8e91e5fd21115cdaa3d1772965daebeee419f19a568a354097a3f1d99e9782",
-          "bytes": 8418,
-          "contentsSha256": "5a08e2384987c29b1f7b87e04e5dcb12c3005a289b72cb948e8d178f0713a704",
+          "sha256": "8ae2bc11c8703b397334dd77bf943208cbe8c9bdf3557abd0769059245bc5ef9",
+          "bytes": 8416,
+          "contentsSha256": "9b02718b935083db9c3cb99b6341677ae64bc8558b5c6836c970f630e036286a",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2263,9 +2263,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-cordis-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-cordis",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "0f6694e4e4751f8738b8a320ec42e95b06af78edb3fc5d5f571f70d6557c95af",
-          "bytes": 107082,
-          "contentsSha256": "ccd970cfb6e5ad495ad2817abeb07bfcc61ac993e35eb55076ed9fb7b24369f6",
+          "sha256": "f706a7d7617a14dded9ebfab19548337ae4450fd8afa5dd6fe6a1b41abe9d4cc",
+          "bytes": 107068,
+          "contentsSha256": "35651374ab8f1d016b630d9fd614def2e39c32b3a1e0cba5e4e4f438881f7fd1",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -2275,9 +2275,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-fs-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-fs",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "64a8ecc3c7d9cb81183d2fbc992c15acaa89c741da4b3bfab3db8936539790cc",
-          "bytes": 34630,
-          "contentsSha256": "7ea421d111e6ba5f39617e4fedb4b46de9f29831a34e7c4a92808ec69c1c917b",
+          "sha256": "93f81cb44a5a8f71bcfec38f36e01e44f2cf4bf3469a44f323b15fc5c5d13135",
+          "bytes": 34635,
+          "contentsSha256": "fe4a0ab778462360e9f80b650d2cafe7569e6054cb0d583a1b9a6290ce36ff26",
           "entryCount": 19,
           "notices": [
             "package/LICENSE"
@@ -2287,9 +2287,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-fs-search-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-fs-search",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "e42d5d0d00638482b5c4244d06e67ced73c46dbd5647d8a8fe33d868b1aa2199",
-          "bytes": 38036,
-          "contentsSha256": "2b8a92bf853a5f10bfbccd615ad4414be8fe6704a48bd41a24d2ef065ec82b04",
+          "sha256": "522dedb69f7ec2503684eb5fbac0872a2ef0dba01bf3520e27419034be1daa3c",
+          "bytes": 38046,
+          "contentsSha256": "3493ef345480fedec7cdc1dc5da2eb7b60ec3e025a12e7212ecf888569a5827f",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -2299,9 +2299,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-goal-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-goal",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "92ba59f86e9cd15ba00309839e83c5fbea449d749e2dce8afbca7255f5d9af3b",
-          "bytes": 13337,
-          "contentsSha256": "538050f5578df54ff0ac80ffade79da93417bcd07774ab62c34414716bd3c076",
+          "sha256": "cf62c8612a8d010b92075c340cfed58727ee0bfba12a19906fc7900ab96c4750",
+          "bytes": 13339,
+          "contentsSha256": "1d4c4b071e8dc481446a0f8e35d6ce7d494905ec0d6275774d46171860a7f9de",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2311,9 +2311,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-jobs-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-jobs",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "65302e1d74d382ed8d9f99930802790931df3578a8fbf6804ed8e69b8b122c07",
-          "bytes": 13587,
-          "contentsSha256": "e8852b62498b83322c336f1a5ef1609f7511705d8111404991d02f16736b7028",
+          "sha256": "0df2d0944c9775bc5077ea6082b6425fe8b7a22eab7aaf013c507be744edb32e",
+          "bytes": 13582,
+          "contentsSha256": "d4ac560fc203413e7df414236f517ee6efb5a49f3446fe0046cf1f5d6ad456d3",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2323,9 +2323,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-lsp-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-lsp",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "5fe0b33bab49710d981497947083d949055715a29411235224480ad7d4a0da66",
-          "bytes": 13124,
-          "contentsSha256": "6ff762ec52b712af99db24eade9a8620df59ac0578d29e786cd4bfa5bd12c092",
+          "sha256": "1f9aee5d2ac407b1c6b6f78a18c944f05e59630dadda96cbfe1d911fd92657e3",
+          "bytes": 13123,
+          "contentsSha256": "d6773819ccac946e78625e613f5fc44ca0d7e713d5aa2657e2c0f1252a86c1e5",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2335,9 +2335,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-pwsh-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-pwsh",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "ae96d411ef06ee07ee20fdf98a38e5cac26ba2a1749ebf59cf23dfbe06cd33d8",
-          "bytes": 18772,
-          "contentsSha256": "0d48bc044d75fa7a20f5a6eb324a32403cda5a57b603cff4561f644209673675",
+          "sha256": "5d5a9bf1df9c49a48923a1bb6bf040eca137764bf2f6d49dfbb06ef5517f6e50",
+          "bytes": 18786,
+          "contentsSha256": "5f2a1ce71ce0bc69bee527bd27192f9dd42875d2e1ccb747dc146b6dd5d61fce",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2347,9 +2347,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-ralph-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-ralph",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "26aa05270ac4ad9769b9034717f227a0174fbcfe856f6d9ed923b46f238cea7f",
-          "bytes": 13734,
-          "contentsSha256": "ebcec6f66917618322dd3557c3b38cf919bd56f2a5e9aaae0bf1f90f585fbf4b",
+          "sha256": "d6b9d42c63d3686be966b88f57dee91d69e50d42e9589de9539f027238076795",
+          "bytes": 13735,
+          "contentsSha256": "11218c60751be1df25d77a1adc830a9b85d01553b64f76f0093d3ca76c6385a1",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2359,9 +2359,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-session-query-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-session-query",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "c0b76ddfbd96dfeb4b717f8d94ed1ea7d20f40e2cc3a18c1a3af916a80a1ae00",
+          "sha256": "d0c126a1f228482b53271af126a08e56354424ee0125c50f58171eaa57f01c93",
           "bytes": 19088,
-          "contentsSha256": "353e845d4c6b18b589a896f424aa0d8d1727fd028a0f9c8a69bd6172754f8735",
+          "contentsSha256": "64a09eeb7b504c4e3ae1bd9a22d7610a835a5aca48679d76801802a156e04ad7",
           "entryCount": 14,
           "notices": [
             "package/LICENSE"
@@ -2371,9 +2371,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-skill-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-skill",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d74d2bb9b3f593814d0791d4d42d863d0aaf0c5b2f9693ee4d8452c9911aec83",
-          "bytes": 15278,
-          "contentsSha256": "ba175acb66d9ef43ce0e194b8d94d9d980ae8413dc72db53fabb578f81de9715",
+          "sha256": "e19631df30f1b3487e0f5793ac6d88602aa2c2ffe802f80e8fc0cc82a5bbe5c8",
+          "bytes": 15280,
+          "contentsSha256": "35ccc1beb9911dd78d0fca265ec8e6ed1c0b49132ffa3993a00bc2ddcb9d21fe",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2383,9 +2383,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-str-replace-editor-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-str-replace-editor",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "df24014c8c0431abd026b8fecc5f3adbff71bd58b4ab5b3b22397016c1dcacd9",
+          "sha256": "457fbe2c3da4ae93c97de69c7c4f93aa5ff81fc4124608ee1995acb597a4c6cc",
           "bytes": 9793,
-          "contentsSha256": "8e9d47b0f1cb0f641c3e471a604e259f130e3d1edaa7bf1db37d17ad28d15e04",
+          "contentsSha256": "757509ce82df4a21a09ddd4bbe3170057bc222afda366be0d21cf8c94b26b907",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2395,9 +2395,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-subagent-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-subagent",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "0373b24d6c670909c767fcdc0eaade51f293c1de590a105251599608fbc4c6df",
-          "bytes": 14566,
-          "contentsSha256": "8d6e23c562c6ac86cdabc94233cfc7fdc749347f3ef0ec4d2e5e837f59cc51d4",
+          "sha256": "2933c4834ef837864504920395e640a17d6fffc36f8edaa351d133ccf1bf825c",
+          "bytes": 14569,
+          "contentsSha256": "3cdd47e998714053d8f01287574b1a7915ee492ab5b695da0ac4faa70f678c73",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2407,9 +2407,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-subagent-control-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-subagent-control",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "e5c19cdf830c662c81290baba14d76165c7dfae90ff4bd2a8cda4b03d5bb48e4",
-          "bytes": 13009,
-          "contentsSha256": "9d51560a4da30d578aeb210baa96deccd1ab2cd12b9bf001a515550c98431e09",
+          "sha256": "a7a871e54d678607536a8ee7e4bb768eb6b3cd230bea32cfb2180125a30e7804",
+          "bytes": 13013,
+          "contentsSha256": "a4468cbd5b092c9547d4dc92ac7931e1048e317918fe08454d6b30e317f8d9bf",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -2419,9 +2419,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-subagent-report-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-subagent-report",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "91d8eb1b34a21dcd1748a4b49fa0aeca30a12e695188136661d5009c6a0722b6",
-          "bytes": 10859,
-          "contentsSha256": "f5ffc2245e60bf29d34ee887c3193c65d02b01bab8b1416f2b51fcaea2c36d04",
+          "sha256": "8af3dba11c3f58df5a69c50457ea179e1de9536d061c80466d2f82bce80cc1c7",
+          "bytes": 10860,
+          "contentsSha256": "c3b30b30f5e6d633164b878c5bbc6dbdffd266736d7391d25cdcdc6c0287172b",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2431,9 +2431,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-terminal-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-terminal",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "7fe1e3d5ba5f78860745a3515b30859e3ccfd1dd2da6966b775190508df1b02e",
-          "bytes": 12166,
-          "contentsSha256": "ac8049c16cafd0bbb5f1e74534798c72e7dead97dabfdceaee19c3b7c187cc8f",
+          "sha256": "aa41d3e17a34802660675f175c3992c5737189deb36004e761fef2aa760389ba",
+          "bytes": 12162,
+          "contentsSha256": "b3a7cd7c58ef2d6fce753e5639ad03128e6b3d43b0cf6be5ed43c7e646827f4a",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -2443,9 +2443,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-todo-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-todo",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "96f10eb13e430d055550b59ae19d9847510af416b035d2dbf9c9607dcab37341",
-          "bytes": 13508,
-          "contentsSha256": "472583c6df44b2a5cec8279f5b9e5b3a0c569144aa80fadd6ed5f612fe8ac7af",
+          "sha256": "5485f1ae26ea82160feceeb0c0df4dbf884fecc82739cbc133969afbb9293928",
+          "bytes": 13499,
+          "contentsSha256": "ff0834e6ae9c58b1802d229edc161ed7aa6d874586c7a2dd38f308397b681c96",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -2455,9 +2455,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-web-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-web",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "a3ce02550a85c2b0402bb821d201b39be3f8ed6cd9582fcf530f54288cf4ee30",
+          "sha256": "a324c6bb2c67cb18eb74d60d78381a2810b7bf55a86e008893bc22ac83c340b0",
           "bytes": 21956,
-          "contentsSha256": "60e6cc25d024ffa181b752e8ebfd12d94e921cee8b9b4b6a8c2f00f09569126a",
+          "contentsSha256": "da76f06d7a33752f87de2fd091459f057e9a0d7f5e989ccf8b9e8a8bb1b1c41e",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2467,9 +2467,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tool-workflow-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tool-workflow",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "1b2544b52ecdb7a6d57f255716b16e8f05adce491f22216c7833bf83763357e1",
-          "bytes": 17428,
-          "contentsSha256": "298c45a2be4560d582f7195358a4fba2bbef3a8bd105611f8044cfa82754d92f",
+          "sha256": "9b11c15d050ccee332d6615a92453e0d67cf1a91a944efd81f5b02c03fb66028",
+          "bytes": 17442,
+          "contentsSha256": "33a9964a42ea242c1ea20aaa52ab343402f806faad61dc6eb08e2452bfdd01a6",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -2479,9 +2479,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-tools-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-tools",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "2c93becb63c326ef1d50408a800be2f5835f980d67fb2cc2f8b8045e3c14ef0b",
-          "bytes": 154250,
-          "contentsSha256": "a2214480b2656db66aa9ca06eaf7f7b3eadce1597bbf9b0fc3489e7f4d8ac555",
+          "sha256": "ded54d4b642bcbf1ca9fad713a16a7b67ab5dd4355ed6bd3cf4111778b05d9e4",
+          "bytes": 154240,
+          "contentsSha256": "10858e5b2a9f0df726b5c3256d24bb2cf802736ad939a35ba95fa920f8d3bac6",
           "entryCount": 27,
           "notices": [
             "package/LICENSE"
@@ -2491,9 +2491,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-typert-generator-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-typert-generator",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "142e57fad78559e0c7ee21441db447b67dc30f6c4790b575870f80b837812f7a",
-          "bytes": 111109,
-          "contentsSha256": "f3248bf5154586c0fbbff3a6a8561c0398cd83ce4fd9e94993adcb15ff93b76e",
+          "sha256": "99d7e39b50370aacbed7035cbfb34c8a05ecb07f4b161214f52bdd08f8fe70e7",
+          "bytes": 111107,
+          "contentsSha256": "784096a906c2a29c8ba13a2864ec8dacc21d455d18c326f10319cf9b783bc39c",
           "entryCount": 25,
           "notices": [
             "package/LICENSE"
@@ -2503,9 +2503,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-typert-loader-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-typert-loader",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "d66cccc5e6a603f86c454917a1280e90c57fa91378c04b7109f134ebddeac651",
-          "bytes": 9249,
-          "contentsSha256": "b259af7a2561eaaecaab4348cf52c376d5ebe8103c7eb68387f8122e03a19052",
+          "sha256": "c19736fbb07dc7f6739ea2af0670ec2d799221070fba13203beca86c3a9b3099",
+          "bytes": 9242,
+          "contentsSha256": "c0a8e91b78c6f4b3ca1e9fd69637c757c77bac5a16b401d5b4437656c366c998",
           "entryCount": 9,
           "notices": [
             "package/LICENSE"
@@ -2527,9 +2527,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-typert-registry-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-typert-registry",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "0413bea59ef4e34ed7db9d1e32c42141029b5900f6433ca7fd35aa1f0c3d7c05",
-          "bytes": 22663,
-          "contentsSha256": "283312a9491b9174aa5bde578c34ed82196ac43c30c33f3d362920d79a364212",
+          "sha256": "8f90a4638f9b765f16c08ebd57feb62b120550e907e8084f9996775a577977ca",
+          "bytes": 22671,
+          "contentsSha256": "f39aa45358284516d4c63ea921b11f8db485bac2df58b77682d2bcb358f4a353",
           "entryCount": 18,
           "notices": [
             "package/LICENSE"
@@ -2539,9 +2539,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-user-approval-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-user-approval",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "c35db156ab26bb50b88526dfdd6a6b794722085bd92361961dad1c5aa1fabcbd",
-          "bytes": 15758,
-          "contentsSha256": "35ad998ffc34f440155149557d415e9c24f760cb398a2601c249a9786a638ef3",
+          "sha256": "7d315ce6f840da281688ca244e643abc0d836dcdbb9a96522e277438e6b20424",
+          "bytes": 15756,
+          "contentsSha256": "d188679d83853e5a702860578c80ec5549261788ed8f55dafcab8393bb01d56f",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -2551,9 +2551,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-user-questions-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-user-questions",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "c9463289e4376e358bb40359fd578d170c29358be737a31b2f3144ad08ce0f62",
+          "sha256": "6cbd2ebe313dc18ba45cc455b074e920030950fd67601980d04a5d4b51cbaa71",
           "bytes": 9554,
-          "contentsSha256": "c0526a267deac6c432a035635ee0442737b898074f28f5e47b582ff2f98b2fcf",
+          "contentsSha256": "4426e3eac34e4dbb23083305cf579f31b3ce6ea7a7ee9abd6e323e6e4a8d111e",
           "entryCount": 13,
           "notices": [
             "package/LICENSE"
@@ -2575,9 +2575,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-web-app-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-web-app",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "37dfe1c9b70b308347b9567ab9b19c6499442e404a97657ad477746128955746",
-          "bytes": 15324,
-          "contentsSha256": "793306e4aef1c00c9548a53e41cdeb8a5a8b910be91a1006fb86ae897fe8565b",
+          "sha256": "fcaf667459e5a94a4805077e55fa3c4050811d9f9a849ed89373683b34168d0f",
+          "bytes": 15323,
+          "contentsSha256": "a45fed05805662be27d16960c0bb37f79ec52af3a766e4210e262214fb89d389",
           "entryCount": 12,
           "notices": [
             "package/LICENSE"
@@ -2587,9 +2587,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-web-fetch-http-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-web-fetch-http",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "e347db30246a9f3b896bd696e43836618a9c919ea8f158ae13336db04b58344d",
-          "bytes": 13789,
-          "contentsSha256": "c4eaa5b161eb5261cdc870a3930989ac1f7803a391dc8690dda4051ad51a5a05",
+          "sha256": "be9f060b8efcebea861720fa1cd4e7f5c49b739b96672ffec1558b951aa382d6",
+          "bytes": 13797,
+          "contentsSha256": "992cdde95b9182eb87533209ef962e08f14c88b41454fcc950d873a8fbc057d9",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2599,9 +2599,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-web-frontend-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-web-frontend",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "98db4b42286116656c334558bdfb4e896fd9eaedcf0512241f295d66dc16981a",
+          "sha256": "89f3122bc5b597889eaf84980ba03398dc02aeb6fe5857c2102cd7ea19cd649e",
           "bytes": 1428603,
-          "contentsSha256": "9ab5121eaacb095f927050d3589ba3cb906b5d2b8b03810bbc759bf88d5aac90",
+          "contentsSha256": "a6c1f4079c1d8a09ade5de2d7710fc8e8f9cc1371113135e270fdb526e6ddef5",
           "entryCount": 91,
           "notices": [
             "package/LICENSE"
@@ -2611,9 +2611,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-web-search-deepseek-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-web-search-deepseek",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "0c1b98ca29b1581060ca1770fb143903bd5c48cddc4f790ace35b3a932e9d33d",
-          "bytes": 15877,
-          "contentsSha256": "6675edecc26bd7005fc9b09ab1cbb7a03b8eb12397c0c5420c560d817afded00",
+          "sha256": "5536300bd8328e37f76a5ef6864c5a9d7b98bc3bbfd6734a5fdf6737da245431",
+          "bytes": 15882,
+          "contentsSha256": "fd2527c44a13ad983f6b41ad71d59164c6d296926ab39f6f1898ee58004fe43d",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2623,9 +2623,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-web-search-exa-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-web-search-exa",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "80ecfc3324df8c019c15a0e0a57388fc59740dc89f37c0e394eddd75254b3954",
-          "bytes": 8767,
-          "contentsSha256": "349331cfbeb847b9a7f82ea81635f2c25cdce45951bfe787fb6ab025138c6f8e",
+          "sha256": "4bc461f808bc21b93fb1d9593f0358ea2a76c4834aad20aed2c48df430655225",
+          "bytes": 8769,
+          "contentsSha256": "c297c93394605463a24a414ebfffa8d98b0c493cfeb33efdd541aee106cc6cb0",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2635,9 +2635,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-web-search-perplexity-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-web-search-perplexity",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "a947cc46c45a5f57568196c8bba3457313e26af5c46e54bed4dbac42e7474f55",
+          "sha256": "09236d8cc53a9bfb358db4f74646177a9d108a7a6f63d5e2b051aeda8c340447",
           "bytes": 9386,
-          "contentsSha256": "3a699ff1b8ff51521c570efbe2b445a43d8e6fc36ab6bfe9c8c5cf1ee878b515",
+          "contentsSha256": "27c9f12df40dcd7954098d1efa86058f536c61af6af52f871128be7413cdcf0b",
           "entryCount": 11,
           "notices": [
             "package/LICENSE"
@@ -2647,9 +2647,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-workflow-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-workflow",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "a61ae5f7cd2a814b7575e7e22417dfad42dce40b0d430376c2ae2630127dfb01",
-          "bytes": 14505,
-          "contentsSha256": "113aaece2c7deebf0532b76f722655803acb14c6f83c76e0b9e761392ced8bd8",
+          "sha256": "7fa1b9b9c2f045ce2401855b10f1d6200c4d9e2202bdbbea80dedc2c55446306",
+          "bytes": 14508,
+          "contentsSha256": "1f035b89899c0540fad02549ac5760c90c2bd2b7493aab49a0628b7aa1c1f1f4",
           "entryCount": 15,
           "notices": [
             "package/LICENSE"
@@ -2659,9 +2659,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-workflow-worker-thread-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-workflow-worker-thread",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "3de431616f3e84d77afc3d1c7aa6f0adb9f370473f9b8ebebcb04c54f2fa4d84",
-          "bytes": 41020,
-          "contentsSha256": "f4b6ac819026d94de6dae6b141c78c5eb0060043bd7a0505248033c9cdda9581",
+          "sha256": "04707d6b3821d278f021bb9a763b6e136b54c39deaa43e314f8137d60d663d7c",
+          "bytes": 41024,
+          "contentsSha256": "15368e81cc42937a85baa8d9c4204df71d0307748ee606f0cc0ba861a3bb36a1",
           "entryCount": 18,
           "notices": [
             "package/LICENSE"
@@ -2671,9 +2671,9 @@
           "relativePath": "dsh/deepseek-ai-dsh-workspace-0.1.0-rc.7.tgz",
           "packageName": "@deepseek-ai/dsh-workspace",
           "packageVersion": "0.1.0-rc.7",
-          "sha256": "4b9dd0e40164f686691f530405a38c5b9ebfb40bc92fccb876aea63004f17944",
-          "bytes": 26907,
-          "contentsSha256": "b522eee4823c48c6570e312a3fac97dca999c9618f02fc9b391b83390fab0436",
+          "sha256": "52589e6fe60599d15f1af9efd68dc00458c14ed9e6a91dcfcc55c5dae5f85927",
+          "bytes": 26914,
+          "contentsSha256": "e7cefd9d23e333f631f821d09c60f96e83058e9c0628db9a0d1c6b039df97ccd",
           "entryCount": 19,
           "notices": [
             "package/LICENSE"
@@ -2719,9 +2719,9 @@
           "relativePath": "vendor/deepseek-ai-cordis-plugin-hmr-1.0.16.tgz",
           "packageName": "@deepseek-ai/cordis-plugin-hmr",
           "packageVersion": "1.0.16",
-          "sha256": "05afd197477ef9cf59b899ec452219be63d8ecbe39ab43b7c9e55273fbfcb347",
-          "bytes": 12860,
-          "contentsSha256": "d75ab9d7daf4987e82b8e0dce0a3e41255feb4270c0f6b489a3e608849b0795e",
+          "sha256": "257ce1d359fab345fe2eadbcffc92cd702cf5edb27c7f0cc0b95ab28d78519c6",
+          "bytes": 12863,
+          "contentsSha256": "11c021c93cf1e3bfe50fc8a229975ee794d41a91cfc77987081cc735f8392b40",
           "entryCount": 10,
           "notices": [
             "package/LICENSE"
@@ -3039,5 +3039,48 @@
     "developerAbsolutePathsFound": false,
     "sourceControlMetadataFound": false,
     "entriesOutsidePackageBoundaryFound": false
+  },
+  "licenseAndNotice": {
+    "acceptedPackages": 244,
+    "packagesWithNotice": 244,
+    "everyAcceptedPackageCarriesNotice": true,
+    "components": [
+      {
+        "name": "deepseek-harness",
+        "declared": "MIT",
+        "status": "permissive",
+        "redistribution": "allowed-with-notices",
+        "packageArchivesCommitted": false
+      },
+      {
+        "name": "deepseek-openai-codex",
+        "declared": "SEE THIRD_PARTY_NOTICES.md",
+        "status": "pending-owner-license",
+        "redistribution": "blocked-pending-owner-license",
+        "packageArchivesCommitted": false
+      },
+      {
+        "name": "deepseek-rlm",
+        "declared": "MIT",
+        "status": "permissive",
+        "redistribution": "allowed-with-notices",
+        "packageArchivesCommitted": false
+      },
+      {
+        "name": "deepseek-honcho",
+        "declared": "Apache-2.0",
+        "status": "permissive",
+        "redistribution": "allowed-with-notices",
+        "packageArchivesCommitted": false
+      },
+      {
+        "name": "deepseek-dovetail",
+        "declared": "SEE THIRD_PARTY_NOTICES.md",
+        "status": "composite",
+        "redistribution": "composite-review-required",
+        "packageArchivesCommitted": false
+      }
+    ],
+    "redistributionRestrictionsPreserved": true
   }
 }
