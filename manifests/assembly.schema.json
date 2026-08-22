@@ -12,6 +12,7 @@
     "baseline",
     "workRoot",
     "integrityOutput",
+    "profileLock",
     "components"
   ],
   "properties": {
@@ -36,6 +37,9 @@
     },
     "integrityOutput": {
       "$ref": "#/$defs/integrityOutput"
+    },
+    "profileLock": {
+      "$ref": "#/$defs/profileLock"
     },
     "components": {
       "type": "array",
@@ -113,6 +117,39 @@
         },
         "deterministic": {
           "const": true
+        }
+      }
+    },
+    "profileLock": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "sha256",
+        "packageManager"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/relativePath"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256"
+        },
+        "packageManager": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "name",
+            "version"
+          ],
+          "properties": {
+            "name": {
+              "const": "pnpm"
+            },
+            "version": {
+              "const": "11.19.0"
+            }
+          }
         }
       }
     },
@@ -449,7 +486,8 @@
       "required": [
         "kind",
         "packages",
-        "configPolicy"
+        "configPolicy",
+        "credentialReferences"
       ],
       "properties": {
         "kind": {
@@ -477,6 +515,14 @@
             "host-credentials-required",
             "profile-template"
           ]
+        },
+        "credentialReferences": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]*$"
+          }
         }
       }
     },

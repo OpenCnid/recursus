@@ -36,6 +36,16 @@ Dependency restore, build, test, and package commands run with the host access g
 
 Package output begins empty and may contain only declared tarballs and declared release metadata. Inspection parses archives without extracting them and rejects traversal, links, source-control metadata, generated residue, credential-shaped content, developer-specific absolute paths, the exact configured work root in native, slash-normalized, or escaped form, missing notices, duplicate entries, corrupt headers, and oversized input. Retained lifecycle evidence stores counts and hashes, not raw command output. Package integrity is emitted only when every component passes. The current Windows evidence records 244 accepted archives with no credential, developer-path, source-control-metadata, or package-boundary finding.
 
+## Isolated profile lifecycle
+
+Locked distributions are input-addressed beneath the operator's work root and contain only re-inspected accepted archives, the checked path-free profile lock, and a deterministic manifest. Profile operations require an explicit absolute DSH home and portable profile name. Reserved Windows device names, traversal, separators, symlinked managed roots, unowned profiles, mismatched ownership markers, package identity drift, lockfile drift, archive drift, and physical paths in generated text fail closed.
+
+Profile installation uses exact pnpm `11.19.0` with lifecycle caches beneath the work root. Credential-shaped environment variables are removed before package-manager execution. Generated configuration records only the host-owned references `DEEPSEEK_API_KEY`, `OPENAI_CODEX_OAUTH`, and `HONCHO_API_KEY`; it never resolves or copies their values. Honcho packages are present but unmounted by default, and the profile does not create or modify the host credential store.
+
+The profile CLI emits bounded JSON evidence. Expected failures expose only a stable Recursus error code and sanitized message; raw package-manager output, environment values, stack traces, and physical paths are not retained.
+
+Update moves only a marker-owned exact profile to a validated sibling backup, installs at the final profile path, and rolls back on failure. Removal requires realpath containment and the matching Recursus marker before recursively deleting that one profile. It does not delete the DSH home, other profiles, settings, credential files, source repositories, component or lifecycle caches, memory, or artifact roots.
+
 ## Reporting
 
 Report security issues privately to the repository owner through GitHub's private vulnerability reporting when enabled. Do not open a public issue containing credentials, exploit details against a live system, private memory, or sensitive filesystem paths.

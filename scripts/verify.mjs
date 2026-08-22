@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict'
+import { createHash } from 'node:crypto'
 import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 
@@ -18,11 +19,13 @@ const requiredFiles = [
   'evaluations/milestone-1-slice-1.json',
   'evaluations/milestone-1-package-report-blocked-99f6f02.json',
   'evaluations/milestone-1-package-report.json',
+  'evaluations/milestone-1-profile-lifecycle-report.json',
   'manifests/components.json',
   'manifests/assembly.json',
   'manifests/assembly.schema.json',
   'manifests/package-integrity.json',
   'manifests/package-integrity.schema.json',
+  'manifests/profile-lock.yaml',
   'packages/assembly/package.json',
   'packages/assembly/README.md',
 ]
@@ -73,6 +76,13 @@ assert.deepEqual(assembly.workRoot.paths, {
   packages: 'packages',
 })
 assert.equal(assembly.integrityOutput.deterministic, true)
+assert.equal(assembly.profileLock.path, 'profile-lock.yaml')
+assert.equal(assembly.profileLock.packageManager.name, 'pnpm')
+assert.equal(assembly.profileLock.packageManager.version, '11.19.0')
+assert.equal(
+  assembly.profileLock.sha256,
+  createHash('sha256').update(contents.get('manifests/profile-lock.yaml')).digest('hex'),
+)
 assert.equal('generatedAt' in assembly, false)
 assert.equal(assembly.components.length, manifest.components.length)
 const assemblyByName = new Map(assembly.components.map((component) => [component.name, component]))
@@ -95,6 +105,9 @@ for (const locked of manifest.components) {
   assert.ok(component.pack.selectors.length > 0)
   assert.match(component.compatibility.dshRevision, /^[0-9a-f]{40}$/u)
 }
+assert.deepEqual(assemblyByName.get('deepseek-harness').profileContribution.credentialReferences, ['DEEPSEEK_API_KEY'])
+assert.deepEqual(assemblyByName.get('deepseek-openai-codex').profileContribution.credentialReferences, ['OPENAI_CODEX_OAUTH'])
+assert.deepEqual(assemblyByName.get('deepseek-honcho').profileContribution.credentialReferences, ['HONCHO_API_KEY'])
 assert.equal(assemblyByName.get('deepseek-openai-codex').compatibility.nestedPins['pi-ai'], '0.84.2')
 assert.equal(assemblyByName.get('deepseek-honcho').compatibility.nestedPins['honcho-sdk'], '2.3.0')
 assert.equal(
@@ -194,6 +207,39 @@ assert.deepEqual(packageReport.security, {
   sourceControlMetadataFound: false,
   entriesOutsidePackageBoundaryFound: false,
 })
+
+const profileReport = JSON.parse(contents.get('evaluations/milestone-1-profile-lifecycle-report.json'))
+assert.equal(profileReport.schemaVersion, 1)
+assert.equal(profileReport.assemblyId, assembly.assemblyId)
+assert.equal(profileReport.platform, 'windows-x64')
+assert.equal(profileReport.status, 'spec-20.4-passed')
+assert.deepEqual(profileReport.componentRevisions, packageReport.componentRevisions)
+assert.equal(profileReport.inputs.acceptedPackages, integrity.packages.length)
+assert.equal(
+  profileReport.inputs.assemblyManifestSha256,
+  createHash('sha256').update(contents.get('manifests/assembly.json')).digest('hex'),
+)
+assert.equal(
+  profileReport.inputs.packageIntegritySha256,
+  createHash('sha256').update(contents.get('manifests/package-integrity.json')).digest('hex'),
+)
+assert.equal(profileReport.inputs.profileLockSha256, assembly.profileLock.sha256)
+assert.match(profileReport.distribution.manifestSha256, /^[0-9a-f]{64}$/u)
+assert.equal(profileReport.distribution.packagesReinspected, integrity.packages.length)
+assert.equal(profileReport.profileLifecycle.realPinnedIntegrationPassed, 1)
+assert.equal(profileReport.profileLifecycle.installedPackagesVerified, integrity.packages.length)
+assert.deepEqual(profileReport.credentials.references, [
+  'DEEPSEEK_API_KEY',
+  'HONCHO_API_KEY',
+  'OPENAI_CODEX_OAUTH',
+])
+assert.equal(profileReport.credentials.valuesSerialized, false)
+assert.equal(profileReport.compositionSmoke.liveProviderCalls, false)
+assert.equal(profileReport.compositionSmoke.startupPassedWithHonchoDisabled, true)
+assert.equal(profileReport.harnessWebReplay.playwrightChromiumInstalled, true)
+assert.equal(profileReport.harnessWebReplay.browserLaunched, true)
+assert.ok(profileReport.criteria.some((criterion) => criterion.spec === '20.4' && criterion.status === 'passed-windows'))
+assert.ok(profileReport.criteria.some((criterion) => criterion.spec === '20.5' && criterion.status === 'incomplete'))
 
 const blockedPackageReport = JSON.parse(
   contents.get('evaluations/milestone-1-package-report-blocked-99f6f02.json'),

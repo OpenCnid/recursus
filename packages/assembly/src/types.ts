@@ -62,6 +62,8 @@ export interface ProfileContribution {
   readonly packages: readonly string[]
   readonly patch?: string
   readonly configPolicy: 'package-defaults' | 'host-credentials-required' | 'profile-template'
+  /** Host-owned credential identifiers referenced by configuration; never values. */
+  readonly credentialReferences: readonly string[]
 }
 
 /** One exact component entry in assembly schema version 1. */
@@ -116,6 +118,14 @@ export interface AssemblyManifestV1 {
     readonly schema: string
     readonly path: string
     readonly deterministic: true
+  }
+  readonly profileLock: {
+    readonly path: string
+    readonly sha256: string
+    readonly packageManager: {
+      readonly name: 'pnpm'
+      readonly version: '11.19.0'
+    }
   }
   readonly components: readonly AssemblyComponentV1[]
 }

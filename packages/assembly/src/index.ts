@@ -26,4 +26,24 @@ export type {
 } from './package-inspection.js'
 export { assertComponentLockMatches, loadAssemblyManifest, validateAssemblyManifest } from './manifest.js'
 export { assertPortableRelativePath, resolveContainedPath, resolveHostContainedPath } from './paths.js'
+export {
+  buildLockedDistribution,
+  installRecursusProfile,
+  removeRecursusProfile,
+  resolveRecursusProfilePath,
+  updateRecursusProfile,
+  validateLockedDistribution,
+  verifyRecursusProfile,
+} from './profile-lifecycle.js'
+export type {
+  BuildLockedDistributionOptions,
+  LockedDistributionComponentV1,
+  LockedDistributionPackageV1,
+  LockedDistributionResult,
+  LockedDistributionV1,
+  ProfileLifecycleEvidence,
+  ProfileLifecycleOptions,
+  ProfileLifecycleResult,
+  ProfilePackageManager,
+} from './profile-lifecycle.js'
 export * from './types.js'
