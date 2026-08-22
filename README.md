@@ -5,7 +5,7 @@
 Recursus is the product and assembly layer for an OpenCnid agent runtime built on DeepSeek Harness. DeepSeek Harness remains the control plane: it owns the agent loop, sessions, tools, approvals, policy, lineage, cancellation, and telemetry. Recursus composes independently versioned capabilities around that core and will add durable run state, execution supervision, verification-driven completion, coordinated delegation, bounded context compilation, and adaptive model routing.
 
 > [!IMPORTANT]
-> Recursus is at the foundation stage. The component integrations are real and independently verified, but the unified installer and durable-run packages described in the roadmap have not been released yet. This repository must not claim an assembled production release before its acceptance gates pass.
+> Recursus is implementing Milestone 1. The source lock, common lifecycle, read-only acquisition, and all five component build/pack adapters are present. Exact Windows assembly at the reviewed Harness pin accepted 244 archives and generated deterministic package integrity. Profile installation, Linux package evidence, disabled-provider evidence, and the assembled smoke test are still incomplete. This repository must not claim an assembled production release before every acceptance gate passes.
 
 Recursus intentionally runs with the host access granted by its operator. It is designed as a capable agent on a trusted development machine, not as a security sandbox. Irreversible external actions still require explicit gates, exact targets, and durable evidence.
 
@@ -33,6 +33,12 @@ flowchart TD
 | DeepSeek Dovetail | Prompting, delegation, evaluation, self-play, steering, and handoff workflows | [`OpenCnid/deepseek-dovetail`](https://github.com/OpenCnid/deepseek-dovetail) |
 
 Exact revisions and license boundaries are recorded in [`manifests/components.json`](./manifests/components.json) and [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md).
+
+## Assembly contract status
+
+[`manifests/assembly.json`](./manifests/assembly.json) extends the accepted component pins with the versioned Milestone 1 source lock: license status, acquisition method, exact package manager and lockfile digests, component-owned verification/build/pack commands, package selectors, public DSH profile contributions, platform support, and compatibility constraints. Its strict schema is [`manifests/assembly.schema.json`](./manifests/assembly.schema.json).
+
+The private [`packages/assembly`](./packages/assembly) package defines the provider-neutral lifecycle, read-only Git acquisition, exact component command execution, and bounded npm-tarball inspection. An operator supplies an absolute Recursus work root; all source, package-manager, dependency, Python, and package output state remains below it. The inspector rejects that exact root in archive text, including slash-normalized and escaped forms. [`manifests/package-integrity.json`](./manifests/package-integrity.json) records the 244 accepted archive hashes and sizes, while [`evaluations/milestone-1-package-report.json`](./evaluations/milestone-1-package-report.json) records path-free lifecycle and inspection evidence. The prior fail-closed result remains preserved as historical evidence. See [`docs/ASSEMBLY.md`](./docs/ASSEMBLY.md) for the workflow, verified behavior, and remaining limitations.
 
 ## What Recursus will own
 
@@ -88,13 +94,16 @@ The normative product boundaries and Definition of Done are in [`SPEC.md`](./SPE
 
 To continue implementation in a fresh Codex session, use the maintained kickoff in [`NEXT_SESSION_PROMPT.md`](./NEXT_SESSION_PROMPT.md). It directs the session to the normative specification and the first unfinished milestone.
 
-## Foundation verification
+## Repository verification
 
-The initial repository has no runtime dependency installation. Verify its pinned component manifest, required documents, MIT boundary, and attribution closure with:
+Use Node.js `22.19.0` or a supported Node.js 24 release and pnpm `11.19.0`:
 
 ```sh
-node scripts/verify.mjs
+pnpm install --frozen-lockfile
+pnpm check
 ```
+
+`node scripts/verify.mjs` remains the dependency-free check for the accepted component pins plus the Milestone 1 schema, source-lock, integrity, and evaluation closure.
 
 ## License
 

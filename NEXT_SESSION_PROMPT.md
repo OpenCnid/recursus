@@ -8,11 +8,11 @@ Work only in the current Recursus checkout—the repository containing `SPEC.md`
 
 Continue building Recursus from its accepted public foundation. Start by reading `AGENTS.md`, `README.md`, `GAMEPLAN.md`, `SPEC.md`, `docs/ARCHITECTURE.md`, `THIRD_PARTY_NOTICES.md`, and `manifests/components.json` completely. Treat `SPEC.md` as normative and `GAMEPLAN.md` as the delivery sequence. Inspect the repository, Git status, existing tests and verification, exact component pins, and each pinned component's public build/package/plugin seams before editing.
 
-Milestone 0 is complete at foundation commit `d8425e54102d3d144f2b1f6f125c0581cee952ed`. Do not rebuild the foundation or copy code/history from the private predecessor. Begin Milestone 1: reproducible runtime assembly. Implement the smallest complete vertical slice that proves the first unmet Milestone 1 criteria in `SPEC.md`, starting with the versioned assembly-manifest schema and common component-adapter contract, followed by read-only acquisition and exact-revision verification if they fit cleanly in the same tested slice.
+Milestone 0 is complete at foundation commit `d8425e54102d3d144f2b1f6f125c0581cee952ed`. Do not rebuild the foundation or copy code/history from the private predecessor. Continue Milestone 1: reproducible runtime assembly. The versioned assembly manifest, common adapter lifecycle, read-only exact-revision acquisition, all five component-owned build/pack adapters, bounded package inspection, accepted Windows package evidence, and deterministic integrity for 244 archives are complete at the pins below. Begin with the first unmet criterion: the bounded profile lifecycle in `SPEC.md` §20.4.
 
 Use these immutable component revisions unless a failing real compatibility test proves a pin must change:
 
-- DeepSeek Harness: `99f6f02fecdb7dff40c3fbc9470f5907c29f74ca` (`dsh-v0.1.0-rc.7`)
+- DeepSeek Harness: `600299571a9d807a475ca87f366bd22761dd938e` (`dsh-v0.1.0-rc.7` package set plus reviewed portable-bundle fix)
 - OpenAI Codex adapter: `5232102d0cc8bd55d5bf27b6eb203efbf6ada8a9`
 - DeepSeek RLM: `4772c12b0630706f14d16e70be0ad67bff116690`
 - DeepSeek Honcho: `83627329867a562959cf992d0ce56d78a273971a`
@@ -46,6 +46,6 @@ Development requirements:
 
 Before concluding, report what was implemented, exact files/packages changed, checks and results, evidence for each reached acceptance criterion, every unmet criterion, and the next exact implementation step. Do not claim Milestone 1 complete until every criterion in section 20 of `SPEC.md` has concrete evidence.
 
-Begin now by inspecting the repository and pinned component build/package seams, then implement the assembly manifest schema and adapter contract.
+Begin now by inspecting the accepted assembly and package evidence, then implement bounded build/install/update/verify/remove commands or APIs for an explicitly named isolated Recursus profile. Prove idempotent install/update, exact-target containment on removal, host-credential references without values, cross-platform paths, and preservation of unrelated DSH profiles, repositories, caches, memory, artifact roots, and credentials. Do not begin the assembled smoke test until the profile lifecycle is complete and independently verified.
 
 ---

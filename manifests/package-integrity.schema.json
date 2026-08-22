@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/OpenCnid/recursus/blob/main/manifests/package-integrity.schema.json",
+  "title": "Recursus accepted package integrity",
+  "description": "Deterministic generated output. Entries are sorted by component and package path and contain no timestamps or machine paths.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schemaVersion",
+    "assemblyId",
+    "algorithm",
+    "packages"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "./package-integrity.schema.json"
+    },
+    "schemaVersion": {
+      "const": 1
+    },
+    "assemblyId": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9.-]*$"
+    },
+    "algorithm": {
+      "const": "sha256"
+    },
+    "packages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "component",
+          "path",
+          "sha256",
+          "bytes"
+        ],
+        "properties": {
+          "component": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9.-]*$"
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,13 +2,13 @@
 
 Recursus original code and documentation are licensed under MIT. This does not replace, weaken, or expand the licenses of the projects it references, consumes, or later distributes.
 
-The foundation repository currently records external components by immutable revision and does not vendor their source or package artifacts.
+The repository records external components by immutable revision and includes a Recursus-owned assembly source lock, acquisition/build adapters, package inspector, deterministic package integrity, accepted-run evidence, and preserved historical blocked-run evidence. It does not vendor component source or package archives. Read-only checkouts and local archives created beneath an operator-configured work root remain external component material under their own terms and are excluded from Recursus release output. Generated integrity proves the accepted local bytes; redistribution remains blocked where the source lock says owner terms are pending or composite review is required.
 
 ## DeepSeek Harness
 
 - Component: [`OpenCnid/deepseek-harness`](https://github.com/OpenCnid/deepseek-harness)
 - Upstream: [`deepseek-ai/deepseek-harness`](https://github.com/deepseek-ai/deepseek-harness)
-- Pinned revision: `99f6f02fecdb7dff40c3fbc9470f5907c29f74ca` (`dsh-v0.1.0-rc.7`)
+- Pinned revision: `600299571a9d807a475ca87f366bd22761dd938e` (`dsh-v0.1.0-rc.7` package set plus reviewed portable-bundle fix)
 - License: MIT
 
 DeepSeek AI and the DeepSeek Harness contributors provide the plugin-first agent control plane on which Recursus is built. The DSH repository vendors and credits Cordis, CosmoKit, Schemastery, and related foundations under their preserved licenses. Recursus does not imply endorsement by DeepSeek AI.
