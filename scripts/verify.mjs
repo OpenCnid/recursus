@@ -20,6 +20,8 @@ const requiredFiles = [
   'evaluations/milestone-1-package-report-blocked-99f6f02.json',
   'evaluations/milestone-1-package-report.json',
   'evaluations/milestone-1-profile-lifecycle-report.json',
+  'evaluations/milestone-1-assembled-smoke-disabled-report.json',
+  'evaluations/milestone-1-assembled-smoke-report.json',
   'manifests/components.json',
   'manifests/assembly.json',
   'manifests/assembly.schema.json',
@@ -207,6 +209,28 @@ assert.deepEqual(packageReport.security, {
   sourceControlMetadataFound: false,
   entriesOutsidePackageBoundaryFound: false,
 })
+assert.deepEqual(
+  {
+    acceptedPackages: packageReport.licenseAndNotice.acceptedPackages,
+    packagesWithNotice: packageReport.licenseAndNotice.packagesWithNotice,
+    everyAcceptedPackageCarriesNotice:
+      packageReport.licenseAndNotice.everyAcceptedPackageCarriesNotice,
+    redistributionRestrictionsPreserved:
+      packageReport.licenseAndNotice.redistributionRestrictionsPreserved,
+  },
+  {
+    acceptedPackages: 244,
+    packagesWithNotice: 244,
+    everyAcceptedPackageCarriesNotice: true,
+    redistributionRestrictionsPreserved: true,
+  },
+)
+assert.equal(packageReport.licenseAndNotice.components.length, manifest.components.length)
+assert.ok(
+  packageReport.licenseAndNotice.components.every(
+    (component) => component.packageArchivesCommitted === false,
+  ),
+)
 
 const profileReport = JSON.parse(contents.get('evaluations/milestone-1-profile-lifecycle-report.json'))
 assert.equal(profileReport.schemaVersion, 1)
@@ -234,12 +258,71 @@ assert.deepEqual(profileReport.credentials.references, [
   'OPENAI_CODEX_OAUTH',
 ])
 assert.equal(profileReport.credentials.valuesSerialized, false)
-assert.equal(profileReport.compositionSmoke.liveProviderCalls, false)
+assert.equal(profileReport.compositionSmoke.optInLiveProviderCallsPassed, true)
 assert.equal(profileReport.compositionSmoke.startupPassedWithHonchoDisabled, true)
 assert.equal(profileReport.harnessWebReplay.playwrightChromiumInstalled, true)
 assert.equal(profileReport.harnessWebReplay.browserLaunched, true)
 assert.ok(profileReport.criteria.some((criterion) => criterion.spec === '20.4' && criterion.status === 'passed-windows'))
-assert.ok(profileReport.criteria.some((criterion) => criterion.spec === '20.5' && criterion.status === 'incomplete'))
+assert.ok(profileReport.criteria.some((criterion) => criterion.spec === '20.5' && criterion.status === 'passed-windows'))
+assert.ok(profileReport.criteria.some((criterion) => criterion.spec === '20.6' && criterion.status === 'incomplete'))
+
+const smokePaths = [
+  'evaluations/milestone-1-assembled-smoke-disabled-report.json',
+  'evaluations/milestone-1-assembled-smoke-report.json',
+]
+const smokeReports = smokePaths.map((path) => JSON.parse(contents.get(path)))
+for (const smoke of smokeReports) {
+  assert.equal(smoke.schemaVersion, 1)
+  assert.equal(smoke.assemblyId, assembly.assemblyId)
+  assert.deepEqual(smoke.componentRevisions, packageReport.componentRevisions)
+  assert.equal(smoke.checks.toolApproval.status, 'passed')
+  assert.deepEqual(smoke.checks.toolApproval.auditEvents, [
+    'approval/asked',
+    'approval/decided',
+    'tool/call',
+    'tool/result',
+  ])
+  assert.match(smoke.checks.toolApproval.toolResultSha256, /^[0-9a-f]{64}$/u)
+  assert.deepEqual(
+    {
+      status: smoke.checks.rlm.status,
+      result: smoke.checks.rlm.result,
+      generation: smoke.checks.rlm.generation,
+      persistent: smoke.checks.rlm.persistent,
+    },
+    { status: 'passed', result: '42', generation: 1, persistent: true },
+  )
+  assert.equal(smoke.checks.honchoDisabled.status, 'passed')
+  assert.equal(smoke.checks.honchoDisabled.startupPassed, true)
+  assert.equal(smoke.checks.artifact.status, 'passed')
+  assert.equal(smoke.checks.artifact.exactResolution, true)
+  assert.match(smoke.checks.artifact.sha256, /^[0-9a-f]{64}$/u)
+  assert.deepEqual(
+    {
+      status: smoke.checks.dovetail.status,
+      provider: smoke.checks.dovetail.provider,
+      discovered: smoke.checks.dovetail.discovered,
+      invoked: smoke.checks.dovetail.invoked,
+    },
+    { status: 'passed', provider: 'dovetail', discovered: true, invoked: true },
+  )
+}
+const [defaultWindowsSmoke, liveWindowsSmoke] = smokeReports
+assert.equal(defaultWindowsSmoke.platform, 'windows-x64')
+assert.equal(defaultWindowsSmoke.checks.codexProvider.status, 'not-run')
+assert.equal(defaultWindowsSmoke.checks.honchoLive.status, 'not-run')
+assert.equal(liveWindowsSmoke.platform, 'windows-x64')
+assert.deepEqual(liveWindowsSmoke.checks.codexProvider, {
+  status: 'passed',
+  mode: 'live',
+  bounded: true,
+})
+assert.deepEqual(liveWindowsSmoke.checks.honchoLive, {
+  status: 'passed',
+  mode: 'live',
+  sanitizedRoundTrip: true,
+  cleanupVerified: true,
+})
 
 const blockedPackageReport = JSON.parse(
   contents.get('evaluations/milestone-1-package-report-blocked-99f6f02.json'),
@@ -298,6 +381,7 @@ const nextSessionPrompt = contents.get('NEXT_SESSION_PROMPT.md')
 assert.ok(nextSessionPrompt.includes('Treat `SPEC.md` as normative'))
 assert.ok(nextSessionPrompt.includes('Milestone 0 is complete'))
 assert.ok(nextSessionPrompt.includes('Continue Milestone 1'))
+assert.ok(nextSessionPrompt.includes('The first unmet criterion remains §20.6'))
 for (const component of manifest.components) {
   assert.ok(
     nextSessionPrompt.includes(component.revision),

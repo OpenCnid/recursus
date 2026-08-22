@@ -4,22 +4,22 @@
   "platform": "windows-x64",
   "status": "spec-20.4-passed",
   "componentRevisions": {
-    "deepseek-harness": "600299571a9d807a475ca87f366bd22761dd938e",
+    "deepseek-harness": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
     "deepseek-openai-codex": "5232102d0cc8bd55d5bf27b6eb203efbf6ada8a9",
     "deepseek-rlm": "4772c12b0630706f14d16e70be0ad67bff116690",
     "deepseek-honcho": "83627329867a562959cf992d0ce56d78a273971a",
     "deepseek-dovetail": "fec14d795edb5e52c02e2ccc49d9af6004fddee0"
   },
   "inputs": {
-    "assemblyManifestSha256": "609468631cf2ab38e8024dc0997f6a28163de470a8b894ecc21e6482ba66f425",
-    "packageIntegritySha256": "042d42868057f6c4e76b00abffca11d461624d499856ec6d970c2f3e0b3b1992",
-    "profileLockSha256": "82dbbea0be76dbdd72bbe975b9e7bfb2841c650c76e304813fa6ac22706b9352",
+    "assemblyManifestSha256": "2a7ef96128ef0ccc2784469950af5137232e25a2693cd9017fb6e6d53e9f2496",
+    "packageIntegritySha256": "8df2ace8bf5e606a5979bca1e29bc58f855bbdf5bd2c0d398c808b7dc9e8af71",
+    "profileLockSha256": "b1d5608aa775dbf1e847aee516f39497b3b6579e65c7be108212d8810de75c8e",
     "acceptedPackages": 244,
     "packageManager": "pnpm@11.19.0"
   },
   "distribution": {
     "schemaVersion": 1,
-    "manifestSha256": "26ee3a1561f4db04fdd7b5a162bd9a2fd62afe3127d50a44c9e4516d5c292b49",
+    "manifestSha256": "244651de852daeab8c39786128146cc2e2190601e62488648d8b2f6ab44a9592",
     "packagesReinspected": 244,
     "relativeArchivePathsOnly": true,
     "inputAddressed": true,
@@ -65,32 +65,25 @@
     "artifacts": true
   },
   "compositionSmoke": {
-    "publicBoundary": "dsh --profile recursus-pinned-test --dump-default-config",
+    "defaultReport": "evaluations/milestone-1-assembled-smoke-disabled-report.json",
+    "liveReport": "evaluations/milestone-1-assembled-smoke-report.json",
     "codexBundleComposed": true,
     "rlmBundleComposed": true,
     "dovetailBundleComposed": true,
     "honchoBundleInstalled": true,
-    "honchoBundleMounted": false,
+    "honchoBundleMountedByDefault": false,
     "startupPassedWithHonchoDisabled": true,
-    "liveProviderCalls": false
+    "optInLiveProviderCallsPassed": true
   },
   "harnessWebReplay": {
+    "platform": "linux-x64",
     "playwrightChromiumInstalled": true,
     "browserLaunched": true,
-    "testFilesPassed": 41,
-    "testFilesFailed": 35,
-    "testsPassed": 154,
-    "testsFailed": 24,
-    "testsSkipped": 90,
-    "snapshotsFailed": 1,
-    "status": "component-test-portability-findings",
-    "findings": [
-      "JSONL fixture substitution does not escape Windows backslashes",
-      "shipped-composition expectations assume bash instead of the Windows pwsh tool",
-      "persistent-terminal snapshot coverage declares win32 unsupported",
-      "one atomic settings rename returned Windows EPERM",
-      "one plugin-config timeout expectation differs from current defaults"
-    ]
+    "testFilesPassed": 75,
+    "testFilesSkipped": 1,
+    "testsPassed": 253,
+    "testsSkipped": 15,
+    "status": "passed"
   },
   "criteria": [
     {
@@ -99,19 +92,14 @@
       "evidence": "bounded distribution and profile APIs, CLI commands, focused containment tests, and one real 244-package pinned integration"
     },
     {
-      "spec": "20.5.4",
-      "status": "passed-default-disabled-provider-path",
-      "evidence": "Honcho package installed but unmounted; DSH default configuration composed successfully"
-    },
-    {
       "spec": "20.5",
-      "status": "incomplete",
-      "evidence": "bounded Codex request, recorded tool call, live RLM computation, enabled Honcho round trip, exact artifact path, and Dovetail invocation remain"
+      "status": "passed-windows",
+      "evidence": "default deterministic and explicitly opted-in live assembled-smoke reports"
     },
     {
       "spec": "20.6",
       "status": "incomplete",
-      "evidence": "Linux build/package evidence, opt-in live-provider results, full notice closure, and real assembled smoke report remain"
+      "evidence": "Linux produced all 244 package identities, but repeated Harness packs differed in 195 of 231 content hashes; accepted Linux package, profile, and smoke evidence remains"
     }
   ]
 }

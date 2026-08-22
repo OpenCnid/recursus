@@ -36,7 +36,7 @@ test('the assembly source lock matches all five accepted component-lock entries'
     ?.compatibility.nestedPins['dovetail-source'], '69f89e3322847fb11665980c16598494a9eacca0')
   assert.deepEqual(manifest.profileLock, {
     path: 'profile-lock.yaml',
-    sha256: '82dbbea0be76dbdd72bbe975b9e7bfb2841c650c76e304813fa6ac22706b9352',
+    sha256: 'b1d5608aa775dbf1e847aee516f39497b3b6579e65c7be108212d8810de75c8e',
     packageManager: { name: 'pnpm', version: '11.19.0' },
   })
   assert.ok(Object.isFrozen(manifest))

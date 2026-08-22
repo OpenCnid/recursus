@@ -19,7 +19,7 @@
   },
   "profileLock": {
     "path": "profile-lock.yaml",
-    "sha256": "82dbbea0be76dbdd72bbe975b9e7bfb2841c650c76e304813fa6ac22706b9352",
+    "sha256": "b1d5608aa775dbf1e847aee516f39497b3b6579e65c7be108212d8810de75c8e",
     "packageManager": {
       "name": "pnpm",
       "version": "11.19.0"
@@ -30,7 +30,7 @@
       "name": "deepseek-harness",
       "role": "control-plane",
       "repository": "https://github.com/OpenCnid/deepseek-harness",
-      "revision": "600299571a9d807a475ca87f366bd22761dd938e",
+      "revision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
       "version": "dsh-v0.1.0-rc.7",
       "license": {
         "declared": "MIT",
@@ -254,7 +254,7 @@
         ]
       },
       "compatibility": {
-        "dshRevision": "600299571a9d807a475ca87f366bd22761dd938e",
+        "dshRevision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
         "nestedPins": {
           "cordis": "4.0.1"
         },
@@ -398,7 +398,7 @@
         ]
       },
       "compatibility": {
-        "dshRevision": "600299571a9d807a475ca87f366bd22761dd938e",
+        "dshRevision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
         "nestedPins": {
           "cordis": "4.0.1",
           "pi-ai": "0.84.2"
@@ -673,13 +673,13 @@
         ]
       },
       "compatibility": {
-        "dshRevision": "600299571a9d807a475ca87f366bd22761dd938e",
+        "dshRevision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
         "nestedPins": {
           "cordis": "4.0.1",
           "rlm-compute-boundary": "79b6b28e16c7305e8e791f2d8c9d2935e75ade60"
         },
         "constraints": [
-          "Requires the three component-owned DSH patches recorded under patches/deepseek-harness.",
+          "Requires the component-owned DSH parity patches 0001 and 0002 recorded under patches/deepseek-harness; the 0003 ignorable-event seam is included in the reviewed Harness pin.",
           "Persistent computation remains behind the provider-neutral ctx.rlm service."
         ]
       }
@@ -933,7 +933,7 @@
         ]
       },
       "compatibility": {
-        "dshRevision": "600299571a9d807a475ca87f366bd22761dd938e",
+        "dshRevision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
         "nestedPins": {
           "cordis": "4.0.1",
           "honcho-sdk": "2.3.0",
@@ -1128,7 +1128,7 @@
         ]
       },
       "compatibility": {
-        "dshRevision": "600299571a9d807a475ca87f366bd22761dd938e",
+        "dshRevision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
         "nestedPins": {
           "cordis": "4.0.1",
           "dovetail-source": "69f89e3322847fb11665980c16598494a9eacca0"

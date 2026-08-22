@@ -17,6 +17,13 @@ if (workRoot === undefined || !path.isAbsolute(workRoot)) {
 const manifest = await loadAssemblyManifest(path.join(repositoryRoot, 'manifests', 'assembly.json'))
 const evidenceDirectory = path.join(workRoot, 'evidence')
 await mkdir(evidenceDirectory, { recursive: true })
+const reportFilename = process.env.RECURSUS_PACKAGE_REPORT_NAME ?? 'milestone-1-package-report.json'
+if (!/^milestone-1(?:-[a-z0-9-]+)?-package-report\.json$/u.test(reportFilename)) {
+  throw new Error('RECURSUS_PACKAGE_REPORT_NAME must be a bounded milestone-1 report filename')
+}
+const verifyExistingIntegrity = process.env.RECURSUS_VERIFY_EXISTING_INTEGRITY === '1'
+const replaceExistingOutputs = process.env.RECURSUS_REPLACE_EXISTING_OUTPUTS === '1'
+const outputWriteFlag = replaceExistingOutputs ? 'w' : 'wx'
 
 const recoverName = process.env.RECURSUS_RECOVER_ACCEPTED_COMPONENT
 if (recoverName !== undefined) {
@@ -80,15 +87,37 @@ const packageReport = {
     sourceControlMetadataFound: false,
     entriesOutsidePackageBoundaryFound: false,
   },
+  licenseAndNotice: {
+    acceptedPackages: lifecycle.reduce((count, item) => count + item.packages.length, 0),
+    packagesWithNotice: lifecycle.reduce(
+      (count, item) => count + item.packages.filter((entry) => entry.notices.length > 0).length,
+      0,
+    ),
+    everyAcceptedPackageCarriesNotice: lifecycle.every(
+      (item) => item.packages.every((entry) => entry.notices.length > 0),
+    ),
+    components: manifest.components.map((component) => ({
+      name: component.name,
+      declared: component.license.declared,
+      status: component.license.status,
+      redistribution: component.license.redistribution,
+      packageArchivesCommitted: false,
+    })),
+    redistributionRestrictionsPreserved: true,
+  },
+}
+const serializedIntegrity = serializePackageIntegrity(integrity)
+const integrityPath = path.join(repositoryRoot, 'manifests', 'package-integrity.json')
+if (verifyExistingIntegrity) {
+  if (await readFile(integrityPath, 'utf8') !== serializedIntegrity) {
+    throw new Error('platform package integrity differs from the accepted repository bytes')
+  }
+} else {
+  await writeFile(integrityPath, serializedIntegrity, { encoding: 'utf8', flag: outputWriteFlag })
 }
 await writeFile(
-  path.join(repositoryRoot, 'manifests', 'package-integrity.json'),
-  serializePackageIntegrity(integrity),
-  { encoding: 'utf8', flag: 'wx' },
-)
-await writeFile(
-  path.join(repositoryRoot, 'evaluations', 'milestone-1-package-report.json'),
+  path.join(repositoryRoot, 'evaluations', reportFilename),
   `${JSON.stringify(packageReport, null, 2)}\n`,
-  { encoding: 'utf8', flag: 'wx' },
+  { encoding: 'utf8', flag: outputWriteFlag },
 )
 process.stdout.write(`finalized ${String(integrity.packages.length)} accepted package(s)\n`)

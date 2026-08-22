@@ -46,4 +46,6 @@ export type {
   ProfileLifecycleResult,
   ProfilePackageManager,
 } from './profile-lifecycle.js'
+export { runAssembledSmoke, validateAssembledSmokeReport } from './smoke.js'
+export type { AssembledSmokeReportV1, RunAssembledSmokeOptions, SmokeStatus } from './smoke.js'
 export * from './types.js'

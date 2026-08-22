@@ -5,7 +5,7 @@
 Recursus is the product and assembly layer for an OpenCnid agent runtime built on DeepSeek Harness. DeepSeek Harness remains the control plane: it owns the agent loop, sessions, tools, approvals, policy, lineage, cancellation, and telemetry. Recursus composes independently versioned capabilities around that core and will add durable run state, execution supervision, verification-driven completion, coordinated delegation, bounded context compilation, and adaptive model routing.
 
 > [!IMPORTANT]
-> Recursus is implementing Milestone 1. Exact Windows assembly at the reviewed Harness pin accepted 244 archives, generated deterministic package integrity, and passed the bounded build/install/update/verify/remove profile lifecycle in `SPEC.md` §20.4. The assembled default-config smoke proves Codex, RLM, and Dovetail composition while the installed Honcho bundle remains unmounted without blocking startup. Linux package evidence and the full model/tool/RLM/memory/artifact/skill smoke matrix in §20.5 remain incomplete. This repository must not claim an assembled production release before every acceptance gate passes.
+> Recursus is implementing Milestone 1. Windows assembly accepts 244 inspected archives, the isolated Windows profile lifecycle passes, and the default plus explicitly opted-in assembled smoke proves the §20.5 composition matrix. Linux built and packaged the same 244 identities, but repeated Harness packs were not deterministic, so Linux evidence and §20.6 remain incomplete. This repository has not created a Recursus release, and component redistribution restrictions still apply.
 
 Recursus intentionally runs with the host access granted by its operator. It is designed as a capable agent on a trusted development machine, not as a security sandbox. Irreversible external actions still require explicit gates, exact targets, and durable evidence.
 
@@ -38,7 +38,7 @@ Exact revisions and license boundaries are recorded in [`manifests/components.js
 
 [`manifests/assembly.json`](./manifests/assembly.json) extends the accepted component pins with the versioned Milestone 1 source lock: license status, acquisition method, exact package manager and lockfile digests, component-owned verification/build/pack commands, package selectors, public DSH profile contributions, platform support, and compatibility constraints. Its strict schema is [`manifests/assembly.schema.json`](./manifests/assembly.schema.json), and [`manifests/profile-lock.yaml`](./manifests/profile-lock.yaml) freezes the assembled profile's third-party dependency resolution under pnpm `11.19.0`.
 
-The private [`packages/assembly`](./packages/assembly) package defines the provider-neutral lifecycle, read-only Git acquisition, exact component command execution, bounded npm-tarball inspection, and isolated DSH profile lifecycle. An operator supplies an absolute Recursus work root; all source, package-manager, dependency, Python, distribution, and package output state remains below it. The inspector rejects that exact root in archive text, including slash-normalized and escaped forms. [`manifests/package-integrity.json`](./manifests/package-integrity.json) records the 244 accepted archive hashes and sizes. [`evaluations/milestone-1-package-report.json`](./evaluations/milestone-1-package-report.json) and [`evaluations/milestone-1-profile-lifecycle-report.json`](./evaluations/milestone-1-profile-lifecycle-report.json) record path-free package and profile evidence. The prior fail-closed result remains preserved as historical evidence. See [`docs/ASSEMBLY.md`](./docs/ASSEMBLY.md) for the workflow, verified behavior, and remaining limitations.
+The private [`packages/assembly`](./packages/assembly) package defines the provider-neutral lifecycle, read-only Git acquisition, exact component command execution, bounded npm-tarball inspection, isolated DSH profile lifecycle, and assembled smoke runner. An operator supplies an absolute Recursus work root; all source, package-manager, dependency, Python, distribution, and package output state remains below it. The inspector rejects that exact root in archive text, including slash-normalized and escaped forms. [`manifests/package-integrity.json`](./manifests/package-integrity.json) records the 244 Windows-accepted archive hashes and sizes. The Windows package, profile, default-smoke, and opt-in live-smoke reports contain path-free evidence. Linux acceptance is intentionally absent until the owning Harness determinism defect is fixed and the complete §20.6 workflow passes. The prior fail-closed result remains preserved as historical evidence. See [`docs/ASSEMBLY.md`](./docs/ASSEMBLY.md) for the workflow, verified behavior, and remaining limitations.
 
 ## What Recursus will own
 
@@ -103,7 +103,7 @@ pnpm install --frozen-lockfile
 pnpm check
 ```
 
-`node scripts/verify.mjs` remains the dependency-free check for the accepted component pins plus the Milestone 1 schema, source-lock, integrity, and evaluation closure.
+`node scripts/verify.mjs` remains the dependency-free check for the accepted component pins plus the implemented Milestone 1 schema, source lock, Windows package/profile evidence, smoke reports, and notice closure.
 
 ## License
 

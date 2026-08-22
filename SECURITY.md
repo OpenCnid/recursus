@@ -34,7 +34,7 @@ GitHub receives ordinary public Git fetch traffic during acquisition. No Codex, 
 
 Dependency restore, build, test, and package commands run with the host access granted by the operator. Their known npm, pnpm, uv, pip, XDG, and exact-tool caches are redirected beneath the work root; Git prompts are disabled; credential-shaped environment variables are removed from component command environments. These controls do not make the build a sandbox.
 
-Package output begins empty and may contain only declared tarballs and declared release metadata. Inspection parses archives without extracting them and rejects traversal, links, source-control metadata, generated residue, credential-shaped content, developer-specific absolute paths, the exact configured work root in native, slash-normalized, or escaped form, missing notices, duplicate entries, corrupt headers, and oversized input. Retained lifecycle evidence stores counts and hashes, not raw command output. Package integrity is emitted only when every component passes. The current Windows evidence records 244 accepted archives with no credential, developer-path, source-control-metadata, or package-boundary finding.
+Package output begins empty and may contain only declared tarballs and declared release metadata. Inspection parses archives without extracting them and rejects traversal, links, source-control metadata, generated residue, credential-shaped content, developer-specific absolute paths, the exact configured work root in native, slash-normalized, or escaped form, missing notices, duplicate entries, corrupt headers, and oversized input. Retained lifecycle evidence stores counts and hashes, not raw command output. Package integrity is emitted only when every component passes. Windows evidence records 244 accepted archives with no credential, developer-path, source-control-metadata, or package-boundary finding. Linux finalization failed closed before evidence was accepted because repeated Harness packs did not reproduce identical contents.
 
 ## Isolated profile lifecycle
 
@@ -45,6 +45,12 @@ Profile installation uses exact pnpm `11.19.0` with lifecycle caches beneath the
 The profile CLI emits bounded JSON evidence. Expected failures expose only a stable Recursus error code and sanitized message; raw package-manager output, environment values, stack traces, and physical paths are not retained.
 
 Update moves only a marker-owned exact profile to a validated sibling backup, installs at the final profile path, and rolls back on failure. Removal requires realpath containment and the matching Recursus marker before recursively deleting that one profile. It does not delete the DSH home, other profiles, settings, credential files, source repositories, component or lifecycle caches, memory, or artifact roots.
+
+## Assembled smoke and live acceptance
+
+The default assembled smoke does not contact Codex or Honcho. It uses deterministic doubles for those provider boundaries while exercising the installed DSH authorization and audit path, persistent RLM kernel, exact local artifact store, and packaged Dovetail skill provider. Reports record hashes and bounded status fields rather than prompts, model output, memory content, environment values, or physical paths.
+
+Live provider acceptance is separately opt-in. The worker environment removes credential-shaped variables before packaged computation starts. The Codex check reads a host-owned authorization file only when explicitly named, keeps the decoded token in memory, bounds the synthetic request by model, reasoning effort, output tokens, and timeout, and never serializes credential material. The Honcho check admits only its explicitly required host key, removes it from the worker environment before RLM starts, exposes it briefly while the Honcho provider captures its configuration, and then removes it again. It sanitizes a fixed synthetic record, creates a uniquely fenced synthetic workspace, searches only that workspace, deletes its sessions and workspace, and verifies the workspace is absent. Content-free recovery manifests are stored under the ignored work root so an interrupted cleanup can be reconciled without retaining the synthetic memory text or credential value. Live provider failures must be treated as compatibility evidence, not copied wholesale into reports.
 
 ## Reporting
 

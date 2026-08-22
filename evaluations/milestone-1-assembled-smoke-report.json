@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "assemblyId": "recursus-m1-source-lock-v1",
+  "platform": "windows-x64",
+  "componentRevisions": {
+    "deepseek-dovetail": "fec14d795edb5e52c02e2ccc49d9af6004fddee0",
+    "deepseek-harness": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
+    "deepseek-honcho": "83627329867a562959cf992d0ce56d78a273971a",
+    "deepseek-openai-codex": "5232102d0cc8bd55d5bf27b6eb203efbf6ada8a9",
+    "deepseek-rlm": "4772c12b0630706f14d16e70be0ad67bff116690"
+  },
+  "checks": {
+    "codexProvider": {
+      "status": "passed",
+      "mode": "live",
+      "bounded": true
+    },
+    "toolApproval": {
+      "status": "passed",
+      "auditEvents": [
+        "approval/asked",
+        "approval/decided",
+        "tool/call",
+        "tool/result"
+      ],
+      "toolResultSha256": "d749ddc81151c8a47c61e69c5b1ed0d60262bf608eadcfb75f062115a9aa0e73"
+    },
+    "rlm": {
+      "status": "passed",
+      "result": "42",
+      "generation": 1,
+      "persistent": true
+    },
+    "artifact": {
+      "status": "passed",
+      "bytes": 21,
+      "sha256": "d98331659744d72668386a9309a21bbb8b01ecd622d494666a9c4227e02fa7b7",
+      "exactResolution": true
+    },
+    "dovetail": {
+      "status": "passed",
+      "provider": "dovetail",
+      "skill": "prompt-engineering",
+      "discovered": true,
+      "invoked": true
+    },
+    "honchoDisabled": {
+      "status": "passed",
+      "startupPassed": true
+    },
+    "honchoLive": {
+      "status": "passed",
+      "mode": "live",
+      "sanitizedRoundTrip": true,
+      "cleanupVerified": true
+    }
+  }
+}

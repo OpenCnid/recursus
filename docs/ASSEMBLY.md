@@ -2,7 +2,7 @@
 
 ## Current scope
 
-This Milestone 1 slice implements the versioned source lock required by `SPEC.md` §20.2, the provider-neutral component lifecycle contract from §20.3, and the bounded profile lifecycle from §20.4. It acquires exact public revisions, provisions exact package-manager entrypoints, runs component-owned restore/verification/build/pack checks, inspects npm tarballs without extracting them, builds a locked local distribution, and installs or removes one explicitly named DSH profile. A reviewed Harness pin fixes the checkout-path leak exposed by the first Windows run; the repeated lifecycle accepted all 244 archives and generated deterministic integrity. No live Codex, DeepSeek, or Honcho provider was contacted, no component archive is redistributed by the repository, and Milestone 1 is not complete.
+Milestone 1 implements the versioned source lock required by `SPEC.md` §20.2, the provider-neutral component lifecycle contract from §20.3, the bounded profile lifecycle from §20.4, and the assembled smoke matrix from §20.5. It acquires exact public revisions, provisions exact package-manager entrypoints, runs component-owned restore/verification/build/pack checks, inspects npm tarballs without extracting them, builds a locked local distribution, installs or removes one explicitly named DSH profile, and verifies the installed public component seams. Windows accepts 244 archives, the isolated profile lifecycle, and the default plus explicitly opted-in smoke. Linux produced all 244 expected package identities, but Harness pack contents were not deterministic, so Linux finalization and §20.6 remain incomplete. No component archive is redistributed by this repository.
 
 The authoritative files are:
 
@@ -14,8 +14,10 @@ The authoritative files are:
 - `manifests/profile-lock.yaml`: exact pnpm `11.19.0` resolution for the assembled profile, pinned by the assembly source lock;
 - `evaluations/milestone-1-package-report.json`: path-free accepted lifecycle, package, and security evidence;
 - `evaluations/milestone-1-profile-lifecycle-report.json`: path-free §20.4 distribution, profile, containment, and smoke evidence;
+- `evaluations/milestone-1-assembled-smoke-disabled-report.json`: Windows default deterministic smoke evidence;
+- `evaluations/milestone-1-assembled-smoke-report.json`: explicitly opted-in Windows Codex and Honcho acceptance evidence;
 - `evaluations/milestone-1-package-report-blocked-99f6f02.json`: preserved evidence for the fail-closed predecessor pin;
-- `packages/assembly`: provider-neutral types, lifecycle runner, manifest validation, containment, Git acquisition, command execution, archive inspection, and profile lifecycle.
+- `packages/assembly`: provider-neutral types, lifecycle runner, manifest validation, containment, Git acquisition, command execution, archive inspection, profile lifecycle, and bounded smoke orchestration.
 
 Package archives themselves remain beneath the ignored work root. No integrity file is written while any archive fails inspection. The checked-in integrity file proves accepted bytes, not redistribution permission; the Codex adapter remains blocked pending owner-selected terms, and Dovetail requires composite notice review.
 
@@ -86,7 +88,7 @@ Install and update verify exact pnpm `11.19.0`, scrub credential-shaped environm
 
 | Component | Package manager | Owned verification/build seam | Pack/profile seam | License finding |
 | --- | --- | --- | --- | --- |
-| DeepSeek Harness `6002995` | pnpm `11.7.0` | serialized `check:ci:windows-complete`, release-family verification, `build` | 221 DSH, 9 vendor, and 1 Landlock tarball; public profile/bundle metadata | MIT with root and generated third-party notices |
+| DeepSeek Harness `29c8342` | pnpm `11.7.0` | serialized Windows and Linux primary CI, release-family verification, `build` | 221 DSH, 9 vendor, and 1 Landlock tarball; public profile/bundle/session metadata | MIT with root and generated third-party notices |
 | Codex adapter `5232102` | pnpm `11.19.0` | typecheck, lint, tests, build | one npm tarball and `cordis.patch.yml`; registers `openai-codex` through `ctx.llm` and `ctx.credentials` | redistribution blocked pending owner-selected license |
 | RLM `4772c12` | pnpm `9.14.4`, uv, Python 3.11 | `check`, build, component package check | five tarballs and `packages/bundle/dsh.bundle.patch`; provider-neutral `ctx.rlm` plus Jupyter provider and tool | MIT; Prime and DSH notices preserved |
 | Honcho `8362732` | pnpm `11.7.0` | `verify`, build, six-package inspection/install check | six tarballs; provider contract, SDK provider, artifact service, consumers, and bundle remain separate | Apache-2.0; Honcho SDK exactly `2.3.0` |
@@ -119,11 +121,25 @@ It installs all 244 accepted packages, proves repeated install/update are unchan
 
 The opt-in pinned integration fetches only the public Codex adapter revision into the configured work root. It proves the real GitHub acquisition/reuse/revision seam, not Codex provider behavior.
 
-The accepted Windows package run produced 244 archives: Harness 231, Codex 1, RLM 5, Honcho 6, and Dovetail 1. The prior Harness pin failed closed on 29 `package/lib/client.js` files whose `dsh-css` virtual-module comments retained the absolute source path. The owning fix now derives repository-relative virtual IDs and scans each DSH/vendor tarball before publication handoff; reviewed Harness PR #1 returned as Recursus pin `600299571a9d807a475ca87f366bd22761dd938e`. The repeated full Harness lifecycle accepted all 231 Harness archives. Finalization independently re-inspected all 244 archives, matched them to component checkpoints, and generated package integrity with no timestamp or host path. The 13 unchanged non-Harness archives were recovered through the documented checkpoint path after their archive SHA-256, size, identity, entry count, and notices matched and only the inspector's derived content digest representation had changed.
+The assembled smoke runner consumes one installed profile:
+
+```sh
+node scripts/run-assembled-smoke.mjs \
+  --work-root /var/tmp/recursus-work \
+  --dsh-home /var/tmp/recursus-dsh-home \
+  --name recursus \
+  --output evaluations/local-smoke-report.json
+```
+
+The default command never calls Codex or Honcho. Live checks additionally require `--live-codex`, `--codex-auth-file <absolute-host-path>`, or `--live-honcho`, plus the corresponding host credential. They use bounded synthetic input and should run only in an isolated acceptance environment. The runner refuses to overwrite a report.
+
+The accepted Windows package run produced 244 archives: Harness 231, Codex 1, RLM 5, Honcho 6, and Dovetail 1. The prior Harness pin failed closed on 29 `package/lib/client.js` files whose `dsh-css` virtual-module comments retained the absolute source path. The owning fix derives repository-relative virtual IDs and scans each DSH/vendor tarball before publication handoff; reviewed Harness PR #1 returned through a Recursus pin. A later assembled-smoke integration required an owning public session-log seam; reviewed Harness PR #2 returned as pin `29c8342b37d76e5dd4ca8daff4beb7743b8e22a0`. Windows finalization independently re-inspected all 244 archives, matched them to component checkpoints, and generated package integrity with no timestamp or host path.
+
+Linux component verification, build, package inspection, the Harness packed-consumer check, RLM Python tests, and Dovetail packaged validation all completed and produced the same 244 package paths and identities. Strict comparison against the Windows-accepted bytes failed, and a same-platform reproduction isolated the owner-level defect: two clean Harness packs at the same revision and toolchain had only 36 identical content hashes while 195 differed. One sampled `@deepseek-ai/dsh-agent-default-model` archive differed only in the key order of generated `package.json` `devDependencies`. Recursus did not normalize or accept those bytes. The next step is an owning Harness canonical-manifest and repeat-pack regression fix, returned through a reviewed pin, before Linux package, profile, and smoke evidence can be accepted.
 
 RLM's aggregate `check` and Dovetail's aggregate `verify` assume build artifacts already exist, so their adapters invoke the same component-owned granular checks before build and their build-dependent E2E/package checks after build. Honcho's package checker is invoked directly with the exact pnpm module in `npm_execpath`. Harness's own packed-consumer verifier is recorded as Linux-only, matching its public Ubuntu release workflow.
 
-The pinned Harness web replay was repeated after installing Playwright's pinned Chromium, headless shell, FFmpeg, and Winldd payloads. Chromium launched successfully. The full Windows run reported 41 passing and 35 failing files, with 154 passing, 24 failing, and 90 skipped tests. The remaining failures are Harness test-portability findings: JSONL fixture replacement does not escape Windows backslashes, shipped-composition goldens assume `bash` instead of the Windows `pwsh` tool, persistent-terminal snapshots declare `win32` unsupported, one settings rename hit Windows `EPERM`, and one plugin-config expectation differs from current defaults. These findings do not change accepted package bytes; a generic fix belongs in the Harness repository.
+The pinned Harness web replay ran with component-pinned Playwright Chromium, headless shell, and FFmpeg. The Linux replay passed 75 files and 253 tests, with one platform suite and 15 tests skipped by its declared conditions. The broader Linux Harness checks also exercised Bubblewrap and the packed-consumer verifier; its native fallback used work-root-local build tooling. These passing component checks establish compatibility, but they do not override the failed deterministic package comparison.
 
 ## Security, privacy, and limitations
 
@@ -131,8 +147,9 @@ The pinned Harness web replay was repeated after installing Playwright's pinned 
 - Absolute checkout paths remain local process state. Inspection rejects the exact work root in native, slash-normalized, and escaped forms. Package integrity contains only relative package paths, SHA-256 values, and byte sizes.
 - The runtime and component build commands use operator-granted host access. Path checks do not make them a sandbox.
 - Package inspection rejects undeclared output, archive traversal and links, source-control metadata, generated residue, credentials, developer-specific paths, corrupt headers, oversized input, and missing declared notices.
-- Local acceptance does not override component redistribution status.
-- The §20.4 profile lifecycle and a deterministic default-config composition smoke have passed on Windows. No live Codex, DeepSeek, or Honcho acceptance has run.
-- Windows acquisition/build/package/inspection is verified locally. Harness's Linux-only packed-consumer check and complete Linux assembly evidence remain required Milestone 1 items.
+- Local acceptance does not override component redistribution status. The Codex adapter remains blocked from redistribution pending owner-selected terms, and Dovetail remains subject to composite review.
+- Windows profile evidence proves local installation and compatibility; Linux profile evidence remains pending accepted deterministic packages. Neither is publication or a release.
+- Live Codex and Honcho acceptance is intentionally absent from default CI and requires explicit credentials and flags.
+- No DeepSeek model-provider live call is required by §20.5 and none was made by the assembled smoke.
 
-The next implementation step is `SPEC.md` §20.5: run Linux and Windows assembled smoke tasks that exercise the model, host tools, persistent RLM, enabled/disabled Honcho behavior, exact artifact bytes, and Dovetail skill paths without live provider mutation unless separately authorized. Linux build/package verification and the full smoke matrix remain required before Milestone 1 can be complete.
+Milestone 1 is not complete. The next delivery step is to land the owning Harness deterministic-pack fix and regression test, return it through a reviewed Recursus pin, then produce accepted Linux package, profile, default-smoke, notice, secret, path, and clean-machine evidence for `SPEC.md` §20.6.

@@ -20,6 +20,7 @@
     "assemble:packages": "pnpm --filter @opencnid/recursus-assembly build && node scripts/assemble-packages.mjs",
     "assemble:finalize": "pnpm --filter @opencnid/recursus-assembly build && node scripts/finalize-package-assembly.mjs",
     "profile": "pnpm --filter @opencnid/recursus-assembly build && node scripts/manage-profile.mjs",
+    "smoke:assembled": "pnpm --filter @opencnid/recursus-assembly build && node scripts/run-assembled-smoke.mjs",
     "verify": "node scripts/verify.mjs",
     "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm verify"
   },
