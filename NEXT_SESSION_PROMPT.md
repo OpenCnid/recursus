@@ -8,11 +8,11 @@ Work only in the current Recursus checkout—the repository containing `SPEC.md`
 
 Continue building Recursus from its accepted public foundation. Start by reading `AGENTS.md`, `README.md`, `GAMEPLAN.md`, `SPEC.md`, `docs/ARCHITECTURE.md`, `THIRD_PARTY_NOTICES.md`, and `manifests/components.json` completely. Treat `SPEC.md` as normative and `GAMEPLAN.md` as the delivery sequence. Inspect the repository, Git status, existing tests and verification, exact component pins, and each pinned component's public build/package/plugin seams before editing.
 
-Milestone 0 is complete at foundation commit `d8425e54102d3d144f2b1f6f125c0581cee952ed`. Do not rebuild the foundation or copy code/history from the private predecessor. Continue Milestone 1: Windows assembly, the §20.4 profile lifecycle, and the default plus opted-in §20.5 assembled smoke are accepted at the pins below. Linux component-owned verification and packaging produced all 244 expected identities, but strict finalization failed closed because two clean Harness packs at the same revision and toolchain reproduced only 36 of 231 content hashes; 195 differed. A sample generated `package.json` differed only in `devDependencies` key order. The first unmet criterion remains §20.6.
+Milestone 0 is complete at foundation commit `d8425e54102d3d144f2b1f6f125c0581cee952ed`. Do not rebuild the foundation or copy code/history from the private predecessor. Continue Milestone 1: Windows assembly, the §20.4 profile lifecycle, and the default plus opted-in §20.5 assembled smoke are preserved as historical evidence at the preceding Harness pin. Linux component-owned verification and packaging produced all 244 expected identities, but strict finalization failed closed because two clean Harness packs reproduced only 36 of 231 Harness content hashes; 195 differed. The owning fix and clean double-pack regression are reviewed, merged, and pinned below. The first unmet criterion remains §20.6, and all package/profile/smoke evidence must now be regenerated at the current source lock rather than relabeling the historical reports.
 
 Use these immutable component revisions unless a failing real compatibility test proves a pin must change:
 
-- DeepSeek Harness: `29c8342b37d76e5dd4ca8daff4beb7743b8e22a0` (`dsh-v0.1.0-rc.7` package set plus reviewed portable-bundle and public-session seam fixes)
+- DeepSeek Harness: `e52c224fe00954fb7e8cda19eb2411dceef15989` (`dsh-v0.1.0-rc.7` package set plus reviewed portable-bundle, public-session, and deterministic-pack fixes)
 - OpenAI Codex adapter: `5232102d0cc8bd55d5bf27b6eb203efbf6ada8a9`
 - DeepSeek RLM: `4772c12b0630706f14d16e70be0ad67bff116690`
 - DeepSeek Honcho: `83627329867a562959cf992d0ce56d78a273971a`
@@ -46,6 +46,6 @@ Development requirements:
 
 Before concluding, report what was implemented, exact files/packages changed, checks and results, evidence for each reached acceptance criterion, every unmet criterion, and the next exact implementation step. Do not claim Milestone 1 complete until every criterion in section 20 of `SPEC.md` has concrete evidence.
 
-Begin only after the owning DeepSeek Harness determinism fix has landed and a reviewed commit is available. Inspect that change and its clean double-pack evidence, update the Recursus Harness pin, then rebuild and inspect all packages twice on Linux and once on Windows. Record truthful platform evidence without assuming cross-platform tarball byte equality. Run the Linux profile lifecycle and default assembled smoke against accepted Linux bytes, then close the remaining §20.6 notice, secret, physical-path, package, and clean-machine evidence. If the owning fix is not yet reviewed, stop and report that exact prerequisite instead of editing component implementation in Recursus.
+The owning DeepSeek Harness determinism fix is reviewed and pinned. Begin by confirming the immutable source lock, then rebuild and inspect all packages twice on Linux and once on Windows. Record truthful platform evidence without assuming cross-platform tarball byte equality. Run the Linux profile lifecycle and default assembled smoke against accepted Linux bytes, then close the remaining §20.6 notice, secret, physical-path, package, and clean-machine evidence. Do not edit component implementation in Recursus or reuse the predecessor evidence as if it were produced at the new pin.
 
 ---

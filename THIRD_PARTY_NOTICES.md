@@ -8,7 +8,7 @@ The repository records external components by immutable revision and includes a 
 
 - Component: [`OpenCnid/deepseek-harness`](https://github.com/OpenCnid/deepseek-harness)
 - Upstream: [`deepseek-ai/deepseek-harness`](https://github.com/deepseek-ai/deepseek-harness)
-- Pinned revision: `29c8342b37d76e5dd4ca8daff4beb7743b8e22a0` (`dsh-v0.1.0-rc.7` package set plus reviewed portable-bundle and public-session seam fixes)
+- Pinned revision: `e52c224fe00954fb7e8cda19eb2411dceef15989` (`dsh-v0.1.0-rc.7` package set plus reviewed portable-bundle, public-session, and deterministic-pack fixes)
 - License: MIT
 
 DeepSeek AI and the DeepSeek Harness contributors provide the plugin-first agent control plane on which Recursus is built. The DSH repository vendors and credits Cordis, CosmoKit, Schemastery, and related foundations under their preserved licenses. Recursus does not imply endorsement by DeepSeek AI.
