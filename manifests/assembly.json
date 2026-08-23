@@ -30,7 +30,7 @@
       "name": "deepseek-harness",
       "role": "control-plane",
       "repository": "https://github.com/OpenCnid/deepseek-harness",
-      "revision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
+      "revision": "e52c224fe00954fb7e8cda19eb2411dceef15989",
       "version": "dsh-v0.1.0-rc.7",
       "license": {
         "declared": "MIT",
@@ -254,7 +254,7 @@
         ]
       },
       "compatibility": {
-        "dshRevision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
+        "dshRevision": "e52c224fe00954fb7e8cda19eb2411dceef15989",
         "nestedPins": {
           "cordis": "4.0.1"
         },
@@ -398,7 +398,7 @@
         ]
       },
       "compatibility": {
-        "dshRevision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
+        "dshRevision": "e52c224fe00954fb7e8cda19eb2411dceef15989",
         "nestedPins": {
           "cordis": "4.0.1",
           "pi-ai": "0.84.2"
@@ -673,7 +673,7 @@
         ]
       },
       "compatibility": {
-        "dshRevision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
+        "dshRevision": "e52c224fe00954fb7e8cda19eb2411dceef15989",
         "nestedPins": {
           "cordis": "4.0.1",
           "rlm-compute-boundary": "79b6b28e16c7305e8e791f2d8c9d2935e75ade60"
@@ -933,7 +933,7 @@
         ]
       },
       "compatibility": {
-        "dshRevision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
+        "dshRevision": "e52c224fe00954fb7e8cda19eb2411dceef15989",
         "nestedPins": {
           "cordis": "4.0.1",
           "honcho-sdk": "2.3.0",
@@ -1128,7 +1128,7 @@
         ]
       },
       "compatibility": {
-        "dshRevision": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
+        "dshRevision": "e52c224fe00954fb7e8cda19eb2411dceef15989",
         "nestedPins": {
           "cordis": "4.0.1",
           "dovetail-source": "69f89e3322847fb11665980c16598494a9eacca0"

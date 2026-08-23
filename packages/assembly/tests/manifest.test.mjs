@@ -12,6 +12,7 @@ import {
 
 const manifestPath = fileURLToPath(new URL('../../../manifests/assembly.json', import.meta.url))
 const componentLockPath = fileURLToPath(new URL('../../../manifests/components.json', import.meta.url))
+const harnessRevision = 'e52c224fe00954fb7e8cda19eb2411dceef15989'
 
 async function sourceManifest() {
   return JSON.parse(await readFile(manifestPath, 'utf8'))
@@ -28,6 +29,11 @@ test('the assembly source lock matches all five accepted component-lock entries'
     'deepseek-honcho',
     'deepseek-dovetail',
   ])
+  assert.equal(manifest.components.find((component) => component.name === 'deepseek-harness')?.revision, harnessRevision)
+  assert.deepEqual(
+    manifest.components.map((component) => component.compatibility.dshRevision),
+    Array.from({ length: 5 }, () => harnessRevision),
+  )
   assert.equal(manifest.components.find((component) => component.name === 'deepseek-openai-codex')
     ?.compatibility.nestedPins['pi-ai'], '0.84.2')
   assert.equal(manifest.components.find((component) => component.name === 'deepseek-honcho')

@@ -5,7 +5,7 @@ Implementation status and detailed acceptance contracts are normative in [`SPEC.
 | Milestone | Status | Next decision |
 | --- | --- | --- |
 | 0 — product foundation | Complete | Preserve the accepted foundation evidence |
-| 1 — reproducible runtime assembly | In progress | Fix Harness pack determinism, return through a reviewed pin, and close Linux §20.6 evidence |
+| 1 — reproducible runtime assembly | In progress | Rebuild at the reviewed Harness pin and close Linux §20.6 evidence |
 | 2–9 | Planned | Begin only after inherited acceptance gates are met |
 
 ## 1. Mission
@@ -270,8 +270,8 @@ Release acceptance:
 
 ## 14. Immediate issue sequence
 
-1. Land the component-owned Harness deterministic-pack regression and implementation fix.
-2. Return the reviewed Harness commit through the Recursus source lock.
+1. Land the component-owned Harness deterministic-pack regression and implementation fix. Completed in Harness revision `e52c224fe00954fb7e8cda19eb2411dceef15989`.
+2. Return the reviewed Harness commit through the Recursus source lock. Completed by the current pin transition.
 3. Rebuild and inspect all 244 packages twice on Linux and once on Windows.
 4. Record accepted platform package evidence without claiming byte equality that the evidence does not prove.
 5. Run the Linux profile lifecycle and default assembled smoke against accepted Linux bytes.
