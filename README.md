@@ -103,7 +103,7 @@ pnpm install --frozen-lockfile
 pnpm check
 ```
 
-`node scripts/verify.mjs` remains the dependency-free check for the component pins plus the implemented Milestone 1 schema, source lock, package/profile evidence, smoke reports, and notice closure. During this deliberate pin transition it fails on the old evidence revision until assembly regenerates and accepts the complete evidence set at the new source lock.
+`node scripts/verify.mjs` remains the dependency-free check for the component pins plus the implemented Milestone 1 schema, source lock, package/profile evidence, smoke reports, and notice closure. During this deliberate pin transition it validates the accepted predecessor evidence against its explicit historical identity and validates the current source lock independently. A passing repository verifier does not make the historical reports current or complete Milestone 1; the full package, profile, smoke, Linux, and §20.6 evidence set must still be regenerated and accepted at the new source lock.
 
 ## License
 

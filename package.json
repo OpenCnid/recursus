@@ -15,6 +15,7 @@
     "lint": "node scripts/lint.mjs",
     "typecheck": "pnpm --filter @opencnid/recursus-assembly typecheck",
     "test": "pnpm --filter @opencnid/recursus-assembly test",
+    "test:evidence-transition": "node --test scripts/verify-evidence-transition.test.mjs",
     "test:integration": "pnpm --filter @opencnid/recursus-assembly test:integration",
     "test:profile-integration": "pnpm --filter @opencnid/recursus-assembly test:profile-integration",
     "assemble:packages": "pnpm --filter @opencnid/recursus-assembly build && node scripts/assemble-packages.mjs",
