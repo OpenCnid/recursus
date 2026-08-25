@@ -12,6 +12,7 @@ The authoritative files are:
 - `manifests/package-integrity.schema.json`: deterministic package hash/size schema;
 - `manifests/package-integrity.json`: deterministic SHA-256 and byte-size records for 244 archives accepted at the preceding source lock, intentionally stale during the pin transition;
 - `manifests/profile-lock.yaml`: exact pnpm `11.19.0` resolution for the assembled profile, pinned by the assembly source lock;
+- `evaluations/milestone-1-predecessor-evidence-identity.json`: immutable source-lock, report, and integrity hashes that bind the accepted historical evidence to the preceding Harness pin during the transition;
 - `evaluations/milestone-1-package-report.json`: path-free accepted lifecycle, package, and security evidence;
 - `evaluations/milestone-1-profile-lifecycle-report.json`: path-free §20.4 distribution, profile, containment, and smoke evidence;
 - `evaluations/milestone-1-assembled-smoke-disabled-report.json`: Windows default deterministic smoke evidence;

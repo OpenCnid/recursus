@@ -2,6 +2,10 @@ import assert from 'node:assert/strict'
 import { createHash } from 'node:crypto'
 import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
+import {
+  currentHarnessRevision,
+  verifyEvidenceTransition,
+} from './verify-evidence-transition.mjs'
 
 const root = resolve(import.meta.dirname, '..')
 const requiredFiles = [
@@ -19,6 +23,7 @@ const requiredFiles = [
   'evaluations/milestone-1-slice-1.json',
   'evaluations/milestone-1-package-report-blocked-99f6f02.json',
   'evaluations/milestone-1-package-report.json',
+  'evaluations/milestone-1-predecessor-evidence-identity.json',
   'evaluations/milestone-1-profile-lifecycle-report.json',
   'evaluations/milestone-1-assembled-smoke-disabled-report.json',
   'evaluations/milestone-1-assembled-smoke-report.json',
@@ -65,6 +70,9 @@ for (const component of manifest.components) {
   roles.add(component.role)
 }
 assert.deepEqual(names, expectedComponents)
+const currentComponentRevisions = Object.fromEntries(
+  manifest.components.map((component) => [component.name, component.revision]),
+)
 
 const assembly = JSON.parse(contents.get('manifests/assembly.json'))
 assert.equal(assembly.$schema, './assembly.schema.json')
@@ -105,7 +113,11 @@ for (const locked of manifest.components) {
     assert.ok(component.entrypoints[phase].length > 0, `${locked.name} has no ${phase} entry point`)
   }
   assert.ok(component.pack.selectors.length > 0)
-  assert.match(component.compatibility.dshRevision, /^[0-9a-f]{40}$/u)
+  assert.equal(
+    component.compatibility.dshRevision,
+    currentHarnessRevision,
+    `${locked.name} compatibility must target the current Harness source lock`,
+  )
 }
 assert.deepEqual(assemblyByName.get('deepseek-harness').profileContribution.credentialReferences, ['DEEPSEEK_API_KEY'])
 assert.deepEqual(assemblyByName.get('deepseek-openai-codex').profileContribution.credentialReferences, ['OPENAI_CODEX_OAUTH'])
@@ -136,10 +148,21 @@ const expectedPackageCounts = {
   'deepseek-rlm': 5,
 }
 const compareCodeUnits = (left, right) => (left < right ? -1 : left > right ? 1 : 0)
-const integrity = JSON.parse(contents.get('manifests/package-integrity.json'))
+const historicalEvidence = verifyEvidenceTransition({
+  identity: JSON.parse(contents.get('evaluations/milestone-1-predecessor-evidence-identity.json')),
+  currentComponentsContents: contents.get('manifests/components.json'),
+  currentAssemblyContents: contents.get('manifests/assembly.json'),
+  currentComponentRevisions,
+  profileLockContents: contents.get('manifests/profile-lock.yaml'),
+  evidenceContents: contents,
+})
+const { identity: evidenceIdentity, integrity, packageReport, profileReport, smokeReports } = historicalEvidence
+const predecessorSourceLock = evidenceIdentity.sourceLocks.predecessor
+const predecessorComponentRevisions = predecessorSourceLock.componentRevisions
+const predecessorComponents = Object.entries(predecessorComponentRevisions).map(([name, revision]) => ({ name, revision }))
 assert.equal(integrity.$schema, './package-integrity.schema.json')
 assert.equal(integrity.schemaVersion, 1)
-assert.equal(integrity.assemblyId, assembly.assemblyId)
+assert.equal(integrity.assemblyId, predecessorSourceLock.assemblyId)
 assert.equal(integrity.algorithm, 'sha256')
 assert.equal(integrity.packages.length, 244)
 
@@ -161,17 +184,13 @@ for (const entry of integrity.packages) {
 }
 assert.deepEqual(actualPackageCounts, expectedPackageCounts)
 
-const packageReport = JSON.parse(contents.get('evaluations/milestone-1-package-report.json'))
 assert.equal(packageReport.schemaVersion, 1)
-assert.equal(packageReport.assemblyId, assembly.assemblyId)
+assert.equal(packageReport.assemblyId, predecessorSourceLock.assemblyId)
 assert.equal(packageReport.platform, 'windows-x64')
-assert.deepEqual(
-  packageReport.componentRevisions,
-  Object.fromEntries(manifest.components.map((component) => [component.name, component.revision])),
-)
-assert.equal(packageReport.lifecycle.length, manifest.components.length)
+assert.deepEqual(packageReport.componentRevisions, predecessorComponentRevisions)
+assert.equal(packageReport.lifecycle.length, predecessorComponents.length)
 const lifecycleByName = new Map(packageReport.lifecycle.map((component) => [component.component, component]))
-assert.equal(lifecycleByName.size, manifest.components.length)
+assert.equal(lifecycleByName.size, predecessorComponents.length)
 const expectedPhases = [
   'inspect',
   'acquire',
@@ -183,9 +202,12 @@ const expectedPhases = [
   'inspectPackage',
 ]
 let reportedPackages = 0
-for (const component of manifest.components) {
+const reportedPackageKeys = []
+for (const component of predecessorComponents) {
   const lifecycle = lifecycleByName.get(component.name)
   assert.ok(lifecycle, `package report is missing ${component.name}`)
+  assert.equal(lifecycle.schemaVersion, 1)
+  assert.equal(lifecycle.assemblyId, predecessorSourceLock.assemblyId)
   assert.equal(lifecycle.revision, component.revision)
   assert.deepEqual(lifecycle.phases, expectedPhases)
   assert.equal(typeof lifecycle.recoveredAfterLaterComponentFailure, 'boolean')
@@ -193,6 +215,7 @@ for (const component of manifest.components) {
   reportedPackages += lifecycle.packages.length
   for (const inspected of lifecycle.packages) {
     const path = `${component.name}/${inspected.relativePath}`
+    reportedPackageKeys.push(path)
     const accepted = integrityByPath.get(path)
     assert.ok(accepted, `package report contains unaccepted archive ${path}`)
     assert.equal(inspected.sha256, accepted.sha256)
@@ -203,6 +226,8 @@ for (const component of manifest.components) {
   }
 }
 assert.equal(reportedPackages, integrity.packages.length)
+assert.equal(new Set(reportedPackageKeys).size, reportedPackageKeys.length)
+assert.deepEqual([...reportedPackageKeys].sort(compareCodeUnits), [...integrityByPath.keys()].sort(compareCodeUnits))
 assert.deepEqual(packageReport.security, {
   credentialsFound: false,
   developerAbsolutePathsFound: false,
@@ -225,30 +250,29 @@ assert.deepEqual(
     redistributionRestrictionsPreserved: true,
   },
 )
-assert.equal(packageReport.licenseAndNotice.components.length, manifest.components.length)
+assert.equal(packageReport.licenseAndNotice.components.length, predecessorComponents.length)
 assert.ok(
   packageReport.licenseAndNotice.components.every(
     (component) => component.packageArchivesCommitted === false,
   ),
 )
 
-const profileReport = JSON.parse(contents.get('evaluations/milestone-1-profile-lifecycle-report.json'))
 assert.equal(profileReport.schemaVersion, 1)
-assert.equal(profileReport.assemblyId, assembly.assemblyId)
+assert.equal(profileReport.assemblyId, predecessorSourceLock.assemblyId)
 assert.equal(profileReport.platform, 'windows-x64')
 assert.equal(profileReport.status, 'spec-20.4-passed')
 assert.deepEqual(profileReport.componentRevisions, packageReport.componentRevisions)
 assert.equal(profileReport.inputs.acceptedPackages, integrity.packages.length)
 assert.equal(
   profileReport.inputs.assemblyManifestSha256,
-  createHash('sha256').update(contents.get('manifests/assembly.json')).digest('hex'),
+  predecessorSourceLock.assemblyManifestSha256,
 )
 assert.equal(
   profileReport.inputs.packageIntegritySha256,
   createHash('sha256').update(contents.get('manifests/package-integrity.json')).digest('hex'),
 )
-assert.equal(profileReport.inputs.profileLockSha256, assembly.profileLock.sha256)
-assert.match(profileReport.distribution.manifestSha256, /^[0-9a-f]{64}$/u)
+assert.equal(profileReport.inputs.profileLockSha256, predecessorSourceLock.profileLockSha256)
+assert.equal(profileReport.distribution.manifestSha256, evidenceIdentity.profileDistributionManifestSha256)
 assert.equal(profileReport.distribution.packagesReinspected, integrity.packages.length)
 assert.equal(profileReport.profileLifecycle.realPinnedIntegrationPassed, 1)
 assert.equal(profileReport.profileLifecycle.installedPackagesVerified, integrity.packages.length)
@@ -266,14 +290,9 @@ assert.ok(profileReport.criteria.some((criterion) => criterion.spec === '20.4' &
 assert.ok(profileReport.criteria.some((criterion) => criterion.spec === '20.5' && criterion.status === 'passed-windows'))
 assert.ok(profileReport.criteria.some((criterion) => criterion.spec === '20.6' && criterion.status === 'incomplete'))
 
-const smokePaths = [
-  'evaluations/milestone-1-assembled-smoke-disabled-report.json',
-  'evaluations/milestone-1-assembled-smoke-report.json',
-]
-const smokeReports = smokePaths.map((path) => JSON.parse(contents.get(path)))
 for (const smoke of smokeReports) {
   assert.equal(smoke.schemaVersion, 1)
-  assert.equal(smoke.assemblyId, assembly.assemblyId)
+  assert.equal(smoke.assemblyId, predecessorSourceLock.assemblyId)
   assert.deepEqual(smoke.componentRevisions, packageReport.componentRevisions)
   assert.equal(smoke.checks.toolApproval.status, 'passed')
   assert.deepEqual(smoke.checks.toolApproval.auditEvents, [
@@ -328,8 +347,14 @@ const blockedPackageReport = JSON.parse(
   contents.get('evaluations/milestone-1-package-report-blocked-99f6f02.json'),
 )
 assert.equal(blockedPackageReport.schemaVersion, 1)
-assert.equal(blockedPackageReport.assemblyId, assembly.assemblyId)
+assert.equal(blockedPackageReport.assemblyId, 'recursus-m1-source-lock-v1')
 assert.equal(blockedPackageReport.platform, 'windows-x64')
+assert.deepEqual(blockedPackageReport.componentRevisions, {
+  ...predecessorComponentRevisions,
+  'deepseek-harness': '99f6f02fecdb7dff40c3fbc9470f5907c29f74ca',
+})
+assert.notDeepEqual(blockedPackageReport.componentRevisions, predecessorComponentRevisions)
+assert.notDeepEqual(blockedPackageReport.componentRevisions, currentComponentRevisions)
 assert.equal(blockedPackageReport.status, 'blocked-component-owned-package-path-leak')
 assert.equal(blockedPackageReport.observedRun.producedPackages, 244)
 assert.equal(blockedPackageReport.observedRun.passedExactWorkRootScan.packages, 13)
@@ -369,6 +394,11 @@ const readme = contents.get('README.md')
 assert.ok(readme.includes('DeepSeek Harness remains the control plane'))
 assert.ok(readme.includes('Standing on the shoulders of giants'))
 assert.ok(readme.includes('not an official DeepSeek, OpenAI, Honcho, or Prime product'))
+assert.ok(readme.includes('Linux package, profile, smoke, and §20.6 evidence must be regenerated'))
+
+const assemblyDocumentation = contents.get('docs/ASSEMBLY.md')
+assert.ok(assemblyDocumentation.includes('Milestone 1 is not complete'))
+assert.ok(assemblyDocumentation.includes('current Windows and Linux profile evidence remains pending'))
 
 const spec = contents.get('SPEC.md')
 for (let milestone = 0; milestone <= 9; milestone += 1) {
@@ -393,5 +423,5 @@ const combined = [...contents.values()].join('\n')
 assert.equal(/\b(?:TODO|FIXME)\b/u.test(combined), false)
 
 console.log(
-  `recursus verified: ${manifest.components.length} accepted component pins; deterministic integrity covers ${integrity.packages.length} inspected packages`,
+  `recursus verified: ${manifest.components.length} current component pins; historical predecessor integrity covers ${integrity.packages.length} inspected packages`,
 )

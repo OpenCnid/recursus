@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "kind": "historical-predecessor-evidence",
+  "sourceLocks": {
+    "predecessor": {
+      "assemblyId": "recursus-m1-source-lock-v1",
+      "componentsManifestSha256": "408e69fabb5bb49bbab7dc8882ef8bd9451f9c66e0fd5ac7174623b24c4fb2ad",
+      "assemblyManifestSha256": "2a7ef96128ef0ccc2784469950af5137232e25a2693cd9017fb6e6d53e9f2496",
+      "profileLockSha256": "b1d5608aa775dbf1e847aee516f39497b3b6579e65c7be108212d8810de75c8e",
+      "componentRevisions": {
+        "deepseek-harness": "29c8342b37d76e5dd4ca8daff4beb7743b8e22a0",
+        "deepseek-openai-codex": "5232102d0cc8bd55d5bf27b6eb203efbf6ada8a9",
+        "deepseek-rlm": "4772c12b0630706f14d16e70be0ad67bff116690",
+        "deepseek-honcho": "83627329867a562959cf992d0ce56d78a273971a",
+        "deepseek-dovetail": "fec14d795edb5e52c02e2ccc49d9af6004fddee0"
+      }
+    },
+    "current": {
+      "assemblyId": "recursus-m1-source-lock-v1",
+      "componentsManifestSha256": "a9a82f1fb3e6eb07589e288861bc83eb418bf5ec5055665be253db0116147f70",
+      "assemblyManifestSha256": "dfcd37e85cb2ca74c4fe401749fcb5129c6d15118609cbc49717fc59f9463fdd",
+      "profileLockSha256": "b1d5608aa775dbf1e847aee516f39497b3b6579e65c7be108212d8810de75c8e",
+      "componentRevisions": {
+        "deepseek-harness": "e52c224fe00954fb7e8cda19eb2411dceef15989",
+        "deepseek-openai-codex": "5232102d0cc8bd55d5bf27b6eb203efbf6ada8a9",
+        "deepseek-rlm": "4772c12b0630706f14d16e70be0ad67bff116690",
+        "deepseek-honcho": "83627329867a562959cf992d0ce56d78a273971a",
+        "deepseek-dovetail": "fec14d795edb5e52c02e2ccc49d9af6004fddee0"
+      }
+    }
+  },
+  "changedComponents": [
+    "deepseek-harness"
+  ],
+  "artifacts": {
+    "packageIntegrity": {
+      "path": "manifests/package-integrity.json",
+      "sha256": "8df2ace8bf5e606a5979bca1e29bc58f855bbdf5bd2c0d398c808b7dc9e8af71"
+    },
+    "packageReport": {
+      "path": "evaluations/milestone-1-package-report.json",
+      "sha256": "0957f3c459184df2b0a0dd9987106748ff36e2ddfe5ce45dcb339d1c23e0ad15"
+    },
+    "profileReport": {
+      "path": "evaluations/milestone-1-profile-lifecycle-report.json",
+      "sha256": "0e700a682e84bf46ab5ad5b60676fd4bde91c6ad9b507332ae31fb3ebc278092"
+    },
+    "defaultSmokeReport": {
+      "path": "evaluations/milestone-1-assembled-smoke-disabled-report.json",
+      "sha256": "5717df6e65d1fb0dcdb3c050bff84aed101032bbed29a8091bc7d528b4cc9191"
+    },
+    "liveSmokeReport": {
+      "path": "evaluations/milestone-1-assembled-smoke-report.json",
+      "sha256": "4aed24120ac0460abe0b8eb8f2b596540665e197b6751c3b47cf71ab7dade518"
+    }
+  },
+  "profileDistributionManifestSha256": "244651de852daeab8c39786128146cc2e2190601e62488648d8b2f6ab44a9592",
+  "acceptance": {
+    "milestone": 1,
+    "status": "incomplete",
+    "currentPinWindowsComplete": false,
+    "currentPinLinuxComplete": false
+  }
+}
